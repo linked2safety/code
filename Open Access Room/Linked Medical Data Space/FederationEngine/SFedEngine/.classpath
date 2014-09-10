@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="junittests"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/antlr-2.7.5.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/antlr-runtime-3.0.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/colt-1.0.3.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/commons-compress-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/commons-lang-2.0.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/commons-lang-2.2.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/concurrent.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/log4j-1.2.12.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/slf4j-api-1.5.2.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/slf4j-log4j12-1.5.2.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/fedx-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yaskha/.m2/repository/org/apache/jena/jena-arq/2.9.2/jena-arq-2.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yaskha/.m2/repository/org/apache/jena/jena-core/2.7.2/jena-core-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yaskha/.m2/repository/org/apache/jena/jena-iri/0.9.2/jena-iri-0.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/yaskha/.m2/repository/org/apache/jena/jena-tdb/0.9.2/jena-tdb-0.9.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/EclipseWorkspace/SFedEngine/lib/DataAccessMechanism.jar"/>
+	<classpathentry kind="lib" path="D:/sesame-config-2.7.2.jar"/>
+	<classpathentry kind="lib" path="D:/openrdf-sesame-2.7.2-onejar.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

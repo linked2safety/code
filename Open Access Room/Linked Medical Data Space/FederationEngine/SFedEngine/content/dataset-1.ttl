@@ -1,0 +1,3338 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix l2s-data: <http://linked2safety.org/data/> .
+@prefix l2s-prop: <http://linked2safety.org/properties/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx: <http://purl.org/linked-data/sdmx#> .
+@prefix l2s: <http://linked2safety.org/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+
+#Default Graph
+{
+<http://linked2safety.org/clinical-trials/dataset1/graph1> dc:publisher "A" .
+}
+
+
+l2s-data:graph1 {
+l2s-data:clinical-trials a qb:DataSet ;
+	rdfs:label "Clinical Trials Dataset" ;
+	rdfs:comment "Clinical Trials Dataset indicating adverse events seen in a sample population upon administration of two drugs" .
+
+<http://linked2safety.org/dsd/positives-by-adverse-event> a qb:DataStructureDefinition .
+
+_:node1747v3dcux1 a qb:ComponentSpecification .
+
+<sdmx-dimension:sex> a qb:DimensionProperty ;
+	rdfs:label "Sex" .
+
+_:node1747v3dcux1 qb:dimension <sdmx-dimension:sex> .
+
+<http://linked2safety.org/dsd/positives-by-adverse-event> qb:component _:node1747v3dcux1 .
+
+_:node1747v3dcux2 a qb:ComponentSpecification .
+
+l2s-prop:drug a qb:DimensionProperty ;
+	rdfs:label "Drug" .
+
+_:node1747v3dcux2 qb:dimension l2s-prop:drug .
+
+<http://linked2safety.org/dsd/positives-by-adverse-event> qb:component _:node1747v3dcux2 .
+
+_:node1747v3dcux3 a qb:ComponentSpecification .
+
+l2s-prop:bmi25 a qb:DimensionProperty ;
+	rdfs:label "BMI25" .
+
+_:node1747v3dcux3 qb:dimension l2s-prop:bmi25 .
+
+<http://linked2safety.org/dsd/positives-by-adverse-event> qb:component _:node1747v3dcux3 .
+
+_:node1747v3dcux4 a qb:ComponentSpecification .
+
+l2s-prop:dyslipidemia a qb:DimensionProperty ;
+	rdfs:label "Dyslipidemia" .
+
+_:node1747v3dcux4 qb:dimension l2s-prop:dyslipidemia .
+
+<http://linked2safety.org/dsd/positives-by-adverse-event> qb:component _:node1747v3dcux4 .
+
+_:node1747v3dcux5 a qb:ComponentSpecification .
+
+l2s-prop:headache a qb:DimensionProperty ;
+	rdfs:label "Headache" .
+
+_:node1747v3dcux5 qb:dimension l2s-prop:headache .
+
+<http://linked2safety.org/dsd/positives-by-adverse-event> qb:component _:node1747v3dcux5 .
+
+_:node1747v3dcux6 a qb:ComponentSpecification .
+
+l2s-prop:rash a qb:DimensionProperty ;
+	rdfs:label "Rash" .
+
+_:node1747v3dcux6 qb:dimension l2s-prop:rash .
+
+<http://linked2safety.org/dsd/positives-by-adverse-event> qb:component _:node1747v3dcux6 .
+
+_:node1747v3dcux7 a qb:ComponentSpecification .
+
+l2s-prop:positives a qb:MeasureProperty ;
+	rdfs:label "Positives" .
+
+_:node1747v3dcux7 qb:measure l2s-prop:positives .
+
+<http://linked2safety.org/dsd/positives-by-adverse-event> qb:component _:node1747v3dcux7 .
+
+l2s-data:clinical-trials qb:structure <http://linked2safety.org/dsd/positives-by-adverse-event> .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" .
+
+<http://linked2safety.org/drug/insulin> rdfs:label "Insulin" .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/0/0//0> l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "72"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "38"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "49"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "83"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "96"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "73"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "44"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "0"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "45"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "70"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "83"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "45"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "72"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "54"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "79"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "99"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "92"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "67"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "15"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "27"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "61"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "29"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "65"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "37"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "28"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "8"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/0/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "65"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "79"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "40"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "34"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "42"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "12"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "72"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "91"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "95"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "68"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "64"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "40"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "69"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "10"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "10"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "52"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "55"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "83"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "7"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "35"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "82"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "0"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "3"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "97"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "27"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "64"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "27"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/1/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "93"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "2"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "55"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "2"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "67"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "34"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "42"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "1"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "76"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "54"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "73"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "67"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "50"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "42"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "32"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "90"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "11"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "43"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "1"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "64"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "99"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "84"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "72"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "34"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "66"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "72"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "38"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/insulin/9/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "64"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" .
+
+<http://linked2safety.org/drug/digrin> rdfs:label "Digrin" .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/0/0//0> l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "0"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "2"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "91"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "93"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "4"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "47"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "95"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "72"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "81"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "38"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "74"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "58"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "92"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "48"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "26"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "43"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "90"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "59"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "34"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "2"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "2"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "35"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "67"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "2"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "19"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "39"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/0/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "37"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "86"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "12"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "75"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "51"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "13"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "78"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "42"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "6"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "82"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "89"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "2"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "55"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "71"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "40"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "29"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "29"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "33"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "77"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "56"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "76"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "68"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "15"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "10"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "70"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "18"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "46"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/1/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "37"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "21"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "66"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "77"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "58"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "53"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "90"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "33"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "4"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "3"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "11"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "47"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "10"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "94"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "37"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "12"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "50"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "8"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "53"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "79"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "38"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "86"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "57"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "95"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "63"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "25"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "10"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/M/digrin/9/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-M> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "74"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "95"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "29"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "20"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "33"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "50"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "87"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "11"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "8"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "40"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "1"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "42"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "44"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "4"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "54"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "91"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "14"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "49"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "29"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "27"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "99"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "37"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "80"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "78"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "76"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "67"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "36"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/0/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "71"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "31"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "61"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "82"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "6"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "57"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "12"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "27"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "90"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "63"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "14"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "1"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "72"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "54"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "2"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "14"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "99"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "7"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "69"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "91"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "21"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "18"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "20"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "49"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "17"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "58"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "29"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/1/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "96"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "35"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "97"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "32"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "6"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "29"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "93"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "89"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "35"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "51"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "2"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "62"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "41"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "65"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "76"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "43"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "37"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "31"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "46"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "52"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "30"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "54"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "21"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "21"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "75"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "39"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "42"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/insulin/9/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/insulin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "25"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "57"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "0"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "55"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "54"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "35"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "52"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "86"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "42"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "81"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "80"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "32"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "16"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "31"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "34"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "79"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "73"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "99"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "55"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "17"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "37"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "86"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "64"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "89"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "17"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "18"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "10"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/0/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "0"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "39"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "93"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "50"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "81"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "19"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "7"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "81"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "74"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "61"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "17"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "26"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "48"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "60"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "8"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "29"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "92"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "25"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "61"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "27"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "4"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "34"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "26"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "60"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "52"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "64"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "47"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "16"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/1/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "1"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "53"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/0/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "64"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/0/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "34"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/0/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "63"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/0/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "3"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/0/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "28"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/0/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "13"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/0/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "84"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/0/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "47"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/0/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "0"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "21"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/1/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "66"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/1/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "21"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/1/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "82"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/1/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "84"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/1/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "48"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/1/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "31"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/1/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "44"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/1/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "56"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/1/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "1"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "60"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/9/0//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "37"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/9/0//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "82"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/9/0//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "0"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "21"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/9/1//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "64"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/9/1//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "86"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/9/1//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "1"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "18"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/9/9//0> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "0"^^xsd:int ;
+	l2s-prop:positives "59"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/9/9//1> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "1"^^xsd:int ;
+	l2s-prop:positives "64"^^xsd:int .
+
+<http://linked2safety.org/data/clinical-trials/F/digrin/9/9/9//9> a qb:Observation ;
+	qb:dataSet "l2s-data:clinical-trials" ;
+	l2s-prop:drug <http://linked2safety.org/drug/digrin> ;
+	sdmx-dimension:sex <sdmx-code:sex-F> ;
+	l2s-prop:bmi25 "9"^^xsd:int ;
+	l2s-prop:dyslipidemia "9"^^xsd:int ;
+	l2s-prop:headache "9"^^xsd:int ;
+	l2s-prop:rash "9"^^xsd:int ;
+	l2s-prop:positives "79"^^xsd:int .
+}

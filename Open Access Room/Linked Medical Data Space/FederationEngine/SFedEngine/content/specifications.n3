@@ -1,0 +1,41 @@
+@prefix tcga:<http://tcga.deri.ie/schema/>.
+<http://tcga.deri.ie/set/setA> tcga:setName "A";
+                               tcga:setElements "result", "chromosome", "start", "stop","bcr_patient_barcode".		   
+<http://tcga.deri.ie/set/setC> tcga:setName "C";
+                               tcga:setElements "copy_number_result", "patient", "radiation", "follow_up", "miRNA_result", "snp_result", "aliquot", "analyte", "portion", "protocol", "sample", "shipment", "slide", "drug".
+<http://tcga.deri.ie/set/setD> tcga:setName "D";
+                               tcga:setElements "scaled_estimate", "seq_mean", "protein_expression_value", "reads_per_million_miRNA_mapped".                      
+<http://tcga.deri.ie/set/setE> tcga:setName "E";
+                               tcga:setElements "RPKM".
+<http://tcga.deri.ie/set/setM> tcga:setName "M";
+                               tcga:setElements "position", "beta_value".							
+<http://tcga.deri.ie/endpoint/blue1>  tcga:category "blue";
+								  tcga:endpointUrl "http://localhost:8080/openrdf-sesame/repositories/tcga-blue1";
+                                  tcga:containTumours "BLCA", "CESC", "HNSC", "KIRP", "LAML".
+<http://tcga.deri.ie/endpoint/blue2> tcga:category "blue";
+                                  tcga:endpointUrl "http://localhost:8080/openrdf-sesame/repositories/tcga-blue2";
+                                  tcga:containTumours "LGG", "LUSC", "PRAD", "READ", "SKCM".
+<http://tcga.deri.ie/endpoint/pink1> tcga:category "pink";
+                                  tcga:endpointUrl "http://localhost:8080/openrdf-sesame/repositories/tcga-pink1";
+                                  tcga:containTumours "BLCA", "CESC", "HNSC".
+<http://tcga.deri.ie/endpoint/pink2> tcga:category "pink";
+                                  tcga:endpointUrl "http://localhost:8080/openrdf-sesame/repositories/tcga-pink2";
+                                  tcga:containTumours "KIRP", "LAML", "LGG".
+<http://tcga.deri.ie/endpoint/pink3> tcga:category "pink";
+                                 tcga:endpointUrl "http://localhost:8080/openrdf-sesame/repositories/tcga-pink3";
+                                  tcga:containTumours "LUSC", "PRAD", "READ", "SKCM".
+<http://tcga.deri.ie/endpoint/green1> tcga:category "green";
+                                   tcga:endpointUrl "http://localhost:8080/openrdf-sesame/repositories/tcga-green1";
+                                   tcga:containTumours "BLCA", "CESC". 
+<http://tcga.deri.ie/endpoint/green2> tcga:category "green";
+                                   tcga:endpointUrl "http://localhost:8080/openrdf-sesame/repositories/tcga-green2";
+                                   tcga:containTumours "HNSC", "KIRP".
+<http://tcga.deri.ie/endpoint/green3> tcga:category "green";
+                                   tcga:endpointUrl "http://localhost:8080/openrdf-sesame/repositories/tcga-green3";
+                                   tcga:containTumours "LAML","LGG".
+<http://tcga.deri.ie/endpoint/green4> tcga:category "green";
+                                   tcga:endpointUrl "http://localhost:8080/openrdf-sesame/repositories/tcga-green4";
+                                   tcga:containTumours "LUSC", "PRAD".
+<http://tcga.deri.ie/endpoint/green5> tcga:category "green";
+                                   tcga:endpointUrl "http://localhost:8080/openrdf-sesame/repositories/tcga-green5";
+                                   tcga:containTumours "READ", "SKCM".

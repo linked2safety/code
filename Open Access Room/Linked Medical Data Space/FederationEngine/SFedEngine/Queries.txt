@@ -1,0 +1,642 @@
+####Query 1####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+select ?v_0 ?v_1 ?v_2 ?c
+where {
+?a l2s-dim:patienthasdiabetes ?v_0.
+?a l2s-dim:hasdislipidemia ?v_1.
+?a l2s-dim:bmi ?v_2.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+}
+user_profile = { 
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+
+####Query 2####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+select ?v_0 ?v_1 ?v_2 ?v_3 
+where {
+?a l2s-dim:patienthasdiabetes ?v_0.
+?a l2s-dim:hashypertension ?v_1.
+?a l2s-dim:bmi ?v_2.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c. 
+BIND(STR(?c) AS ?v_3).
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+
+####Query 3####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+select ?v_0 ?v_1 ?v_2 ?v_3
+where {
+?a <http://www.linked2safety-project.eu/properties/patienthasdiabetes> ?v_0. 
+?a <http://www.linked2safety-project.eu/properties/hashypertension> ?v_1. 
+?a <http://www.linked2safety-project.eu/properties/bmi> ?v_2. 
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c. 
+BIND(STR(?c) AS ?v_3).
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+
+####Query 4####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+select ?v_0 ?v_1 ?v_2 ?v_3
+where {
+?a <http://www.linked2safety-project.eu/properties/patienthasdiabetes> ?v_0.
+?a <http://www.linked2safety-project.eu/properties/smokingever> ?v_1.
+?a <http://www.linked2safety-project.eu/properties/bmi> ?v_2.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c. BIND(STR(?c) AS ?v_3).
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+
+####Query 5####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#> 
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/> 
+SELECT ?diabetes ?bmi ?hypertension
+WHERE {
+?instance a qb:Observation .
+?instance l2s-dim:hashypertension ?hypertension.
+?instance l2s-dim:bmi ?bmi.
+?instance l2s-dim:patienthasdiabetes ?diabetes.
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+
+
+####Query 6####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#> 
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/> 
+SELECT ?diabetes ?bmi ?dislipidemia 
+WHERE { 
+?instance a qb:Observation . 
+?instance l2s-dim:patienthasdiabetes ?diabetes. 
+?instance l2s-dim:bmi ?bmi. 
+?instance l2s-dim:hasdislipidemia ?dislipidemia. 
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases. 
+}
+user_profile = { 
+<http://www.l2s.com/userprofile> lmds:hasDCSource lmds:LungCancerStudy .
+}
+
+
+
+
+
+####Query 7####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#> 
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+SELECT ?diabetes ?bmi ?dislipidemia 
+WHERE {
+?instance a qb:Observation . 
+?instance l2s-dim:patienthasdiabetes ?diabetes. 
+?instance l2s-dim:bmi ?bmi. 
+?instance l2s-dim:hasdislipidemia ?dislipidemia. 
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases. 
+?a <http://www.linked2safety-project.eu/hasStudyProperties> <http://linked2safety-project.eu/studyProperty/doubleBlind>.
+?a <http://www.linked2safety-project.eu/hasStudyProperties> <http://linked2safety-project.eu/studyProperty/multicenter>.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasRole lmds:ClinicalTrialCoordinator .
+}
+
+
+
+
+
+####Query 8####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#> 
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/> 
+SELECT ?diabetes ?bmi ?smokingever
+WHERE { 
+?instance a qb:Observation . 
+?instance l2s-dim:patienthasdiabetes ?diabetes. 
+?instance l2s-dim:bmi ?bmi. 
+?instance l2s-dim:smokingever ?smokingever. 
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases.
+}
+user_profile = { 
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+}
+
+
+
+
+
+####Query 9####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#> 
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/> 
+SELECT ?diabetes ?bmi ?smokingever
+WHERE { 
+?instance a qb:Observation . 
+?instance l2s-dim:patienthasdiabetes ?diabetes. 
+?instance l2s-dim:bmi ?bmi. 
+?instance l2s-dim:smokingever ?smokingever. 
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases.
+}
+user_profile = { 
+<http://www.l2s.com/userprofile> lmds:hasLocation "Cyprus".
+}
+
+
+
+
+
+####Query 10####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#> 
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/> 
+SELECT ?diabetes ?cancer ?hypertension
+WHERE {
+?instance a qb:Observation .
+?instance l2s-dim:hashypertension ?hypertension.
+?instance l2s-dim:cancer ?cancer.
+?instance l2s-dim:patienthasdiabetes ?diabetes.
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+
+
+####Query 11####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+select ?v_0 ?v_1 ?v_2 ?c
+where {
+?a l2s-dim:patienthasdiabetes ?v_0.
+?a l2s-dim:rs0 ?v_1.
+?a l2s-dim:rs123 ?v_2.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+}
+user_profile = { 
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+####Query 12####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+select ?v_0 ?v_1 ?v_2 ?c
+where {
+?a l2s-dim:hasdislipidemia ?v_0.
+?a l2s-dim:diabetes2 ?v_1.
+?a l2s-dim:rs15 ?v_2.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+}
+user_profile = { 
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+
+####Query 13####
+
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+select ?v_0 ?v_1 ?v_2 ?c
+where {
+?a l2s-dim:hasdislipidemia ?v_0.
+?a l2s-dim:diabetes2 ?v_1.
+?a l2s-dim:rs15 ?v_2.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+}
+user_profile = { 
+<http://www.l2s.com/userprofile> lmds:hasRole lmds:ClinicalResearcher.
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Cancer".
+}
+
+
+
+
+####Query 14####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+select ?v_0 ?v_1 ?c
+where {
+?a l2s-dim:patienthasdiabetes ?v_0.
+?a l2s-dim:bmi ?v_1.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+}
+user_profile = { 
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+
+####Query 15####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+
+select ?v_0 ?v_1 ?v_2 ?c
+where { {
+?instance a qb:Observation .
+?instance l2s-dim:hashypertension ?hypertension.
+?instance l2s-dim:bmi ?bmi.
+?instance l2s-dim:patienthasdiabetes ?diabetes.
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases.
+} UNION {
+?a l2s-dim:hasdislipidemia ?v_0.
+?a l2s-dim:diabetes2 ?v_1.
+?a l2s-dim:rs15 ?v_2.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+} }
+user_profile = { 
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+
+####Query 16####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+
+select ?v_0 ?v_1 ?v_3 ?c 
+where
+{
+  ?a l2s-dim:bmi ?v_0.
+  ?a l2s-dim:patienthasdiabetes ?v_1.
+  ?a l2s-dim:hasdislipidemia ?v_2.
+  ?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+  ?a <http://www.linked2safety-project.eu/hasStudyProperties> <http://linked2safety-project.eu/studyProperty/doubleBlind>.
+  ?a <http://www.linked2safety-project.eu/hasStudyProperties> <http://linked2safety-project.eu/studyProperty/multicenter>.
+ } user_profile = { 
+ <http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+ <http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+ }
+ 
+ 
+ 
+####Query 17####
+ 
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+
+select ?v_0 ?v_1 ?v_2 ?c
+where {
+?a a qb:Observation.
+?a l2s-dim:patienthasdiabetes ?v_0.
+?a l2s-dim:hasdislipidemia ?v_1.
+?a l2s-dim:bmi ?v_2.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+?a qb:dataSet ?dataset.
+?dataset <http://www.linked2safety-project.eu/hasStudyProperties> <http://www.linked2safety-project.eu/studyProperty/multicenter>.
+?dataset <http://www.linked2safety-project.eu/hasStudyProperties> <http://www.linked2safety-project.eu/studyProperty/randomized>.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+####Query 18####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#> 
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/> 
+SELECT ?diabetes ?bmi ?receivedaspirin
+WHERE {
+?instance a qb:Observation .
+?instance l2s-dim:receivedaspirin ?receivedaspirin.
+?instance l2s-dim:bmi ?bmi.
+?instance l2s-dim:patienthasdiabetes ?diabetes.
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+####Query 19####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+select ?v_0 ?v_1 ?v_2 ?v_3 ?v_4 ?c
+where {
+?a l2s-dim:eexac ?v_0.
+?a l2s-dim:receiveformoterol ?v_1.
+?a l2s-dim:ageatinterview ?v_2.
+?a l2s-dim:gender ?v_3.
+?a l2s-dim:adverseevent ?v_4.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+####Query 20####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+select ?v_0 ?v_1 ?v_2 ?v_3 ?v_4 ?v_5 ?c
+where {
+?a l2s-dim:eexac ?v_0.
+?a l2s-dim:ageatinterview ?v_1.
+?a l2s-dim:gender ?v_2.
+?a l2s-dim:adverseevent ?v_3.
+?a l2s-dim:fev ?v_4.
+?a l2s-dim:medication ?v_5.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+####Query 21####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+select (SUM(xsd:long(?c)) as ?subjectcount)
+where {
+?a l2s-dim:eexac ?v_0.
+?a l2s-dim:receiveformoterol ?v_1.
+?a l2s-dim:ageatinterview ?v_2.
+?a l2s-dim:gender ?v_3.
+?a l2s-dim:adverseevent ?v_4.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+####Query 22####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+SELECT ?nationality ?age ?ethnicity ?gender ?diabetes ?cases
+WHERE { 
+?instance a qb:Observation .
+?instance l2s-dim:Nationality ?nationality.
+?instance l2s-dim:Age ?age.
+?instance l2s-dim:Ethnicity ?ethnicity.
+?instance l2s-dim:Gender ?gender.
+?instance l2s-dim:Diabetes ?diabetes. 
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases.
+} 
+user_profile = {
+<http://www.l2s.com/userprofile> c:hasRole c:ClinicalResearcher
+}
+
+
+####Query 23####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+SELECT ?teaweekly ?caffeineweekly ?smokingever ?diabetes ?bipolardo ?cases
+WHERE {
+?instance a qb:Observation .
+?instance l2s-dim:cups_tea_weekly ?teaweekly.
+?instance l2s-dim:drinks_caffeine_weekly ?caffeineweekly.
+?instance l2s-dim:Smoking_Ever ?smokingever.
+?instance l2s-dim:Diabetes ?diabetes.
+?instance l2s-dim:Bipolar_Disorder ?bipolardo. 
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> c:hasRole c:ClinicalTrialCoordinator
+}
+
+
+####Query 24####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+SELECT ?bmi ?weight ?brca12 ?diabetes ?cases
+WHERE {
+?instance a qb:Observation .
+?instance l2s-dim:BMI ?bmi.
+?instance l2s-dim:Weight ?weight.
+?instance l2s-dim:Diabetes ?diabetes. 
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> c:hasRole c:Student
+}
+
+
+
+####Query 25####
+
+#PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+SELECT ?nationality ?age ?ethnicity ?gender ?dis ?diabetes ?cases
+WHERE {
+?instance a qb:Observation .
+?instance l2s-dim:Nationality ?nationality.
+?instance l2s-dim:Age ?age.
+?instance l2s-dim:Ethnicity ?ethnicity.
+?instance l2s-dim:Gender ?gender.
+?instance l2s-dim:Dyslipidemia ?dis.
+?instance l2s-dim:Diabetes ?diabetes. 
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases.
+}
+user_profile = {
+<http://www.l2s.com/userprofile> c:hasRole c:ClinicalResearcher
+}
+
+
+
+####Query 26####
+
+PREFIX qb: <http://purl.org/linked-data/cube#> 
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/> 
+SELECT ?nationality ?age ?ethnicity ?gender ?dis ?diabetes ?cases 
+WHERE { 
+?instance a qb:Observation . 
+?instance l2s-dim:Nationality ?nationality. 
+?instance l2s-dim:Age ?age. 
+?instance l2s-dim:Ethnicity ?ethnicity. 
+?instance l2s-dim:Gender ?gender. 
+?instance l2s-dim:Dislipidemia ?dis. 
+?instance l2s-dim:Diabetes ?diabetes. 
+?instance <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?cases. 
+} 
+user_profile = { <http://www.l2s.com/userprofile> c:hasRole c:ClinicalResearcher }
+
+
+
+
+####Query 27####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select ?v_0 ?v_1 ?v_2 ?v_3 ?v_4 ?v_5 ?v_6 where {
+?a l2s-dim:dbp ?v_0.
+?a l2s-dim:sbp ?v_1.
+?a l2s-dim:diabetestypeii ?v_2.
+?a l2s-dim:ageatinterview ?v_3.
+?a l2s-dim:gender ?v_4.
+?a l2s-dim:receivedantihypertensivedrug ?v_5.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+BIND(STR(?c) AS ?v_6).
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+
+####Query 28####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+select ?v_0 where {
+?a l2s-dim:bmi ?v_0.
+?a qb:dataSet ?q.
+?q rdfs:label "ZEINCRO".
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+BIND(STR(?c) AS ?v_6).
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+
+####Query 29####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select ?v_0 ?v_1 ?v_2 ?v_3 ?v_4 where {
+?a l2s-dim:diabetestypeii ?v_0.
+?a l2s-dim:ageatinterview ?v_1.
+?a l2s-dim:gender ?v_2.
+?a l2s-dim:receivedselectiveseratonininhibitors ?v_3.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+BIND(STR(?c) AS ?v_4).
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+####Query 30####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select ?v_0 ?v_1 ?v_2 ?v_3 ?v_4 where {
+?a l2s-dim:ageatinterview ?v_0.
+?a l2s-dim:gender ?v_1.
+?a l2s-dim:metabolicsyndrome ?v_2.
+?a l2s-dim:receivedselectiveseratonininhibitors ?v_3.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+BIND(STR(?c) AS ?v_4).
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}
+
+
+####Query 31####
+
+PREFIX lmds: <http://www.linked2safety.eu/lmds2#>
+PREFIX l2s-dim: <http://www.linked2safety-project.eu/properties/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select ?v_0 ?v_1 ?v_2 ?v_3 ?v_4 where {
+?a l2s-dim:diabetestypeii ?v_0.
+?a l2s-dim:ageatinterview ?v_1.
+?a l2s-dim:gender ?v_2.
+?a l2s-dim:receivedselectiveseratonininhibitors ?v_3.
+?a <http://purl.org/linked-data/sdmx/2009/measure#Cases> ?c.
+BIND(STR(?c) AS ?v_4).
+}
+user_profile = {
+<http://www.l2s.com/userprofile> lmds:hasLocation "Greece".
+<http://www.l2s.com/userprofile> lmds:hasWorkingArea "Oncology".
+}

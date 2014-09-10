@@ -1,0 +1,7 @@
+@prefix fluid: <http://fluidops.org/config#>.
+
+<http://endpoint1> fluid:store "SPARQLEndpoint";
+fluid:SPARQLEndpoint "http://linked2safety.hcls.deri.org:3032/cubesproviderA/sparql".
+
+<http://endpoint2> fluid:store "SPARQLEndpoint";
+fluid:SPARQLEndpoint "http://linked2safety.hcls.deri.org:3032/cubesproviderA/sparql".

@@ -1,0 +1,86 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+
+#################################################### Named Graph 2 - Start #########################################
+
+<http://linked2safety.org/clinical-trials/graph2> {
+
+<http://linked2safety.org/clinical-trials/dataset2/> a qb:DataSet ;
+	rdfs:label "Clinical Trials Dataset 2" .
+
+_:node17932jsqjx1 a qb:DataStructureDefinition .
+
+_:node17932jsqjx2 a qb:ComponentSpecification .
+
+<http://linked2safety.org/clinical-trial-dataset-2/snp> a qb:DimensionProperty ;
+	rdfs:label "SNP" .
+
+_:node17932jsqjx2 qb:dimension <http://linked2safety.org/clinical-trial-dataset-2/snp> .
+
+<http://linked2safety.org/clinical-trial-dataset-2/diabetes> a qb:DimensionProperty ;
+	rdfs:label "Diabetes" .
+
+_:node17932jsqjx2 qb:dimension <http://linked2safety.org/clinical-trial-dataset-2/diabetes> .
+
+<http://linked2safety.org/clinical-trial-dataset-2/breast-cancer> a qb:DimensionProperty ;
+	rdfs:label "Breast Cancer" .
+
+_:node17932jsqjx2 qb:dimension <http://linked2safety.org/clinical-trial-dataset-2/breast-cancer> .
+
+<http://linked2safety.org/clinical-trial-dataset-2/bmi> a qb:DimensionProperty ;
+	rdfs:label "BMI" .
+
+_:node17932jsqjx2 qb:dimension <http://linked2safety.org/clinical-trial-dataset-2/bmi> .
+
+_:node17932jsqjx1 qb:component _:node17932jsqjx2 .
+
+<http://linked2safety.org/clinical-trials/dataset2/> qb:structure _:node17932jsqjx1 .
+
+}
+
+#################################################### Named Graph 2 - End ###########################################
+
+
+
+#################################################### Named Graph 3 - Start #########################################
+
+<http://linked2safety.org/clinical-trials/graph3> {
+
+<http://linked2safety.org/clinical-trials/dataset3/> a qb:DataSet ;
+	rdfs:label "Clinical Trials Dataset 3" .
+
+_:node1795pjj6ux2 a qb:DataStructureDefinition .
+
+_:node1795pjj6ux1 a qb:ComponentSpecification .
+
+<http://linked2safety.org/clinical-trial-dataset-3/dyslipidemia> a qb:DimensionProperty ;
+	rdfs:label "Dyslipidemia" .
+
+_:node1795pjj6ux1 qb:dimension <http://linked2safety.org/clinical-trial-dataset-3/dyslipidemia> .
+
+<http://linked2safety.org/clinical-trial-dataset-3/smoker> a qb:DimensionProperty ;
+	rdfs:label "Smoker" .
+
+_:node1795pjj6ux1 qb:dimension <http://linked2safety.org/clinical-trial-dataset-3/smoker> .
+
+<http://linked2safety.org/clinical-trial-dataset-3/diabetes2> a qb:DimensionProperty ;
+	rdfs:label "Diabetes 2" .
+
+_:node1795pjj6ux1 qb:dimension <http://linked2safety.org/clinical-trial-dataset-3/diabetes2> .
+
+<http://linked2safety.org/clinical-trial-dataset-3/counts> a qb:MeasureProperty ;
+	rdfs:label "Counts" .
+
+_:node1795pjj6ux1 qb:measure <http://linked2safety.org/clinical-trial-dataset-3/counts> .
+
+_:node1795pjj6ux2 qb:component _:node1795pjj6ux1 .
+
+<http://linked2safety.org/clinical-trials/dataset3/> qb:structure _:node1795pjj6ux2 .
+
+}
+
+#################################################### Named Graph 3 - End ###########################################

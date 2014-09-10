@@ -1,0 +1,34 @@
+-------------Specify the Source and Predicate sets------------
+-------------We need to categorized the sources into three different sets named D_blue, D_pink, D_greeN 
+------------ D_blue set will contain CNV,SNP,Expression-Protein, Expression_Gene,miRNA, and Lookup files 
+------------ D_pink contains Epression_Exon results
+------------ D_green contains Methylation results
+* Note that the ratio of the RDF data for each of the above results are be 1:3:4 ie. If 1 GB is D_blue results then 3 GB will 
+*be Expression-Exon Result and about 4GB will be Methylation data.
+* Which If 2 sources are allocated for D_blue then 6 Will be for D_pink and 8~9 will be for D_green
+*
+------------start of the source set initialization. Please use single line for each set-----------------
+D_blue = {http://hcls.deri.org:8080/openrdf-sesame/repositories/deri-tcga,http://localhost:8080/openrdf-sesame/repositories/tcga-blue1}
+D_pink = {http://localhost:8080/openrdf-sesame/repositories/tcga-pink1,http://localhost:8080/openrdf-sesame/repositories/tcga-pink2,http://localhost:8080/openrdf-sesame/repositories/tcga-pink3}
+D_green = {http://localhost:8080/openrdf-sesame/repositories/tcga-green1,http://localhost:8080/openrdf-sesame/repositories/tcga-green2,http://localhost:8080/openrdf-sesame/repositories/tcga-green3,http://localhost:8080/openrdf-sesame/repositories/tcga-green4,http://localhost:8080/openrdf-sesame/repositories/tcga-green5}
+
+------------start of the predicate set initialization. Please use single line for each set and follow the format-----------------
+A = {result,bcr_patient_barcode}
+B = {chromosome,start,stop}
+C = {expression_protein_result,copy_number_result,miRNA_result,snp_result,aliguot,analyte,portion,protocol,sample,shipment,slide,drug,follow_up,patient,radiation}
+D = {normalized_count,seq_mean,protein_expression_value,reads_per_million_miRNA_mapped}
+E = {chromosome,start,stop,RPKM}
+M = {chromosome,position,beta_value}
+
+------------tumours data distribution. Please use single line for each set and follow the format-----------------
+http://hcls.deri.org:8080/openrdf-sesame/repositories/deri-tcga = {LUSC,BLCA,BRCA,CESC,CNTL}
+http://localhost:8080/openrdf-sesame/repositories/tcga-blue1 = {COAD,DLBC,ESCA,GBM,HNSC}
+http://localhost:8080/openrdf-sesame/repositories/tcga-pink1 = {LUSC,BLCA,BRCA}
+http://localhost:8080/openrdf-sesame/repositories/tcga-pink2 = {GBM,HNSC,COAD}
+http://localhost:8080/openrdf-sesame/repositories/tcga-pink3 = {DLBC,ESCA,GBM,HNSC}
+http://localhost:8080/openrdf-sesame/repositories/tcga-green1 = {LUSC,BLCA}
+http://localhost:8080/openrdf-sesame/repositories/tcga-green2 = {ESCA,GBM}
+http://localhost:8080/openrdf-sesame/repositories/tcga-green3 = {CNTL,COAD}
+http://localhost:8080/openrdf-sesame/repositories/tcga-green4 = {DLBC,ESCA}
+http://localhost:8080/openrdf-sesame/repositories/tcga-green5 = {GBM,HNSC}
+

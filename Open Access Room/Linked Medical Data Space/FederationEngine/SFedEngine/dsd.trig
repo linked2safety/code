@@ -1,0 +1,349 @@
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#> .
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#> .
+@prefix sdmx: <http://purl.org/linked-data/sdmx#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#> .
+@prefix l2s-dim: <http://www.linked2safety-project.eu/dimension/>.
+@prefix l2s-measure: <http://www.linked2safety-project.eu/measure/>.
+
+
+
+############################################################################################ Data-Cube-1
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset1/graph1> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d1> dcterms:date "2013_06_21";
+	dcterms:publisher "UCYfakeprovdeddatacubes";
+	rdfs:label "SNP";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d1/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d1/str> a qb:DataStructureDefinition;
+	qb:component <http://www.linked2safety-project.eu/fake/data-cube/d1/1>,
+				 <http://www.linked2safety-project.eu/fake/data-cube/d1/2>,
+				 <http://www.linked2safety-project.eu/fake/data-cube/d1/3>,
+				 <http://www.linked2safety-project.eu/fake/data-cube/d1/4>. 
+
+
+l2s-dim:number a qb:DimensionProperty.
+l2s-dim:Age a qb:DimensionProperty.
+l2s-dim:patientAgeHighBloodPressureDiagnosed a qb:DimensionProperty.	
+l2s-measure:Cases a qb:MeasureProperty.			 
+
+<http://www.linked2safety-project.eu/fake/data-cube/d1/1> qb:dimension l2s-dim:number.
+<http://www.linked2safety-project.eu/fake/data-cube/d1/2> qb:dimension l2s-dim:Age.
+<http://www.linked2safety-project.eu/fake/data-cube/d1/3> qb:dimension l2s-dim:patientAgeHighBloodPressureDiagnosed.
+<http://www.linked2safety-project.eu/fake/data-cube/d1/4> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################ Data-Cube-2
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset1/graph2> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d2> dcterms:date "2013_06_21";
+	dcterms:publisher "UCYfakeprovdeddatacubes";
+	rdfs:label "SNP";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d2/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d2/str> a qb:DataStructureDefinition;
+		qb:component <http://www.linked2safety-project.eu/fake/data-cube/d2/1>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d2/2>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d2/3>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d2/4>. 
+
+l2s-dim:number a qb:DimensionProperty.
+l2s-dim:weightAdult a qb:DimensionProperty.
+l2s-dim:patientAgeHighBloodPressureDiagnosed a qb:DimensionProperty.	
+l2s-measure:Cases a qb:MeasureProperty.	
+		
+<http://www.linked2safety-project.eu/fake/data-cube/d2/1> qb:dimension l2s-dim:number.
+<http://www.linked2safety-project.eu/fake/data-cube/d2/2> qb:dimension l2s-dim:weightAdult.
+<http://www.linked2safety-project.eu/fake/data-cube/d2/3> qb:dimension l2s-dim:patientAgeHighBloodPressureDiagnosed.
+<http://www.linked2safety-project.eu/fake/data-cube/d2/4> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################ Data-Cube-3
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset1/graph3> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d3> dcterms:date "2013_06_21";
+	dcterms:publisher "UCYfakeprovdeddatacubes";
+	rdfs:label "SNP";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d3/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d3/str> a qb:DataStructureDefinition;
+		qb:component <http://www.linked2safety-project.eu/fake/data-cube/d3/1>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d3/2>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d3/3>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d3/4>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d3/5>. 
+
+l2s-dim:weightAdult a qb:DimensionProperty.
+l2s-dim:Age a qb:DimensionProperty.
+l2s-dim:number a qb:DimensionProperty.					 
+l2s-dim:patientAgeHighBloodPressureDiagnosed a qb:DimensionProperty.
+l2s-measure:Cases a qb:MeasureProperty.					 
+					 
+<http://www.linked2safety-project.eu/fake/data-cube/d3/1> qb:dimension l2s-dim:weightAdult.
+<http://www.linked2safety-project.eu/fake/data-cube/d3/2> qb:dimension l2s-dim:Age.
+<http://www.linked2safety-project.eu/fake/data-cube/d3/3> qb:dimension l2s-dim:number.
+<http://www.linked2safety-project.eu/fake/data-cube/d3/4> qb:dimension l2s-dim:patientAgeHighBloodPressureDiagnosed.
+<http://www.linked2safety-project.eu/fake/data-cube/d3/5> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################ Data-Cube-4
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset1/graph4> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d4> dcterms:date "2013_06_21";
+	dcterms:publisher "UCYfakeprovdeddatacubes";
+	rdfs:label "SNP";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d4/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d4/str> a qb:DataStructureDefinition;
+		qb:component <http://www.linked2safety-project.eu/fake/data-cube/d4/1>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d4/2>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d4/3>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d4/4>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d4/5>. 
+					 
+l2s-dim:hypertension a qb:DimensionProperty.
+l2s-dim:Diabetes a qb:DimensionProperty.
+l2s-dim:number a qb:DimensionProperty.					 
+l2s-dim:BMI a qb:DimensionProperty.
+l2s-measure:Cases a qb:MeasureProperty.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d4/1> qb:dimension l2s-dim:hypertension.
+<http://www.linked2safety-project.eu/fake/data-cube/d4/2> qb:dimension l2s-dim:Diabetes.
+<http://www.linked2safety-project.eu/fake/data-cube/d4/3> qb:dimension l2s-dim:number.
+<http://www.linked2safety-project.eu/fake/data-cube/d4/4> qb:dimension l2s-dim:BMI.
+<http://www.linked2safety-project.eu/fake/data-cube/d4/5> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################ Data-Cube-5
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset2/graph1> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d5> dcterms:date "2013_06_21";
+	dcterms:publisher "UCYfakeprovdeddatacubes";
+	rdfs:label "SNP";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d5/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d5/str> a qb:DataStructureDefinition;
+		qb:component <http://www.linked2safety-project.eu/fake/data-cube/d5/1>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d5/2>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d5/3>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d5/4>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d5/5>. 
+					 
+l2s-dim:smokingEver a qb:DimensionProperty.
+l2s-dim:Diabetes a qb:DimensionProperty.
+l2s-dim:number a qb:DimensionProperty.					 
+l2s-dim:BMI a qb:DimensionProperty.
+l2s-measure:Cases a qb:MeasureProperty.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d5/1> qb:dimension l2s-dim:smokingEver.
+<http://www.linked2safety-project.eu/fake/data-cube/d5/2> qb:dimension l2s-dim:Diabetes.
+<http://www.linked2safety-project.eu/fake/data-cube/d5/3> qb:dimension l2s-dim:number.
+<http://www.linked2safety-project.eu/fake/data-cube/d5/4> qb:dimension l2s-dim:BMI.
+<http://www.linked2safety-project.eu/fake/data-cube/d5/5> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################ Data-Cube-6
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset2/graph2> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d6> dcterms:date "2013_06_21";
+	dcterms:publisher "UCYfakeprovdeddatacubes";
+	rdfs:label "SNP";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d6/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d6/str> a qb:DataStructureDefinition;
+		qb:component <http://www.linked2safety-project.eu/fake/data-cube/d6/1>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d6/2>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d6/3>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d6/4>. 
+		
+l2s-dim:number a qb:DimensionProperty.
+l2s-dim:Diabetes a qb:DimensionProperty.				 
+l2s-dim:BMI a qb:DimensionProperty.
+l2s-measure:Cases a qb:MeasureProperty.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d6/1> qb:dimension l2s-dim:number.
+<http://www.linked2safety-project.eu/fake/data-cube/d6/2> qb:dimension l2s-dim:Diabetes.
+<http://www.linked2safety-project.eu/fake/data-cube/d6/3> qb:dimension l2s-dim:BMI.
+<http://www.linked2safety-project.eu/fake/data-cube/d6/4> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################ Data-Cube-7
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset2/graph3> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d7> dcterms:date "2013_06_21";
+	dcterms:publisher "UCYfakeprovdeddatacubes";
+	rdfs:label "SNP";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d7/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d7/str> a qb:DataStructureDefinition;
+		qb:component <http://www.linked2safety-project.eu/fake/data-cube/d7/1>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d7/2>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d7/3>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d7/4>.
+		
+l2s-dim:number a qb:DimensionProperty.
+l2s-dim:parity a qb:DimensionProperty.				 
+l2s-dim:eduCat a qb:DimensionProperty.
+l2s-measure:Cases a qb:MeasureProperty.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d7/1> qb:dimension l2s-dim:number.
+<http://www.linked2safety-project.eu/fake/data-cube/d7/2> qb:dimension l2s-dim:parity.
+<http://www.linked2safety-project.eu/fake/data-cube/d7/3> qb:dimension l2s-dim:eduCat.
+<http://www.linked2safety-project.eu/fake/data-cube/d7/4> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################ Data-Cube-8
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset2/graph4> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d8> dcterms:date "2013_06_21";
+	dcterms:publisher "UCYfakeprovdeddatacubes";
+	rdfs:label "SNP";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d8/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d8/str> a qb:DataStructureDefinition;
+		qb:component <http://www.linked2safety-project.eu/fake/data-cube/d8/1>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d8/2>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d8/3>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d8/4>,
+		<http://www.linked2safety-project.eu/fake/data-cube/d8/5>.
+		
+l2s-dim:parity a qb:DimensionProperty.
+l2s-dim:breastFed a qb:DimensionProperty.				 
+l2s-dim:number a qb:DimensionProperty.
+l2s-dim:edutCat a qb:DimensionProperty.
+l2s-measure:Cases a qb:MeasureProperty.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d8/1> qb:dimension l2s-dim:parity.
+<http://www.linked2safety-project.eu/fake/data-cube/d8/2> qb:dimension l2s-dim:breastFed.
+<http://www.linked2safety-project.eu/fake/data-cube/d8/3> qb:dimension l2s-dim:number.
+<http://www.linked2safety-project.eu/fake/data-cube/d8/4> qb:dimension l2s-dim:edutCat.
+<http://www.linked2safety-project.eu/fake/data-cube/d8/5> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################ Data-Cube-9
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset3/graph1> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d9> dcterms:date "2013_06_21";
+	dcterms:publisher "UCYfakeprovdeddatacubes";
+	rdfs:label "SNP";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d9/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d9/str> a qb:DataStructureDefinition;
+		qb:component <http://www.linked2safety-project.eu/fake/data-cube/d9/1>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d9/2>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d9/3>,
+					 <http://www.linked2safety-project.eu/fake/data-cube/d9/4>.
+					 
+l2s-dim:number a qb:DimensionProperty.
+l2s-dim:smokingEver a qb:DimensionProperty.				 
+l2s-dim:eduCat a qb:DimensionProperty.
+l2s-measure:Cases a qb:MeasureProperty.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d9/1> qb:dimension l2s-dim:number.
+<http://www.linked2safety-project.eu/fake/data-cube/d9/2> qb:dimension l2s-dim:smokingEver.
+<http://www.linked2safety-project.eu/fake/data-cube/d9/3> qb:dimension l2s-dim:eduCat.
+<http://www.linked2safety-project.eu/fake/data-cube/d9/4> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################ Data-Cube-10
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset3/graph2> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d10> dcterms:date "2014_01_1";
+	dcterms:publisher "test";
+	rdfs:label "test Respiratory Diseases";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d10/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d10/str> a qb:DataStructureDefinition;
+		qb:component <http://www.linked2safety-project.eu/test/data-cube/d10/1>,
+		<http://www.linked2safety-project.eu/test/data-cube/d10/2>,
+		<http://www.linked2safety-project.eu/test/data-cube/d10/3>,
+		<http://www.linked2safety-project.eu/test/data-cube/d10/4>,
+		<http://www.linked2safety-project.eu/test/data-cube/d10/5>.
+		
+l2s-dim:weight a qb:DimensionProperty.
+l2s-dim:ethnicity a qb:DimensionProperty.				 
+l2s-dim:diagnosis a qb:DimensionProperty.
+l2s-dim:gender a qb:DimensionProperty.
+l2s-measure:Cases a qb:MeasureProperty.
+
+<http://www.linked2safety-project.eu/test/data-cube/d10/1> qb:dimension l2s-dim:weight.
+<http://www.linked2safety-project.eu/test/data-cube/d10/2> qb:dimension l2s-dim:ethnicity.
+<http://www.linked2safety-project.eu/test/data-cube/d10/3> qb:dimension l2s-dim:diagnosis.
+<http://www.linked2safety-project.eu/test/data-cube/d10/4> qb:dimension l2s-dim:gender.
+<http://www.linked2safety-project.eu/test/data-cube/d10/5> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################ Data-Cube-11
+
+<http://www.linked2safety-project.eu/clinical-trials/dataset3/graph3> {
+
+<http://www.linked2safety-project.eu/fake/data-cube/d11> dcterms:date "2014_01_2";
+	dcterms:publisher "test";
+	rdfs:label "test Respiratory Diseases";
+	qb:structure <http://www.linked2safety-project.eu/fake/data-cube/d11/str>;
+	a qb:DataSet.
+
+<http://www.linked2safety-project.eu/fake/data-cube/d11/str> a qb:DataStructureDefinition;
+		qb:component <http://www.linked2safety-project.eu/test/data-cube/d11/1>,
+					 <http://www.linked2safety-project.eu/test/data-cube/d11/2>,
+					 <http://www.linked2safety-project.eu/test/data-cube/d11/3>,
+					 <http://www.linked2safety-project.eu/test/data-cube/d11/4>,
+					 <http://www.linked2safety-project.eu/test/data-cube/d11/5>,
+					 <http://www.linked2safety-project.eu/test/data-cube/d11/6>.
+					 
+l2s-dim:Smoking a qb:DimensionProperty.
+l2s-dim:gender a qb:DimensionProperty.				 
+l2s-dim:weight a qb:DimensionProperty.
+l2s-dim:diagnosis a qb:DimensionProperty.
+l2s-dim:ethnicity a qb:DimensionProperty.
+l2s-measure:Cases a qb:MeasureProperty.
+
+<http://www.linked2safety-project.eu/test/data-cube/d11/1> qb:dimension l2s-dim:Smoking.
+<http://www.linked2safety-project.eu/test/data-cube/d11/2> qb:dimension l2s-dim:gender.
+<http://www.linked2safety-project.eu/test/data-cube/d11/3> qb:dimension l2s-dim:weight.
+<http://www.linked2safety-project.eu/test/data-cube/d11/4> qb:dimension l2s-dim:diagnosis.
+<http://www.linked2safety-project.eu/test/data-cube/d11/5> qb:dimension l2s-dim:ethnicity.
+<http://www.linked2safety-project.eu/test/data-cube/d11/6> qb:measure l2s-measure:Cases.
+
+}
+
+############################################################################################

@@ -1,0 +1,783 @@
+﻿# baseURI: http://www.linked2safety.eu/lmds2
+
+@prefix :        <http://www.linked2safety.eu/lmds2#> .
+@prefix acl:     <http://www.w3.org/ns/auth/acl#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix ont:     <http://www.w3.org/2006/gen/ont#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfg-1:  <http://www.w3.org/2004/03/trix/rdfg-1/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix l2s-dim: <http://www.linked2safety-project.eu/dimension/>.
+
+dc:title
+      rdf:type owl:AnnotationProperty .
+
+<http://www.linked2safety.eu/lmds2>
+      rdf:type owl:Ontology ;
+      dc:title "LMDS Security Model (Policy Model)"^^xsd:string ;
+      owl:versionInfo "Created with TopBraid Composer"^^xsd:string .
+
+:AccessPolicy
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:AccessPolicy1
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy enforced to datacube-graph-2 authorizing only users that their role is defined as 'ClinicalTrialCordinator'"^^xsd:string ;
+      :appliesToNamedGraph
+              :NamedGraph_14 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasCondition :Condition7 ;
+      :hasUserProfile :UserProfile_4 .
+
+:AccessPolicy10
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy enforced to RDF data-cubes having as dimension the gender and coming from a study project created in clinical sites located in Greece authorizing only users that their role is defined as 'ClinicalTrialCordinator'"^^xsd:string ;
+      :grantsAccess acl:Read_l2s ;
+      :hasCondition :Condition10 , :Condition9 ;
+      :hasUserProfile :UserProfile_4 .
+
+:AccessPolicy2
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy enforced to RDF data-cubes having as dimension dyslipidemia authorizing end-users working in ZEINCRO"^^xsd:string ;
+      :grantsAccess acl:Read_l2s ;
+      :hasCondition :Condition1 ;
+      :hasUserProfile :UserProfile_1 .
+
+:AccessPolicy3
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy enforced to RDF data-cubes having as measure the number of diabetes incidences authorizing only John Smith"^^xsd:string ;
+      :grantsAccess acl:Read_l2s ;
+      :hasCondition :Condition2 ;
+      :hasUser :JohnSmith .
+
+:AccessPolicy4
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy enforced to RDF data-cubes having as dimension drug and dimension values include aspirin and authorizing access to users working in the area of oncology"^^xsd:string ;
+      :grantsAccess acl:Read_l2s ;
+      :hasCondition :Condition3 ;
+      :hasUserProfile :UserProfile_3 .
+
+:AccessPolicy5
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy enforced to RDF data-cubes having as measure occurrence of cancer and measure values is more than 60 (exceeds 60 for at least one observation) authorizing access to users working in the area of oncology and coming from Cyprus"^^xsd:string ;
+      :grantsAccess acl:Read_l2s ;
+      :hasCondition :Condition4 ;
+      :hasUserProfile :UserProfile_3 .
+
+:AccessPolicy6
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy enforced to RDF data-cubes provided by John Smith authorizing end-users working in ZEINCRO"^^xsd:string ;
+      :grantsAccess acl:Read_l2s ;
+      :hasCondition :Condition5 ;
+      :hasUserProfile :UserProfile_1 .
+
+:AccessPolicy7
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy enforced to RDF data-cubes coming from a study project related to lung cancer authorizing only Maria Smith"^^xsd:string ;
+      :grantsAccess acl:Read_l2s ;
+      :hasCondition :Condition6 ;
+      :hasUser :MarySmith .
+
+:AccessPolicy8
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy enforced to RDF data-cubes having as sponsor the \"Xpharma\" authorizing only users that their role is defined as 'ClinicalTrialCordinator'"^^xsd:string ;
+      :grantsAccess acl:Read_l2s ;
+      :hasCondition :Condition7 ;
+      :hasUserProfile :UserProfile_4 .
+
+:AccessPolicy9
+      rdf:type owl:NamedIndividual , :AccessPolicy ;
+      rdfs:comment "An access policy enforced to RDF data-cubes coming from a study project created in clinical sites located in Greece authorizing only users working in the area of oncology and coming from Cyprus"^^xsd:string ;
+      :grantsAccess acl:Read_l2s ;
+      :hasCondition :Condition7 ;
+      :appliesToNamedGraph
+              :NamedGraph_11 ;	  
+      :hasUserProfile :UserProfile_3 .
+
+:AccessPolicy_11
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_11 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :JohnSmith .
+
+:AccessPolicy_12
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_12 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :MarySmith .
+
+:AccessPolicy_13
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_13 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :JohnSmith .
+
+:AccessPolicy_14
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_14 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :MarySmith .
+
+:AccessPolicy_15
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_15 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :JohnSmith , :MarySmith .
+
+:AccessPolicy_16
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_16 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :JohnSmith , :MarySmith .
+
+:AccessPolicy_17
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_17 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :MarySmith .
+
+:AccessPolicy_18
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_18 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :JohnSmith .
+
+:AccessPolicy_19
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_19 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :JohnSmith .
+
+:AccessPolicy_20
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_20 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :MarySmith .
+
+:AccessPolicy_21
+      rdf:type :AccessPolicy ;
+      :appliesToNamedGraph
+              :NamedGraph_21 ;
+      :grantsAccess acl:Read_l2s ;
+      :hasUser :JohnSmith , :MarySmith .
+
+:CancerOccurrence
+      rdf:type owl:NamedIndividual , :Measure ;
+      :hasMinMeasureValue 60 .
+
+:ClinicalResearcher
+      rdf:type owl:NamedIndividual , :Role .
+
+:ClinicalTrialCoordinator
+      rdf:type owl:NamedIndividual , :Role .
+
+:Condition
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:Condition1
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "Dyslipidemia is one of the dimension of the cube" ;
+      :hasDimension l2s-dim:Dyslipidemia .
+
+:Condition10
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The project study is located in Cyprus"^^xsd:string ;
+      :hasSPLocation "Cyprus"^^xsd:string .
+
+:Condition2
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The measure of the data-cube is the diabetes incidences"^^xsd:string ;
+      :hasMeasure :DiabetesIncidences .
+
+:Condition3
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "Aspirin is one of the values receiving the dimension Drug"^^xsd:string ;
+      :hasDimension l2s-dim:Drug .
+
+:Condition4
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The occurrence of cancer is more than 60"^^xsd:string ;
+      :hasMeasure :CancerOccurrence .
+
+:Condition5
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The provider of the data-cube is John Smith"^^xsd:string ;
+      :hasDatacubeProvider
+              :JohnSmith .
+
+:Condition6
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The source of the data-cube is the lung cancer project study"^^xsd:string ;
+	  :hasDimension l2s-dim:Dyslipidemia ;
+      :hasDatacubeSource :LungCancerStudy .
+
+:Condition7
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The project study has as sponsor the \"Xpharma\""^^xsd:string ;
+	  :hasDimension l2s-dim:Dyslipidemia ;
+      :hasDatacubeSource :LungCancerStudy .
+
+:Condition8
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "The project study is located in Greece"^^xsd:string ;
+      :hasSPLocation "Greece"^^xsd:string .
+
+:Condition9
+      rdf:type owl:NamedIndividual , :Condition ;
+      rdfs:comment "Gender is one of the dimensions of the cube" ;
+      :hasDimension l2s-dim:Gender .
+
+:DataProvider
+      rdf:type owl:NamedIndividual , :Role .
+
+:DateRange
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:DiabetesIncidences
+      rdf:type owl:NamedIndividual , :Measure .
+
+:Dimension
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:Drug
+      rdf:type owl:NamedIndividual , :Dimension ;
+      :hasDimesionValue "Aspirin"^^xsd:string .
+
+:Dyslipidemia
+      rdf:type owl:NamedIndividual , :Dimension .
+
+:Gender
+      rdf:type owl:NamedIndividual , :Dimension .
+
+:JohnSmith
+      rdf:type owl:NamedIndividual , :User ;
+      :hasDisseminationPurpose
+              "Publish in BIBE 2013"^^xsd:string ;
+      :hasExpertise "Biologist"^^xsd:string ;
+      :hasOccupation "Scientist"^^xsd:string ;
+      :hasOrganization "CING"^^xsd:string ;
+      :hasOrganizationType
+              "ResearchInstitute"^^xsd:string ;
+      :hasPurpose "Perform p-value analysis"^^xsd:string ;
+      :hasQualification "PhD"^^xsd:string ;
+      :hasRole :ClinicalTrialCoordinator ;
+      :hasWorkingArea "Oncology"^^xsd:string .
+
+:LungCancerStudy
+      rdf:type owl:NamedIndividual , :StudyProject .
+
+:MarySmith
+      rdf:type owl:NamedIndividual , :User ;
+      :hasLocation "Greece"^^xsd:string ;
+      :hasPurpose "Perform p-value analysis "^^xsd:string ;
+      :hasQualification "Student"^^xsd:string ;
+      :hasRole :ClinicalResearcher ;
+      :hasWorkingArea "Diabetes"^^xsd:string .
+
+:Measure
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:NamedGraph
+      rdf:type owl:Class ;
+      rdfs:subClassOf rdfg-1:Graph .
+
+:NamedGraph_11
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset1/graph1"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-1/sparql"^^xsd:string .
+
+:NamedGraph_12
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset1/graph2"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-1/sparql"^^xsd:string .
+
+:NamedGraph_13
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset1/graph3"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-1/sparql"^^xsd:string .
+
+:NamedGraph_14
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset1/graph4"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-1/sparql"^^xsd:string .
+
+:NamedGraph_15
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset2/graph1"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-2/sparql"^^xsd:string .
+
+:NamedGraph_16
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset2/graph2"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-2/sparql"^^xsd:string .
+
+:NamedGraph_17
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset2/graph3"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-2/sparql"^^xsd:string .
+
+:NamedGraph_18
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset2/graph4"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-2/sparql"^^xsd:string .
+
+:NamedGraph_19
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset3/graph1"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-3/sparql"^^xsd:string .
+
+:NamedGraph_20
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset3/graph2"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-3/sparql"^^xsd:string .
+
+:NamedGraph_21
+      rdf:type :NamedGraph ;
+      :hasGraphURI "http://www.linked2safety-project.eu/clinical-trials/dataset3/graph3"^^xsd:string ;
+      :hasSparqlEndpoint "http://linked2safety.hcls.deri.org:3031/data-3/sparql"^^xsd:string .
+
+:PlatformManager
+      rdf:type owl:NamedIndividual , :Role .
+
+:Role
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:StudyProject
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:User
+      rdf:type owl:Class ;
+      rdfs:subClassOf foaf:Agent .
+
+:UserProfile
+      rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing .
+
+:UserProfile_1
+      rdf:type owl:NamedIndividual , :UserProfile ;
+      rdfs:comment "The user profile refers to those users working in ZEINCRO" ;
+      :hasOrganization "ZEINCRO"^^xsd:string .
+
+:UserProfile_2
+      rdf:type owl:NamedIndividual , :UserProfile ;
+      rdfs:comment "The user profile refers to those users coming from Cyprus" ;
+      :hasLocation "Cyprus"^^xsd:string .
+
+:UserProfile_3
+      rdf:type owl:NamedIndividual , :UserProfile ;
+      rdfs:comment "The user profile refers to those users working in the area of oncology and coming from Cyprus"^^xsd:string ;
+      :hasLocation "Greece"^^xsd:string ;
+      :hasWorkingArea "Oncology"^^xsd:string .
+
+:UserProfile_4
+      rdf:type owl:NamedIndividual , :UserProfile ;
+      rdfs:comment "The user profile refers to those users that has role 'ClinicalTrialCoordinator'"^^xsd:string ;
+      :hasRole :ClinicalTrialCoordinator .
+
+:appliesToNamedGraph
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "An access policy that applies to an lmds:NamedGraph. When an access policy has this property it means that the access policy applies to a NamedGraph (that contains a data-cube)."^^xsd:string ;
+      rdfs:domain :AccessPolicy ;
+      rdfs:range :NamedGraph .
+
+:datacube-graph-2
+      rdf:type owl:NamedIndividual , :NamedGraph ;
+      rdfs:comment "The datacube-graph-2 represents a certain RDF data-cube that has four dimensions, namely sex, drug, snp and breast cancer"^^xsd:string .
+
+:deniesAccess
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The access control privilege which is not granted to the user. The access control is described using the Web Access Control vocabulary"^^xsd:string ;
+      rdfs:domain :AccessPolicy ;
+      rdfs:range acl:Read .
+
+:grantsAccess
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The access control privilege which is granted to the user. The access control is described using the Web Access Control vocabulary"^^xsd:string ;
+      rdfs:domain :AccessPolicy ;
+      rdfs:range acl:Read .
+
+:hasCondition
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The hasCondition defines the condition(s) (connected by 'and' logical operator when exceeds the one) that will be tested to specify the data-cubes restricted by the specific access policy"^^xsd:string ;
+      rdfs:domain :AccessPolicy ;
+      rdfs:range :Condition .
+
+:hasDatacubeDate
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The hasDatacubeDate property defines the date associated with the creation of the data cube"^^xsd:string ;
+      rdfs:domain :Condition , :NamedGraph ;
+      rdfs:range :DateRange .
+
+:hasDatacubeDescription
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasDatacubeDescription property defines the description of the data cube" ;
+      rdfs:domain :Condition , :NamedGraph ;
+      rdfs:range xsd:string .
+
+:hasDatacubeProvider
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The DatacubeProvider defines the entity responsible for creating and making the data cube  available (or else the owner of the data cube)"^^xsd:string ;
+      rdfs:domain :Condition , :NamedGraph ;
+      rdfs:range :User .
+
+:hasDatacubeSource
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The DatacubeSource defines the source or else the study project from which the described data cube  has been derived"^^xsd:string ;
+      rdfs:domain :Condition , :NamedGraph ;
+      rdfs:range :StudyProject .
+
+:hasDatacubeTitle
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasDatacubeTitle property defines the name/title of the data cube" ;
+      rdfs:domain :Condition , :NamedGraph ;
+      rdfs:range xsd:string .
+
+:hasDimension
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The hasDimension defines the dimension of the data-cube"^^xsd:string ;
+      rdfs:domain :Condition , :NamedGraph ;
+      rdfs:range :Dimension .
+
+:hasDimesionValue
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasDimesionValue defines the value of a dimension based on which we will search for the data-cubes that are involved in a policy (e.g. if it's defined that Dimension Drug hasDimensionValue='aspirin', that means that we apply the specific policy to cubes having the Drug aspirin in their Dimensions' values)"^^xsd:string ;
+      rdfs:domain :Dimension ;
+      rdfs:range xsd:string .
+
+:hasDisseminationPurpose
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasDisseminationPurpose property defines the dissemination purpose of the user from the results taken by the specific analysis of the data-cubes" ;
+      rdfs:domain :User , :UserProfile ;
+      rdfs:range xsd:string .
+
+:hasEqualDate
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasEqualDate defines the exact date value "^^xsd:string ;
+      rdfs:domain :DateRange ;
+      rdfs:range xsd:date .
+
+:hasEqualMeasureValue
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasEqualMeasureValue defines the the exact measure values based on which we will search for the data-cubes that are involved in a policy (e.g. if it's defined that Measure cases hasEqualMeasureValue=50, that means that we apply the specific policy to cubes having 50 cases in their Measures' values)"^^xsd:string ;
+      rdfs:domain :Measure ;
+      rdfs:range xsd:integer .
+
+:hasExpertise
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "e.g. biologist, epidemiologist, doctor"^^xsd:string ;
+      rdfs:domain :User , :UserProfile ;
+      rdfs:range xsd:string .
+
+:hasGraphURI
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :NamedGraph ;
+      rdfs:range xsd:string .
+
+:hasLocation
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasLocation property defines the location of the user" ;
+      rdfs:domain :User , :UserProfile ;
+      rdfs:range xsd:string .
+
+:hasMaxDate
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasMaxDate defines the max date value "^^xsd:string ;
+      rdfs:domain :DateRange ;
+      rdfs:range xsd:date .
+
+:hasMaxMeasureValue
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasMaxMeasureValue defines the the max measure values based on which we will search for the data-cubes that are involved in a policy (e.g. if it's defined that Measure cases hasMaxMeasureValue=50, that means that we apply the specific policy to cubes having until 50 cases in their Measures' values)"^^xsd:string ;
+      rdfs:domain :Measure ;
+      rdfs:range xsd:integer .
+
+:hasMeasure
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The hasMeasure defines the measured value of the phenomenon being observed"^^xsd:string ;
+      rdfs:domain :Condition , :NamedGraph ;
+      rdfs:range :Measure .
+
+:hasMinDate
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasMinDate defines the min date value "^^xsd:string ;
+      rdfs:domain :DateRange ;
+      rdfs:range xsd:date .
+
+:hasMinMeasureValue
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasMinMeasureValue defines the the max measure values based on which we will search for the data-cubes that are involved in a policy (e.g. if it's defined that Measure cases hasMinMeasureValue=50, that means that we apply the specific policy to cubes having more than 50 cases in their Measures' values)"^^xsd:string ;
+      rdfs:domain :Measure ;
+      rdfs:range xsd:integer .
+
+:hasOccupation
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "e.g. scientist, data analyst, etc."^^xsd:string ;
+      rdfs:domain :User , :UserProfile ;
+      rdfs:range xsd:string .
+
+:hasOrganization
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasOrganization defines the organization for which the user is working"^^xsd:string ;
+      rdfs:domain :User , :UserProfile ;
+      rdfs:range xsd:string .
+
+:hasOrganizationType
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "e.g. a hospital, a clinical site, a pharmaceutical company, a CRO, an academic institute, a medical center, a genetic lab, a bioinformatics company, a health authority, etc."^^xsd:string ;
+      rdfs:domain :User , :UserProfile ;
+      rdfs:range xsd:string .
+
+:hasPurpose
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasPurpose property defines the user’s purpose for sending the specific query"^^xsd:string ;
+      rdfs:domain :User , :UserProfile ;
+      rdfs:range xsd:string .
+
+:hasQualification
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasQualification defines the education degree of the user e.g. Prof, PhD, MSc."^^xsd:string ;
+      rdfs:domain :User , :UserProfile ;
+      rdfs:range xsd:string .
+
+:hasRole
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The hasRole property defines the role of the user in the Linked2Safety system"^^xsd:string ;
+      rdfs:domain :User , :UserProfile ;
+      rdfs:range :Role .
+
+:hasSPClinicaSite
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The SPClinicalSite defines the clinical sites/hospitals where the study project has been conducted"^^xsd:string ;
+      rdfs:domain :Condition , :StudyProject ;
+      rdfs:range xsd:string .
+
+:hasSPDate
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The hasSPDate property defines the point associated with the initialization of the study project"^^xsd:string ;
+      rdfs:domain :Condition , :StudyProject ;
+      rdfs:range :DateRange .
+
+:hasSPDescription
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasSPDescription property defines the description of the study project"^^xsd:string ;
+      rdfs:domain :Condition , :StudyProject ;
+      rdfs:range xsd:string .
+
+:hasSPLocation
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasSPLocation property defines the location/country of the clinical sites and hospitals where the study project has been conducted"^^xsd:string ;
+      rdfs:domain :Condition , :StudyProject ;
+      rdfs:range xsd:string .
+
+:hasSPProvider
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The SPProvider defines the entity responsible for running the study project"^^xsd:string ;
+      rdfs:domain :Condition , :StudyProject ;
+      rdfs:range :User .
+
+:hasSPSponsor
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The SPSponsor defines the sponsor entity of the study project"^^xsd:string ;
+      rdfs:domain :Condition , :StudyProject ;
+      rdfs:range xsd:string .
+
+:hasSPTitle
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasSPTitle property efines the name/title of the study project"^^xsd:string ;
+      rdfs:domain :Condition , :StudyProject ;
+      rdfs:range xsd:string .
+
+:hasSparqlEndpoint
+      rdf:type owl:DatatypeProperty ;
+      rdfs:domain :NamedGraph ;
+      rdfs:range xsd:string .
+
+:hasSubscriptionDate
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The hasSubscriptionDate property defines the subscription date of the user in the system"^^xsd:string ;
+      rdfs:domain :User , :UserProfile ;
+      rdfs:range :DateRange .
+
+:hasUser
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The hasUser defines the user who is granted or denied the specific access policy "^^xsd:string ;
+      rdfs:domain :AccessPolicy ;
+      rdfs:range :User .
+
+:hasUserProfile
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The hasUserProfile defines a set of attributes (i.e. a pattern/profile) that the requester user must satisfy to be authorized to read the specific data-cube"^^xsd:string ;
+      rdfs:domain :AccessPolicy ;
+      rdfs:range :UserProfile .
+
+:hasWorkingArea
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "The hasWorkingArea property defines the subject area of the user’s job"^^xsd:string ;
+      rdfs:domain :UserProfile ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (:User :UserProfile)
+              ] ;
+      rdfs:range xsd:string .
+
+rdfs:Class
+      rdf:type owl:Class .
+
+xsd:date
+      rdf:type rdfs:Datatype .
+
+rdfg-1:Graph
+      rdf:type owl:Class ;
+      rdfs:comment """
+An RDF graph (with intensional semantics).
+      """ ;
+      rdfs:label "Graph" .
+
+rdfg-1:equivalentGraph
+      rdf:type owl:AnnotationProperty , owl:ObjectProperty ;
+      rdfs:comment """
+The graphs associated with the subject and object are equivalent.
+      """ ;
+      rdfs:domain rdfg-1:Graph ;
+      rdfs:range rdfg-1:Graph .
+
+rdfg-1:subGraphOf
+      rdf:type owl:AnnotationProperty , owl:ObjectProperty ;
+      rdfs:comment """
+The graph associated with the subject is a subgraph of a graph equivalent
+to that associated with the object.
+      """ ;
+      rdfs:domain rdfg-1:Graph ;
+      rdfs:range rdfg-1:Graph .
+
+ont:InformationResource
+      rdf:type owl:Class .
+
+<http://www.w3.org/ns/auth/acl>
+      rdfs:comment """Defines the element of Authorization and its essential properties,
+    and also some classes of access such as read and write. """ ;
+      dc:title "Basic Access Control ontology" .
+
+acl:Access
+      rdf:type owl:Class ;
+      rdfs:comment "Any kind of access to a resource. Don't use this, use R W and RW" ;
+      acl:label "access"@en .
+
+acl:Append
+      rdf:type owl:Class ;
+      rdfs:comment """Append accesses are specific write access which only add information, and do not remove information.
+    For text files, for example, append access allows bytes to be added onto the end of the file.
+    For RDF graphs, Append access allows adds triples to the graph but does not remove any.
+    Append access is useful for dropbox functionality.
+    Dropbox can be used for link notification, which the information added is a notification
+    that a some link has been made elsewhere relevant to the given resource.
+    """ ;
+      rdfs:label "append"@en ;
+      rdfs:subClassOf acl:Access , acl:Write .
+
+acl:Authorization
+      rdf:type owl:Class ;
+      rdfs:comment """An element of access control,
+    allowing agent to agents access of some kind to resources or classes of resources""" ;
+      rdfs:label "authorization" .
+
+acl:Control
+      rdf:type owl:Class ;
+      rdfs:comment "Allows read/write access to the ACL for the resource(s)" ;
+      rdfs:label "control"@en ;
+      rdfs:subClassOf acl:Access .
+
+acl:Read
+      rdf:type owl:Class ;
+      rdfs:comment "The class of read operations" ;
+      rdfs:label "read"@en ;
+      rdfs:subClassOf acl:Access .
+
+acl:Read_l2s
+      rdf:type acl:Read , owl:NamedIndividual .
+
+acl:Write
+      rdf:type owl:Class ;
+      rdfs:label "write"@en ;
+      rdfs:subClassOf acl:Access .
+
+acl:accessControl
+      rdf:type owl:AnnotationProperty ;
+      rdfs:comment """The Access Control file for this information resource.
+        This may of course be a virtual resorce implemented by the access control system.
+        Note also HTTP's header  Link:  foo.meta ;rel=meta can be used for this.""" ;
+      rdfs:domain ont:InformationResource ;
+      rdfs:label "access control" ;
+      rdfs:range ont:InformationResource ;
+      rdfs:subPropertyOf rdfs:seeAlso .
+
+acl:accessTo
+      rdf:type owl:AnnotationProperty , owl:ObjectProperty ;
+      rdfs:comment "The information resource to which access is being granted." ;
+      rdfs:domain acl:Authorization ;
+      rdfs:range ont:InformationResource .
+
+acl:accessToClass
+      rdf:type owl:AnnotationProperty , owl:ObjectProperty ;
+      rdfs:comment "A class of information resources to which access is being granted." ;
+      rdfs:domain acl:Authorization ;
+      rdfs:range rdfs:Class .
+
+acl:agent
+      rdf:type owl:AnnotationProperty , owl:ObjectProperty ;
+      rdfs:comment "A person or social entity to being given the right" ;
+      rdfs:domain acl:Authorization ;
+      rdfs:range foaf:Agent .
+
+acl:agentClass
+      rdf:type owl:AnnotationProperty , owl:ObjectProperty ;
+      rdfs:comment "A class of persons or social entities to being given the right" ;
+      rdfs:domain acl:Authorization ;
+      rdfs:range rdfs:Class .
+
+acl:defaultForNew
+      rdf:type owl:AnnotationProperty ;
+      rdfs:comment "A directory for which this authorization is used for new files in the directory." ;
+      rdfs:domain acl:Authorization ;
+      rdfs:label "default access for new things in" .
+
+acl:label
+      rdf:type owl:AnnotationProperty .
+
+acl:mode
+      rdf:type owl:AnnotationProperty , owl:ObjectProperty ;
+      rdfs:comment "A mode of access such as read or write." ;
+      rdfs:domain acl:Authorization ;
+      rdfs:range rdfs:Class .
+
+acl:owner
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment """The person or other agent which owns this. 
+    For example, the owner of a file in a filesystem.
+    There is a sense of right to control.   Typically defaults to the agent who craeted
+    something but can be changed.""" ;
+      rdfs:range foaf:Agent .
+
+foaf:Agent
+      rdf:type owl:Class .
