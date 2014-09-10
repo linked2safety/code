@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<configs>
+    <config name="L10N">
+        <item name="ApplicationClosingForNewSettings">The application will close. Relaunch the application with the new settings.</item>
+        <item name="ApplicationCloseConfirmation">Do you want to close the application?</item>
+        <item name="WindowTitleInformation">Information</item>
+		<item name="WindowTitleConfirmation">Confirmation</item>
+        
+        <!--sys tray menu items localisation-->
+        <item name="IconTooltip">%(name)s - %(version)s</item>
+        <item name="SysTrayMenuItemOpenHome">Open Home</item>
+        <item name="SysTrayMenuItemOpenMapping">Open Mapping</item>
+        <item name="SysTrayMenuItemOpenTransform">Open Transform</item>
+        <item name="SysTrayMenuItemMedDRA">MedDRA</item>
+        <item name="SysTrayMenuItemExit">Exit</item>
+        
+        <!--Application localization-->
+        <item name="OtherCategories">«Other categories»</item>
+		<item name="MedDRAOtherCategories">«Non-MedDRA categories»</item>
+    </config>
+</configs>

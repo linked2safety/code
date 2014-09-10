@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="MappingFile">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">Mapping File - XML Schema Definition</xs:documentation>
+	</xs:annotation>
+	<xs:element name="mappings">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Root element holder for mapping information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sourceAttributes">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">Source attributes collection</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="sourceAttribute" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">Source attribute item definition</xs:documentation>
+								</xs:annotation>							
+								<xs:complexType>
+									<xs:sequence>
+											<xs:element name="destinationAttribute" minOccurs="0">
+												<xs:annotation>
+													<xs:documentation xml:lang="en">Destination attribute definition (optional item from Common EHR Schema)</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+													<xs:attribute name="namespace" type="xs:string" use="optional">
+														<xs:annotation>
+															<xs:documentation xml:lang="en">Source attribute namespace (unique namespace identifier)</xs:documentation>
+														</xs:annotation>
+													</xs:attribute>
+													<xs:attribute name="name" type="xs:string" use="required">
+														<xs:annotation>
+															<xs:documentation xml:lang="en">Destionation attribute name (unique field identifier)</xs:documentation>
+														</xs:annotation>
+													</xs:attribute>
+													<xs:attribute name="dataType" type="xs:string" use="optional">
+														<xs:annotation>
+															<xs:documentation xml:lang="en">Source attribute data type (a valid XSD data type)</xs:documentation>
+														</xs:annotation>
+													</xs:attribute>
+													<xs:attribute name="range" type="xs:string" use="optional">
+														<xs:annotation>
+															<xs:documentation xml:lang="en">Range of values that may apear in data file for specified Source Attribute</xs:documentation>
+														</xs:annotation>
+													</xs:attribute>
+												</xs:complexType>
+											</xs:element>
+									</xs:sequence>
+									<xs:attribute name="namespace" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation xml:lang="en">Source attribute namespace (unique namespace identifier)</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="name" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation xml:lang="en">Source attribute name (unique field identifier)</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="isPrimaryKey" type="xs:boolean" use="optional">
+										<xs:annotation>
+											<xs:documentation xml:lang="en">Indicates whether the source attribute is used to uniquely identify records in data files</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="dataType" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation xml:lang="en">Source attribute data type (a valid XSD data type)</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="fileName" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">Clinical partner RAW schema file name</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="createDate" type="xs:dateTime" use="required">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">The date and time when the mapping file was created</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="provider" type="xs:string" use="optional">
+				<xs:annotation>
+				  <xs:documentation xml:lang="en">Data provider name (unique provider identifier)</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>      
+			<xs:attribute name="description" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Mapping file description / notes</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="comments" type="xs:string" use="optional">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Mapping file additional comments</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

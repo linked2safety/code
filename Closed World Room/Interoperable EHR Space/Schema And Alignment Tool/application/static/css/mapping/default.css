@@ -1,0 +1,520 @@
+/*
+This code is licensed under the GNU Lesser General Public License, version 3.0 (LGPL-3.0)
+For details see: http://opensource.org/licenses/LGPL-3.0
+*/
+#raw-attributes{
+    clear: both;
+    float:left;
+    width:300px;
+}
+.raw-attributes,
+.mapped-attributes{
+    margin-bottom: 1px;
+    clear: both;
+}
+
+.mapped-attributes{
+    clear:left;
+    display: block;
+}
+.raw-attributes br,
+.mapped-attributes br{
+    clear: both;
+}
+.mapped-attributes ol.attributes,
+.raw-attributes ol{
+        list-style: decimal outside;
+        margin-left:60px;
+}
+
+.raw-attributes .wrapper,
+.mapped-attributes .wrapper{
+    float: right;
+    display: block;
+    width: 100%;
+}
+
+.mapped-attributes .description{
+    clear:both;
+}
+.mapped-attributes .description span{
+    font-style: italic;
+}
+
+.raw-attributes .ui-icon{
+    position: relative;
+    top:3px;
+    float:left;
+}
+.raw-attributes .ui-icon-grip-dotted-vertical{
+    cursor: pointer;
+    cursor: grab;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+.raw-attributes .ui-icon-check{
+    top:4px;
+}
+
+.raw-attributes .ui-icon-grip-dotted-vertical,
+.raw-attributes .ui-icon-check{
+    visibility: hidden;
+}
+
+.raw-attributes li.mapped .ui-icon-check,
+.raw-attributes li:hover .ui-icon-grip-dotted-vertical{
+    visibility: visible;
+}
+
+.raw-attributes .wrapper{
+    width: 300px;
+}
+.mapped-attributes ol{
+    width: 300px;
+}
+.mapped-attributes ol{
+    width:430px;
+}
+.mapped-attributes label,
+.mapped-attributes input{
+    display:inline;
+}
+.raw-attributes li,
+.mapped-attributes .attributes li{
+    margin-top:3px;
+    position: relative;
+}
+
+#mapped-attributes{
+    float:right;
+    width:480px;
+    margin-right: 10px;
+}
+
+.raw-attributes li{
+    height:auto;
+    line-height: 25px;
+    padding:0 3px;
+    cursor: default;
+    z-index: 1;
+}
+.raw-attributes li{
+    float: left;
+    width:300px;
+}
+
+.mapped-attributes li{
+    float: left;
+    width: 480px;
+}
+
+.mapped-attributes .subcategories,
+.mapped-attributes .subcategories li{
+    width: 450px;
+}
+
+.mapped-attributes .attributes,
+.mapped-attributes .attributes li{
+    width: 420px;
+}
+
+.mapped-attributes .subcategories .subcategories,
+.mapped-attributes .subcategories .subcategories li{
+    width: 420px;
+}
+
+.mapped-attributes .subcategories .attributes,
+.mapped-attributes .subcategories .attributes li{
+    width: 390px;
+}
+.mapped-attributes .subcategories .attributes .wrapper .text{
+    width: 74%;
+}
+
+.mapped-attributes .subcategories .subcategories .subcategories,
+.mapped-attributes .subcategories .subcategories .subcategories li{
+    width: 390px;
+}
+
+.mapped-attributes .subcategories .subcategories .attributes,
+.mapped-attributes .subcategories .subcategories .attributes li{
+    width: 360px;
+}
+.mapped-attributes .subcategories .subcategories  .attributes .wrapper .text{
+    width: 72%;
+}
+
+.mapped-attributes .subcategories .subcategories .subcategories .subcategories,
+.mapped-attributes .subcategories .subcategories .subcategories .subcategories li{
+    width: 360px;
+}
+
+.mapped-attributes .subcategories .subcategories .subcategories .attributes,
+.mapped-attributes .subcategories .subcategories .subcategories .attributes li{
+    width: 330px;
+}
+.mapped-attributes .subcategories .subcategories .subcategories .attributes .wrapper .text{
+    width: 70%;
+}
+
+.mapped-attributes .subcategories .subcategories .subcategories .subcategories .subcategories,
+.mapped-attributes .subcategories .subcategories .subcategories .subcategories .subcategories li{
+    width: 330px;
+}
+
+.mapped-attributes .subcategories .subcategories .subcategories .subcategories .attributes,
+.mapped-attributes .subcategories .subcategories .subcategories .subcategories .attributes li{
+    width: 300px;
+}
+
+.mapped-attributes .subcategories .subcategories .subcategories .subcategories .attributes .wrapper .text{
+    width: 68%;
+}
+
+.raw-attributes li:nth-child(2n+1),
+.mapped-attributes .attributes li:nth-child(2n+1){
+    background: #DDDDDD;
+}
+
+.raw-attributes li.ui-draggable-dragging{
+    color: #FBB917;
+    cursor: move;
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+    z-index: 10;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    list-style: none;
+}
+
+.raw-attributes li.ui-draggable-dragging .ui-icon{
+    cursor: move;
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing; 
+}
+
+.mapped-attributes li.mapped input.display-raw-attribute-name{
+    background: #57E964;
+}
+
+.mapped-attributes .container{
+    width:100%;
+}
+
+.mapped-attributes input.display-raw-attribute-name{
+    margin: 2px auto auto 1px;
+    float: left;
+    width:180px;
+}
+
+.mapped-attributes .ui-icon{
+    float:left;
+    top: 5px;
+    position: relative;
+    margin: auto 5px 10px auto;
+}
+
+.mapped-attributes .ui-icon:first-child{
+    margin-left: 5px;
+}
+
+.mapped-attributes .ui-icon-circle-close{
+    visibility: hidden;
+}
+
+.edit-file-server,
+.raw-file-server{
+    width: 100%;
+}
+
+.mapped-attributes li.mapped .ui-icon-circle-close{
+    visibility: visible;
+}
+
+.raw-attributes .text,
+.mapped-attributes .text{
+    float: left;
+    overflow-y: auto;
+    line-height: 26px;
+    width: 90%;
+}
+
+.wrapper .text{
+    width: 77%;
+    overflow-y: auto;
+}
+
+.mapped-attributes input.has-range{
+    float: right;
+    margin: 7px;
+    margin-bottom:8px;
+}
+
+.mapped-attributes label.range{
+    display: none;
+}
+
+.mapped-attributes li.has-range label.range{
+    display: block;
+}
+
+.mapped-attributes label.range{
+    clear: both;
+    line-height: 27px;
+    padding-left: 5px;
+}
+.mapped-attributes input.range{
+    float: right;
+    width: 80%;
+}
+
+.mapped-attributes .mappings{
+    clear:both;
+    display: none;
+    padding-left: 5px;
+}
+
+.mapped-attributes .mapped .mappings{
+    display: block;
+}
+
+.mapped-attributes .mappings .mapping{
+    margin-left:5px;
+    padding-right: 5px;
+    text-decoration: none;
+    border-right: 1px solid #000000;
+    display: inline-block;
+    color: #6C8C8C;
+}
+.mapped-attributes .mappings .mapping:last-child{
+    border-right: 0;
+}
+
+.mapped-attributes .mapping .ui-icon-circle-close{
+    float:right;
+    top:3px;
+    margin:auto auto auto 3px;
+    cursor: pointer;
+}
+
+.mapped-attributes .add-mapping{
+    float: left;
+}
+
+.suggestions{
+    position: relative;
+    height:160px;
+}
+
+.suggestions .close-suggestions{
+    background: url('././img/dialog_close.png') no-repeat;
+    width: 22px;
+    height:22px;
+    position: absolute;
+    top:0;
+    right: 0;
+    display: none;
+}
+
+.suggestions li{
+    width:auto;
+    padding:2px;
+    cursor: pointer;
+}
+
+.suggestions li.active{
+    background: #C0C0C0;
+}
+
+.mapping-comments,
+.mapping-description{
+    display: block;
+    float:left;
+    margin:auto auto 10px 10px;
+    height:16px;
+}
+
+label.mapping-comments,
+label.mapping-description{
+    width:180px;
+    line-height: 20px;
+}
+
+textarea.mapping-comments,
+textarea.mapping-description{
+    width:808px;
+    resize:none;
+    overflow-y: auto;
+}
+
+.dialog .container{
+    position: relative;
+    width:100%;
+}
+
+.dialog .ui-tabs{
+    position: absolute;
+    left:0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    height: auto;
+    width: auto;
+}
+
+.dialog .container input.edit-file-server,
+.dialog .container input.raw-file-server{
+    position: absolute;
+    width: 343px;
+    left:0;
+    right: 110px;
+    top:20px;
+}
+
+.dialog .container .ui-button{
+    position: absolute;
+    right: 0;
+    top:20px;
+}
+.no-header{
+    color:#FF0000;
+}
+
+.raw-attributes .is-primary-key{
+    float:right;
+}
+.raw-attributes .disabled input{
+    visibility: hidden;
+}
+
+.raw-attributes .remove-mappings{
+    float:right;
+    visibility: hidden;
+}
+
+.raw-attributes .mapped .remove-mappings{
+    visibility: visible;
+}
+
+.raw-attributes .disabled .ui-icon-grip-dotted-vertical{
+    visibility: hidden!important;
+}
+
+.droppable-hover-class{
+    border:1px solid #CF0000;
+}
+
+#raw-input-suggestion{
+    display: block;
+    width: 100%;
+}
+
+#owl-input-suggestion{
+    display: block;
+    width: 100%;
+}
+
+.raw-attributes .attributes,
+.mapped-attributes .attributes{
+    clear:left;
+}
+
+.raw-attributes.collapsed .attributes,
+.mapped-attributes.collapsed .body{
+    height: 0;
+    display: block;
+}
+
+.raw-attributes.collapsed .attributes{
+    clear: none;
+    float: left;
+    height: 0;
+    width: 0;
+    margin:0;
+    margin-left:10px;
+    padding: 0;
+    overflow: hidden;
+}
+.mapped-attributes.collapsed .body *{
+    height: 0;
+    /*width: 0;*/
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.mapped-attributes.collapsed .attributes li{
+    margin-left:0px;
+    margin-top:-13px;
+}
+
+.mapped-attributes .help{
+    float: right;
+	cursor:default;
+}
+
+.raw-attributes.collapsed .attributes li{
+    height: 0;
+    width: 0;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    top:10px;
+}
+
+#dialog-map-raw-attribute .suggestions ul li{
+    padding:2px;
+    margin-top:3px;
+    border:2px solid transparent;
+}
+
+#dialog-map-raw-attribute .suggestions ul li:hover{
+    border:2px solid #3399FF;
+}
+
+#dialog-map-raw-attribute .suggestions ul li:nth-child(2n+1) {
+    background: #DDDDDD;
+}
+
+#dialog-map-raw-attribute .suggestions ul li span{
+    color: #666666;
+    font-size: 0.8em;
+    display: block;
+}
+
+
+#dialog-add-mapping .suggestions ul li{
+    padding:2px;
+    margin-top:3px;
+    border:2px solid transparent;
+}
+
+#dialog-add-mapping .suggestions ul li:hover{
+    border:2px solid #3399FF;
+}
+
+#dialog-add-mapping .suggestions ul li:nth-child(2n+1) {
+    background: #DDDDDD;
+}
+
+#dialog-add-mapping .suggestions ul li span{
+    color: #666666;
+    font-size: 0.8em;
+    display: block;
+}
+
+
+.ui-tooltip-content{
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.disabled{
+    visibility: hidden;
+}
+
+.subcategories{
+    margin-left:30px;
+}

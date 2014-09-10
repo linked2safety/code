@@ -1,0 +1,824 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY stru "http://www.openehr.org/owl/v1/Resource#" >
+    <!ENTITY type "http://www.openehr.org/owl/v1/BaseTypes#" >
+    <!ENTITY ehr "http://www.openehr.org/owl/v1/Annotations#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.openehr.org/owl/v1/Resource#"
+     xml:base="http://www.openehr.org/owl/v1/Resource"
+     xmlns:stru="http://www.openehr.org/owl/v1/Resource#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ehr="http://www.openehr.org/owl/v1/Annotations#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:type="http://www.openehr.org/owl/v1/BaseTypes#">
+    <owl:Ontology rdf:about="http://www.openehr.org/owl/v1/Resource">
+        <rdfs:label>Linked2Safety Common EHR Schema</rdfs:label>
+        <rdfs:comment>Linked2Safety Common EHR Schema - Resource
+based on the openEHR EHR Reference Model (RM) v1.0.2</rdfs:comment>
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <owl:imports rdf:resource="http://www.openehr.org/owl/v1/BaseTypes"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#author -->
+
+    <owl:ObjectProperty rdf:about="&stru;author"/>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#description -->
+
+    <owl:ObjectProperty rdf:about="&stru;description">
+        <rdfs:range rdf:resource="&stru;RESOURCE_DESCRIPTION"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#details -->
+
+    <owl:ObjectProperty rdf:about="&stru;details">
+        <rdfs:range rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#language -->
+
+    <owl:ObjectProperty rdf:about="&stru;language">
+        <rdfs:range rdf:resource="&type;CODE_PHRASE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#original_author -->
+
+    <owl:ObjectProperty rdf:about="&stru;original_author"/>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#original_language -->
+
+    <owl:ObjectProperty rdf:about="&stru;original_language">
+        <rdfs:range rdf:resource="&type;CODE_PHRASE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#original_resource_uri -->
+
+    <owl:ObjectProperty rdf:about="&stru;original_resource_uri"/>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#other_details -->
+
+    <owl:ObjectProperty rdf:about="&stru;other_details"/>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#parent_resource -->
+
+    <owl:ObjectProperty rdf:about="&stru;parent_resource">
+        <rdfs:range rdf:resource="&stru;AUTHORED_RESOURCE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#revision_history -->
+
+    <owl:ObjectProperty rdf:about="&stru;revision_history">
+        <rdfs:range rdf:resource="&type;REVISION_HISTORY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#translations -->
+
+    <owl:ObjectProperty rdf:about="&stru;translations">
+        <rdfs:range rdf:resource="&stru;TRANSLATION_DETAILS"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#accreditation -->
+
+    <owl:DatatypeProperty rdf:about="&stru;accreditation">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#copyright -->
+
+    <owl:DatatypeProperty rdf:about="&stru;copyright">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#id -->
+
+    <owl:DatatypeProperty rdf:about="&stru;id">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#is_controlled -->
+
+    <owl:DatatypeProperty rdf:about="&stru;is_controlled">
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#keywords -->
+
+    <owl:DatatypeProperty rdf:about="&stru;keywords">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#lifecycle_state -->
+
+    <owl:DatatypeProperty rdf:about="&stru;lifecycle_state">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#misuse -->
+
+    <owl:DatatypeProperty rdf:about="&stru;misuse">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#other_contributors -->
+
+    <owl:DatatypeProperty rdf:about="&stru;other_contributors">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#purpose -->
+
+    <owl:DatatypeProperty rdf:about="&stru;purpose">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#resource_package_uri -->
+
+    <owl:DatatypeProperty rdf:about="&stru;resource_package_uri">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#use -->
+
+    <owl:DatatypeProperty rdf:about="&stru;use">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#AUTHORED_RESOURCE -->
+
+    <owl:Class rdf:about="&stru;AUTHORED_RESOURCE">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;revision_history"/>
+                <owl:onClass rdf:resource="&type;REVISION_HISTORY"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;original_language"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;is_controlled"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;translations"/>
+                <owl:onClass rdf:resource="&stru;TRANSLATION_DETAILS"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;description"/>
+                <owl:onClass rdf:resource="&stru;RESOURCE_DESCRIPTION"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:Purpose>Abstract idea of an online resource created by a human author.</ehr:Purpose>
+        <ehr:Abstract>true</ehr:Abstract>
+        <ehr:HL7></ehr:HL7>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:Use></ehr:Use>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>List of details for each natural translation made of this resource, keyed by language. For each translation listed here, there must be corresponding sections in all language-dependent parts of the resource. The original_language does not appear in this list.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;AUTHORED_RESOURCE"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;translations"/>
+                <owl:onClass rdf:resource="&stru;TRANSLATION_DETAILS"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>True if this resource is under any kind of change control (even file copying), in which case revision history is created.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;AUTHORED_RESOURCE"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;is_controlled"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;boolean"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Description and lifecycle information of the resource.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;AUTHORED_RESOURCE"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;description"/>
+                <owl:onClass rdf:resource="&stru;RESOURCE_DESCRIPTION"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>The revision history of the resource. Only required if is_controlled = True (avoids large revision histories for informal or private editing situations).</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;AUTHORED_RESOURCE"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;revision_history"/>
+                <owl:onClass rdf:resource="&type;REVISION_HISTORY"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Language in which this resource was initially authored. Although there is no language primacy of resources overall, the language of original authoring is required to ensure natural language translations can preserve quality. Language is relevant in both the description and ontology sections.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;AUTHORED_RESOURCE"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;original_language"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#RESOURCE_DESCRIPTION -->
+
+    <owl:Class rdf:about="&stru;RESOURCE_DESCRIPTION">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;other_contributors"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;other_details"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;parent_resource"/>
+                <owl:onClass rdf:resource="&stru;AUTHORED_RESOURCE"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;resource_package_uri"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;original_author"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;details"/>
+                <owl:onClass rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;lifecycle_state"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:Purpose>Defines the descriptive meta-data of a resource.</ehr:Purpose>
+        <ehr:Use></ehr:Use>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:HL7></ehr:HL7>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>URI of package to which this resource belongs.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;resource_package_uri"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Details of all parts of resource description that are natural language-dependent, keyed by language code.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;details"/>
+                <owl:onClass rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Lifecycle state of the resource, typically including states such as: initial, submitted, experimental, awaiting_approval, approved, superseded, obsolete.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;lifecycle_state"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Original author of this resource, with all relevant details, including organisation.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;original_author"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Additional non language-senstive resource meta-data, as a list of name/value pairs.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;other_details"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Reference to owning resource.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;parent_resource"/>
+                <owl:onClass rdf:resource="&stru;AUTHORED_RESOURCE"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Other contributors to the resource, probably listed in “name &lt;email&gt;” form.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;other_contributors"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#RESOURCE_DESCRIPTION_ITEM -->
+
+    <owl:Class rdf:about="&stru;RESOURCE_DESCRIPTION_ITEM">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;language"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;keywords"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;misuse"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;purpose"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;original_resource_uri"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;copyright"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;other_details"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;use"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:Use></ehr:Use>
+        <ehr:HL7></ehr:HL7>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:Purpose>Language-specific detail of resource description. When a resource is translated for use in another language environment, each RESOURCE_DESCRIPTION_ITEM needs to be copied and translated into the new language.</ehr:Purpose>
+        <ehr:ISO18308></ehr:ISO18308>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Optional copyright statement for the resource as a knowledge resource.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;copyright"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Purpose of the resource.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;purpose"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>URIs of original clinical document(s) or description of which resource is a formalisation, in the language of this description item; keyed by meaning.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;original_resource_uri"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Keywords which characterise this resource, used e.g. for indexing and searching.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;keywords"/>
+                <owl:someValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Description of any misuses of the resource, i.e. contexts in which it should not be used.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;misuse"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Additional language-senstive resource metadata, as a list of name/value pairs.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;other_details"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Description of the uses of the resource, i.e. contexts in which it could be used.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;use"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>The localised language in which the items in this description item are written. Coded from openEHR Code Set “languages”.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;RESOURCE_DESCRIPTION_ITEM"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;language"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#StringDictionaryItem -->
+
+    <owl:Class rdf:about="&stru;StringDictionaryItem">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;id"/>
+                <owl:allValuesFrom rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Resource#TRANSLATION_DETAILS -->
+
+    <owl:Class rdf:about="&stru;TRANSLATION_DETAILS">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;accreditation"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;other_details"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;language"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;author"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:HL7></ehr:HL7>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:Purpose>Class providing details of a natural language translation.</ehr:Purpose>
+        <ehr:Use></ehr:Use>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:ISO18308></ehr:ISO18308>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Accreditation of translator, usually a national translator’s association id.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;TRANSLATION_DETAILS"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;accreditation"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Translator name and other demographic details</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;TRANSLATION_DETAILS"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;author"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Language of translation.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;TRANSLATION_DETAILS"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;language"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Any other meta-data.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&stru;TRANSLATION_DETAILS"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;other_details"/>
+                <owl:onClass rdf:resource="&stru;StringDictionaryItem"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <rdf:Description>
+        <rdfs:comment>Purpose of the resource.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Other contributors to the resource, probably listed in “name ” form.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Original author of this resource, with all relevant details, including organisation.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Description of the uses of the resource, i.e. contexts in which it could be used.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The localised language in which the items in this description item are written. Coded from openEHR Code Set “languages”.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>URIs of original clinical document(s) or description of which resource is a formalisation, in the language of this description item; keyed by meaning.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Lifecycle state of the resource, typically including states such as: initial, submitted, experimental, awaiting_approval, approved, superseded, obsolete.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Reference to owning resource.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>URI of package to which this resource belongs.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Details of all parts of resource description that are natural language-dependent.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Keywords which characterise this resource, used e.g. for indexing and searching.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Optional copyright statement for the resource as a knowledge resource.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Additional language-senstive resource metadata, as a list of name/value pairs.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Description of any misuses of the resource, i.e. contexts in which it should not be used.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Additional non language-senstive resource meta-data, as a list of name/value pairs.</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

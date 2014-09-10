@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY map "http://www.linked2safety-project.eu/owl/v1/Mapping#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.linked2safety-project.eu/owl/v1/Mapping#"
+     xml:base="http://www.linked2safety-project.eu/owl/v1/Mapping"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:map="http://www.linked2safety-project.eu/owl/v1/Mapping#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.linked2safety-project.eu/owl/v1/Mapping">
+        <rdfs:label>Linked2Safety Common EHR Schema</rdfs:label>
+        <rdfs:comment>Linked2Safety Common EHR Schema - Mapping
+needed for mapping annotations </rdfs:comment>
+        <owl:versionInfo>1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.linked2safety-project.eu/owl/v1/Mapping#hasInternalNo -->
+
+    <owl:DatatypeProperty rdf:about="&map;hasInternalNo">
+        <rdfs:comment>Specifies if aligned data has an Internal Number attribute for distinguishing multiple records of same patient. (e.g. in case of multiple clinical trials or laboratory tests)</rdfs:comment>
+        <rdfs:domain rdf:resource="&map;RecordDescription"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>n/a</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>no</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>yes</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    <owl:Axiom>
+        <rdfs:comment>Can have following values:
+- yes : when internal_no are mapped
+- no : when internal_no are not mapped
+- n/a : when not available</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&map;hasInternalNo"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;range"/>
+        <owl:annotatedTarget>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>n/a</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>no</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>yes</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.linked2safety-project.eu/owl/v1/Mapping#hasRange -->
+
+    <owl:DatatypeProperty rdf:about="&map;hasRange">
+        <rdfs:comment>Specifies ranges for properties of L2S Clinical Common Variables.</rdfs:comment>
+        <rdfs:domain rdf:resource="&map;RecordDescription"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.linked2safety-project.eu/owl/v1/Mapping#RecordDescription -->
+
+    <owl:Class rdf:about="&map;RecordDescription">
+        <rdfs:comment>Describes clinical data records with annotations related to mapping and transformation component.</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

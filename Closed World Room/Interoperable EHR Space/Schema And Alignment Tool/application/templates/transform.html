@@ -1,0 +1,146 @@
+{#
+This code is licensed under the GNU Lesser General Public License, version 3.0 (LGPL-3.0)
+For details see: http://opensource.org/licenses/LGPL-3.0
+#}
+{% extends "layouts/default.html" %}
+
+{% block title %}Transform tool{{ " - " + ProviderName if ProviderName != None else ''}}{% end %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ static_url("css/server-browser.css") }}" />
+    <link rel="stylesheet" type="text/css" href="{{ static_url("css/transform.css") }}" />
+{% end %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ static_url("js/server-browser.js") }}" ></script>
+    <script type="text/javascript" src="{{ static_url("js/transform/default.js") }}" ></script>
+{% end %}
+
+{% block menu %}
+    <a href="/" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false">
+        <span class="ui-button-icon-primary ui-icon ui-icon-home"></span>
+        <span class="ui-button-text">Home</span>
+    </a>
+{% end %}
+
+{% block body %}
+    <div class="transformation-container">
+        <div class="message-to-user">
+            {% if ProcessIsCompleted == True %}
+            <div class="ui-widget">
+                    <div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;">
+                            <p>
+                                <span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+                                <strong>Transformation completed</strong>
+                                <a href="/transform/downloadOutputFile" title= "Download file" >Download file data</a>
+                            </p>
+                    </div>
+            </div>
+            {% end %}
+            {% if ProcessErrors!=None %}
+                <div class="ui-widget">
+                    <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+                        <p>
+                            <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+                            <strong>Error:</strong> {{ProcessErrors}}</p>
+                    </div>
+                </div>
+            {% end %}
+        </div>
+        <div id="input-information">
+            <form id="form-transform" method="POST" enctype="multipart/form-data" >
+                {% raw xsrf_form_html() %}
+                <fieldset class="clearfix step nr-1">   
+                    <legend>1. Select the healthcare instance data file:</legend>
+                    {% if "client" in BrowseFileOn %}
+                    <label for="raw-file">
+                        {% if "client" in BrowseFileOn and "server" in BrowseFileOn %}
+                        <input type="radio" name="choose-raw-file-source" value="1" id="raw-file-radio" />
+                        {% end %}
+                        Browse client:
+                    </label>
+                    <input name="raw-file" accept=".xls,.xlsx" type="file" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="raw-file"/>
+                    {% end %}
+                    {% if "server" in BrowseFileOn %}
+                    <label for="raw-file-server-browser">
+                        {% if "client" in BrowseFileOn and "server" in BrowseFileOn %}
+                        <input type="radio" name="choose-raw-file-source" value="2" id="raw-file-server-radio"/>
+                        {% end %}
+                        Browse server:
+                    </label>
+                    <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="raw-file-server-browser">
+                        <span class="ui-button-text">Browse</span>
+                    </button>
+                    <input name="raw-file-server" readonly="readonly" type="input" class="server-input ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="raw-file-server"/>
+                    {% end %}
+                </fieldset>
+                <fieldset class="clearfix step nr-2">
+                    <legend>2. Select the mapped and aligned schema file:</legend>
+                    {% if "client" in BrowseFileOn %}
+                    <label for="mapping-file">
+                        {% if "client" in BrowseFileOn and "server" in BrowseFileOn %}
+                        <input type="radio" name="choose-mapping-file-source" value="1" id="mapping-file-radio" />
+                        {% end %}
+                        Browse client:
+                    </label>
+                    <input name="mapping-file" accept=".xml" type="file" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="mapping-file"/>
+                    {% end %}
+                    {% if "server" in BrowseFileOn %}
+                    <label for="mapping-file-server-browser">
+                        {% if "client" in BrowseFileOn and "server" in BrowseFileOn %}
+                        <input type="radio" name="choose-mapping-file-source" value="2" id="mapping-file-server-radio" />
+                        {% end %}
+                        Browse server:</label>
+                    <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="mapping-file-server-browser">
+                        <span class="ui-button-text">Browse</span>
+                    </button>
+                    <input name="mapping-file-server" readonly="readonly" type="input" class="server-input ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="mapping-file-server"/>
+                    {% end %}
+                </fieldset>
+                {% if "server" in BrowseFileOn %}
+                <fieldset class="clearfix step nr-3 saving-file">
+                    <legend>3. Choose where to save the output file:</legend>
+                    <label for="output-file-server-browser">
+                        Browse server:
+                    </label>
+                    <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="output-file-server-browser">
+                        <span class="ui-button-text">Browse</span>
+                    </button>
+                    <input name="output-file-server" readonly="readonly" type="input" class="server-input ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="output-file-server"/>
+                </fieldset>
+                {% end %}
+                <fieldset class="clearfix step nr-4">
+                    <legend>{% if "server" in BrowseFileOn %}4{% else %}3{% end %}. Press the "Process" button to transform and align the raw data</legend>
+                    <input type="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false" value="Process" />
+                </fieldset>
+            </form>
+        </div>
+        {% if ProcessHasStarted == True %}
+        <div id="display-information" style="display: none;">
+            <fieldset class="clearfix step nr-1">   
+                <legend>1. Processing raw data file:</legend>
+                <label>RAW Data file:</label>
+                <input type="text" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" value="{{ RawFileName }}"/>
+            </fieldset>
+            <fieldset class="clearfix step nr-2">
+                <legend>2. Applying mapping schema file:</legend>
+                <label>Mapping file:</label>
+                <input type="text" readonly="readonly" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" value="{{ MappingFileName }}"/>
+            </fieldset>
+            {% if OutputFileDownload == False %}
+            <fieldset class="clearfix step nr-3 saving-file">
+                <legend>3. Saving transformed and aligned data file to:</legend>
+                <label>Saved to:</label>
+                <input type="text" id="save-file-location" readonly="readonly" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" value="{{ OutputFile }}"/>
+            </fieldset>
+            {% end %}
+            <fieldset class="clearfix step nr-{{ 3 if OutputFileDownload else 4}}">
+                <legend>{{ 3 if OutputFileDownload else 4}}. Process completed:</legend>
+                <div id="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20">
+                    <div class="title" id="progressbarValue">Processing ...</div>
+                </div>
+            </fieldset>
+        </div>
+        {% end %}
+    </div>
+{% end %}
