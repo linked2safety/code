@@ -94,9 +94,7 @@ public class QueryEvaluation<repo> {
 			Config.getConfig().set("monitoring.logQueryPlan", "true");
 
 			repo = FedXFactory.initializeSparqlFederation(Arrays.asList(
-					"http://82.116.205.61:4040/cingrep/sparql",
-					"http://62.38.242.7:4040/zeincrorep/sparql",
-					"http://62.38.242.7:4041/dataset/sparql"));
+					"http://1.1.1.1:3030/rep/sparql"));
 
 			long startTime = System.currentTimeMillis();
 			long endTime = 0;
