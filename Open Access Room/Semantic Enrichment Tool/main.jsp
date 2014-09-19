@@ -731,10 +731,9 @@
     var fileSubmitted = false
     var nodesArray = new Array();
 
-    var urlbase_generic = "http://192.168.1.202:4040/zeincrorep";
-//var urlbase     = "http://62.38.242.7:4040";
+    var urlbase_generic = "http://192.168.1.202:4040/rep";
     var urlbase = "http://192.168.1.202:4040";
-    var datasetName = "zeincrorep";
+    var datasetName = "rep";
 
     var cubeDatainRDFformat;
 
