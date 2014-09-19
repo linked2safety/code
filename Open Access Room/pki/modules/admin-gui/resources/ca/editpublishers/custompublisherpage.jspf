@@ -1,0 +1,86 @@
+<%               
+  CustomPublisherContainer custompublisher = (CustomPublisherContainer) publisherhelper.publisherdata;
+%>
+
+   <%-- Custom publisher settings --%>
+
+   <tr id="Row<%=row++%2%>" class="section"> 
+      <td width="45%" valign="top" align="right"> 
+         <strong><%= ejbcawebbean.getText("CUSTOMPUBLISHERSETTINGS") %></strong>
+      </td>
+      <td width="55%" valign="top"> 
+         &nbsp;
+      </td>
+    </tr>
+    <tr id="Row<%=row++%2%>"> 
+      <td width="45%" valign="top" align="right"> 
+         <%= ejbcawebbean.getText("CLASSPATH") %>
+      </td>
+      <td width="55%" valign="top"> 
+
+        <select name="<%=EditPublisherJSPHelper.SELECT_CUSTOMCLASS%>" id="<%=EditPublisherJSPHelper.SELECT_CUSTOMCLASS%>" size="1"
+            <% if (org.ejbca.config.WebConfiguration.isManualClassPathsEnabled()) { %>
+                onchange="document.getElementById('<%=EditPublisherJSPHelper.TEXTFIELD_CUSTOMCLASSPATH%>').disabled = (this.value != &quot;&quot;); return true"
+            <% } %>
+            >
+            
+           <% 
+           
+              if (!org.ejbca.config.WebConfiguration.isManualClassPathsEnabled()) {
+                  %><option value=""><%= ejbcawebbean.getText("PLEASE_SELECT") %></option><%
+              }
+              
+              String currentClass = custompublisher.getClassPath();
+              boolean customClassChoice = true;
+              boolean hasOldManualClass = false;
+              for (String klass : publisherhelper.getCustomClasses()) { %>
+                  <option value="<c:out value="<%=klass%>"/>"
+                     <% if(klass.equals(currentClass) || currentClass == null || currentClass.isEmpty()) {
+                           out.write(" selected ");
+                           customClassChoice = false;
+                           currentClass = klass;
+                        } %> >
+                     <c:out value="<%=klass%>"/>
+                  </option>
+              <% }
+              
+              if (org.ejbca.config.WebConfiguration.isManualClassPathsEnabled()) {
+                  %><option value="" <% if (customClassChoice) { %>selected="selected"<% } %>><%= ejbcawebbean.getText("MANUALCLASSPATH") %></option><%
+              } else if (customClassChoice && currentClass != null && !currentClass.isEmpty()) {
+                  %><option value="<c:out value="<%=currentClass%>"/>" selected="selected"><c:out value="<%=currentClass%>"/>*</option><%
+                  hasOldManualClass = true;
+              }
+              %>
+        </select>
+        
+        <% if (hasOldManualClass) { %>
+            <p><small><%= ejbcawebbean.getText("OLDMANUALCLASSPATHELP") %></small></p>
+        <% } %>
+        
+        <% if (org.ejbca.config.WebConfiguration.isManualClassPathsEnabled()) { %>
+            <br>
+            <input type="text" name="<%=EditPublisherJSPHelper.TEXTFIELD_CUSTOMCLASSPATH%>" id="<%=EditPublisherJSPHelper.TEXTFIELD_CUSTOMCLASSPATH%>" size="45" maxlength="255"
+                   value='<c:out value="<%= customClassChoice ? currentClass : &quot;&quot; %>"/>'>
+            
+            <% if (!customClassChoice) { %>
+                <script type="text/javascript">
+                <!--
+                var textCustomClass = document.getElementById('<%=EditPublisherJSPHelper.TEXTFIELD_CUSTOMCLASSPATH%>');
+                var selectClass = document.getElementById('<%=EditPublisherJSPHelper.SELECT_CUSTOMCLASS%>');
+                textCustomClass.disabled = (selectClass.value != "");
+                //-->
+                </script>
+            <% } %>
+        <% } %> 
+        
+      </td>
+    </tr>
+    <tr id="Row<%=row++%2%>"> 
+      <td width="45%" valign="top" align="right"> 
+         <%= ejbcawebbean.getText("PROPERTIESOFCUSTOM") %>
+      </td>
+      <td width="55%" valign="top">          
+         <textarea name="<%=EditPublisherJSPHelper.TEXTAREA_CUSTOMPROPERTIES%>" cols="45" rows="8"><c:out value="<%= custompublisher.getPropertyData() %>"/></textarea>
+      </td>
+    </tr>
+    

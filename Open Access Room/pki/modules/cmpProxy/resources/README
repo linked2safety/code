@@ -1,0 +1,89 @@
+ $Id: README 9645 2010-08-14 16:28:22Z primelars $
+
+
+This is a proxy to be used to transfer CMP requests received to a CA.
+The proxy is a stand alone module that runs on another mahing than the CA itself.
+
+There is one proxy for receiving TCP requests and another for receiving HTTP requests.
+The README is same for both proxies.
+If this README is in the same directory as the file 'cmpProxy-x.x.x.war' you got the HTTP proxy.
+If this README is in the same directory as the file 'cmpTcpProxy.jar' you got the TCP proxy.
+
+
+
+TCP proxy.
+---------
+Build the proxy by:
+cd ${EJBCA_HOME}/modules/cmpProxy
+ant -f build-tcp.xml
+
+The proxy files are put in ${EJBCA_HOME}/dist/cmpTcpProxy, here after referred to as ${PROXY_HOME}.
+
+The proxy is started like this: java -jar ${PROXY_HOME}/cmpTcpProxy.jar [ CONFIGFILE ]
+
+${PROXY_HOME} is the directory containing this file (README).
+
+Configuration properties are read from a file. This file is search for like this until an existing file is found:
+1. The path given as argument (CONFIGFILE) when starting the proxy.
+2. ./conf/cmpProxy.properties
+3. ./cmpProxy.properties
+4. ${PROXY_HOME}/properties/cmpProxy.properties
+
+Use ${PROXY_HOME}/properties/cmpProxy.properties as a template or change it.
+
+The program could be started from any directory.
+
+Log is written to the "stdout" and to the file ./ctb.log (in the current directory).
+The logging (levels output etc) could be changed in the file: ${PROXY_HOME}/properties/log4j.xml
+If you are not familiar with log4j have a look at http://logging.apache.org/log4j/1.2/manual.html
+
+To define a service on Windows for this application http://yajsw.sourceforge.net is usable.
+If this is done make sure to:
+* Set wrapper.work.dir to the directory with your cmpProxy.properties . All files in the configuration with
+  no absolute path will be relative to this directory.
+* Make sure with the Windows service GUI that the service is started by logging on to wrapper.app.account .
+
+
+HTTP proxy
+----------
+The HTTP proxy can be built and deployed with apache Tomcat 6.x. It should be possible to use other servlet containers, but this has not been tested.
+
+You got to tell where the servlet jars for your servlet engine are located when building the http proxy.
+For tomcat on debian this is done like this:
+
+export SERVLET_ENGINE_HOME=/usr/share/tomcat6
+or if you just unpacked the tomcat distribution in /opt
+export SERVLET_ENGINE_HOME=/opt/apache-tomcat-6.0.26
+
+Build the proxy by:
+cd ${EJBCA_HOME}/modules/cmpProxy
+ant -f build-http.xml
+
+The proxy files are put in ${EJBCA_HOME}/dist/cmpHttpProxy, here after referred to as ${PROXY_HOME}.
+
+Deploy 'cmpProxy-x.x.x.war' to the servlet container. With  this could be done with a GUI or on the command line.
+
+Configuration properties are read from a file. This file is search for like this until an existing file is found:
+1. The file with the name of the property 'configFileName' in the servlet definition.
+   The servlet is defined in 'WEB-INF/web.xml' located in 'cmpProxy-x.x.x.war'
+2. ./conf/cmpProxy.properties
+3. ./cmpProxy.properties
+4. './WEB-INF/classes/cmpProxy.properties' in 'WEB-INF/web.xml' located in 'cmpProxy-x.x.x.war'.
+
+The path of the current directory './' is dependent on the servlet engine and the installation of the servlet engine.
+Tomacat6 installed with a debian package has current directory '/var/lib/tomcat6'.
+
+With default configuration the log is written to './logs/cmpProxy.log'.
+The log is configured in 'WEB-INF/classes/log4j.xml' located in 'cmpProxy-x.x.x.war'.
+
+You can see that the proxy is deployed correctly using a simple url:
+http://localhost:8080/cmpProxy-3.10.2/
+if the war file is called cmpProxy-3.10.2.war. You can easily call the war file simply cmpProxy.war to have the, always same, url:
+http://localhost:8080/cmpProxy/
+
+The URL for the CMP proxy, to be used by clients are:
+http://your-proxy-server:8080/cmpProxy/cmp
+If the war file is called cmpProxy.war.
+
+A sample command for the EJBCA Client Tool Box's CMP stress test tool to use the proxy is:
+./ejbcaClientToolBox.sh CMPTest localhost /AdminCA1.cacert.pem  1 1 KeyId 8080 http /cmpProxy/cmp

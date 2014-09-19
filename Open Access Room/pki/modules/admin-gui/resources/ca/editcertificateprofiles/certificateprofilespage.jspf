@@ -1,0 +1,176 @@
+<%
+  TreeMap certificateprofiles     = cabean.getEditCertificateProfileNames(); 
+
+%>
+
+
+<h1><%= ejbcawebbean.getText("MANAGECERTIFICATEPROFILES") %></h1>
+
+<!-- <a onclick='displayHelpWindow("<%= ejbcawebbean.getHelpfileInfix("ca_help.html") + "#certificateprofiles"%>")'>
+    <u><%= ejbcawebbean.getText("HELP") %></u> </a> -->
+
+<form name="editcertificateprofiles" method="post"  action="<%= THIS_FILENAME%>">
+
+  <input type="hidden" name='<%= ACTION %>' value='<%=ACTION_EDIT_CERTIFICATEPROFILES %>'>
+
+  <table class="list">
+  <% if(triedtoeditfixedcertificateprofile){ %> 
+    <tr> 
+      <td width="40%" class="alert"><%= ejbcawebbean.getText("YOUCANTEDITFIXEDCERTPROFS") %></td>
+      <td width="60%"></td>
+    </tr>
+  <% } %>
+  <% if(triedtodeletefixedcertificateprofile){ %> 
+    <tr> 
+      <td width="40%" class="alert"><%= ejbcawebbean.getText("YOUCANTDELETEFIXEDCERT") %></td>
+      <td width="60%"></td>
+    </tr>
+  <% } %>
+  <% if(triedtoaddfixedcertificateprofile){ %> 
+    <tr> 
+      <td width="40%" class="alert"><%= ejbcawebbean.getText("YOUCANTADDFIXEDCERT") %></td>
+      <td width="60%"></td>
+    </tr>
+  <% } %>
+  <% if(certificateprofileexists){ %> 
+    <tr> 
+      <td width="40%" class="alert"><%= ejbcawebbean.getText("CERTIFICATEPROFILEALREADY") %></td>
+      <td width="60%"></td>
+    </tr>
+  <% } %>
+  <% if(certificateProfileDeletionFailed){ %>
+     <tr> 
+      <td width="40%" class="alert"><%= ejbcawebbean.getText("COULDNTDELETECERTPROF") %> </td>      
+      <td width="60%"></td>
+    </tr>
+    <% if(!servicesContainingCertificateProfile.isEmpty()) { %>  	
+         <tr><td width="40%" class="alert"><%= ejbcawebbean.getText("CERTPROFILEUSEDINSERVICES") %></td><td width="60%"></td></tr>                 
+         <tr><td width="40%">
+         	<% for(int i = 0; i < servicesContainingCertificateProfile.size(); i++) { 
+         	   String serviceName = servicesContainingCertificateProfile.get(i);
+         	 %>
+         		<c:out value="<%= serviceName%>"/>
+         		<% if(i < servicesContainingCertificateProfile.size()-1 ) {%>
+         		<c:out value=","/>
+         		<% } %> 
+         	 <% } %>   
+         </td><td width="60%" class="alert"></td></tr>   
+                    
+    <% } %>
+    <% if(numberOfEndEntitiesContainingCertificateProfile > 1000) { %>
+    <tr><td width="40%" class="alert"><%= ejbcawebbean.getText("CERTPROFILEUSEDINENDENTITIESEXCESSIVE") %></td><td width="60%"></td></tr>   
+    <% } else { %>
+	    <% if(!endEntitiesContainingCertificateProfile.isEmpty()) { %>  	
+	         <tr><td width="40%" class="alert"><%= ejbcawebbean.getText("CERTPROFILEUSEDINENDENTITIES") %>
+	          <% if(endEntitiesContainingCertificateProfile.size() > 10) { %> 
+	          (<%= ejbcawebbean.getText("DISPLAYINGFIRSTTENRESULTS")  %> <c:out value="<%= numberOfEndEntitiesContainingCertificateProfile%>"/>)
+	          <% } %>     
+	         </td><td width="60%"></td></tr>                 
+	         <tr><td width="40%">
+	         	<% for(int i = 0; i < endEntitiesContainingCertificateProfile.size(); i++) { 
+	         	   String name = endEntitiesContainingCertificateProfile.get(i);
+	         	 %>
+	         	   <c:out value="<%= name%>"/>
+	         	   <% if(i < endEntitiesContainingCertificateProfile.size()-1 ) {%>
+	         		<c:out value=","/>
+	         	   <% } %> 
+	         	<% } %>     
+	         </td><td width="60%" class="alert"></td></tr>
+		 <% } %>                      
+    <% } %>
+    <% if(!endEntityProfilesContainingCertificateProfile.isEmpty()) { %>
+         <tr><td width="40%" class="alert"><%= ejbcawebbean.getText("CERTPROFILEUSEDINENDENTITYPROFILES") %></td><td width="60%"></td></tr>                 
+         <tr><td width="40%">
+         	<% for(int i = 0; i < endEntityProfilesContainingCertificateProfile.size(); i++) { 
+         	   String name = endEntityProfilesContainingCertificateProfile.get(i);
+         	 %>
+         	   <c:out value="<%= name%>"/>
+         	   <% if(i < endEntityProfilesContainingCertificateProfile.size()-1 ) {%>
+         		<c:out value=","/>
+         	   <% } %> 
+         	<% } %>    
+         	</td><td width="60%" class="alert"></td></tr>                 
+    <% } %>
+    <% if(!hardTokenProfilesContainingCertificateProfile.isEmpty()) { %>  	
+         <tr><td width="40%" class="alert"><%= ejbcawebbean.getText("CERTPROFILEUSEDINHARDTOKENPROFILES") %></td><td width="60%"></td></tr>                 
+         <tr><td width="40%">
+         	<% for(int i = 0; i < hardTokenProfilesContainingCertificateProfile.size(); i++) { 
+         	   String name = hardTokenProfilesContainingCertificateProfile.get(i);
+         	 %>
+         	   <c:out value="<%= name%>"/>
+         	   <% if(i < hardTokenProfilesContainingCertificateProfile.size()-1 ) {%>
+         		<c:out value=","/>
+         	   <% } %> 
+         	<% } %>    
+         </td><td width="60%" class="alert"></td></tr>   
+                    
+    <% } %>
+    <% if(!casUsingCertificateProfile.isEmpty()) { %>  	
+         <tr><td width="40%" class="alert"><%= ejbcawebbean.getText("CERTPROFILEUSEDINCAS") %></td><td width="60%"></td></tr>                 
+         <tr><td width="40%">
+         	<% for(int i = 0; i < casUsingCertificateProfile.size(); i++) { 
+         	   String name = casUsingCertificateProfile.get(i);
+         	 %>
+         	   <c:out value="<%= name%>"/>
+         	   <% if(i < casUsingCertificateProfile.size()-1 ) {%>
+         		<c:out value=","/>
+         	   <% } %> 
+         	<% } %>  
+         </td><td width="60%" class="alert"></td></tr>   
+                    
+    <% } %>
+   <% } %>
+    <tr> 
+      <td width="40%"><h3><%= ejbcawebbean.getText("LISTOFCERTIFICATEPROFILES") %></h3></td>
+      <td width="60%"></td>
+    </tr>
+    <tr> 
+      <td width="40%">
+        <select name="<%=SELECT_CERTIFICATEPROFILES%>" style="width: 50em" size="15"  >
+          <% Iterator iter = certificateprofiles.keySet().iterator();
+             while(iter.hasNext()){
+               String profilename = (String) iter.next(); %>     
+            	<option value="<c:out value="<%= profilename %>"/>"> 
+                <c:out value="<%= profilename %>"/>
+             </option>
+          <%}%>
+        </select>
+      </td>
+      <td width="60%"></td>
+    </tr>
+    <tr> 
+      <td width="40%"> 
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left">
+              <input type="submit" name="<%= BUTTON_EDIT_CERTIFICATEPROFILES %>" value="<%= ejbcawebbean.getText("EDITCERTIFICATEPROFILE") %>">
+            </td>
+            <td align="center">
+              &nbsp;
+            </td>
+            <td align="right">
+              <input class=buttonstyle type="submit" onClick="return confirm('<%= ejbcawebbean.getText("AREYOUSURE",true) %>');" name="<%= BUTTON_DELETE_CERTIFICATEPROFILES %>" value="<%= ejbcawebbean.getText("DELETECERTIFICATEPROFILE") %>">
+            </td>
+          </tr>
+        </table> 
+      </td>
+      <td width="60%"></td>
+    </tr>
+  </table>
+  
+  <table class="actions">
+    <tr> 
+      <td width="100%"><h3><%= ejbcawebbean.getText("ADDPROFILE") %></h3></td>
+    </tr>
+    <tr> 
+      <td width="100%"> 
+        <input type="text" name="<%=TEXTFIELD_CERTIFICATEPROFILESNAME%>" size="40" maxlength="255" title="<%= ejbcawebbean.getText("FORMAT_ID_STR") %>">
+        <input type="submit" name="<%= BUTTON_ADD_CERTIFICATEPROFILES%>" onClick='return checkfieldforlegalchars("document.editcertificateprofiles.<%=TEXTFIELD_CERTIFICATEPROFILESNAME%>","<%= ejbcawebbean.getText("ONLYCHARACTERS") %>")' value="<%= ejbcawebbean.getText("ADD") %>">&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="<%= BUTTON_RENAME_CERTIFICATEPROFILES%>" onClick='return checkfieldforlegalchars("document.editcertificateprofiles.<%=TEXTFIELD_CERTIFICATEPROFILESNAME%>","<%= ejbcawebbean.getText("ONLYCHARACTERS") %>")' value="<%= ejbcawebbean.getText("RENAME") %>">&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="<%= BUTTON_CLONE_CERTIFICATEPROFILES%>" onClick='return checkfieldforlegalchars("document.editcertificateprofiles.<%=TEXTFIELD_CERTIFICATEPROFILESNAME%>","<%= ejbcawebbean.getText("ONLYCHARACTERS") %>")' value="<%= ejbcawebbean.getText("USESELECTEDASTEMPLATE") %>">
+      </td>
+    </tr>
+  </table>
+
+</form>
+

@@ -1,0 +1,100 @@
+<% 
+  TreeMap profiles     = ejbcarabean.getAuthorizedEndEntityProfileNames();
+
+%>
+
+
+<h1><%= ejbcawebbean.getText("MANAGEENDENTITYPROFILES") %></h1>
+
+<!-- <a onclick='displayHelpWindow("<%= ejbcawebbean.getHelpfileInfix("ra_help.html") + "#profiles"%>")'>
+     <u><%= ejbcawebbean.getText("HELP") %></u> </a> -->
+
+<form name="editprofiles" method="post"  action="<%= THIS_FILENAME%>">
+
+  <input type="hidden" name='<%= ACTION %>' value='<%=ACTION_EDIT_PROFILES %>'>
+
+  <table class="list">
+  <% if(triedtoeditemptyprofile){ %> 
+    <tr> 
+      <td width="40%" class="alert"><%= ejbcawebbean.getText("YOUCANTEDITEMPTYPROFILE") %></td>
+      <td width="60%"></td>
+    </tr>
+  <% } %>
+  <% if(triedtodeleteemptyprofile){ %> 
+    <tr> 
+      <td width="40%" class="alert"><%= ejbcawebbean.getText("YOUCANTDELETEEMPTYPROFILE") %></td>
+      <td width="60%"></td>
+    </tr>
+  <% } %> 
+  <% if(profileexists){ %> 
+    <tr> 
+      <td width="40%" class="alert"><%= ejbcawebbean.getText("EEPROFILEALREADYEXISTS") %></td>
+      <td width="60%"></td>
+    </tr>
+  <% } %>
+  <% if(profiledeletefailed){ %> 
+    <tr> 
+      <td width="40%" class="alert"><%= ejbcawebbean.getText("COULDNTDELETEEEPROFILE") %></td>
+      <td width="60%"></td>
+    </tr>
+  <% } %>
+  <% if(cannotcloneempty){ %> 
+    <tr> 
+      <td width="40%" class="alert"><%= ejbcawebbean.getText("YOUCANNOTUSEEMPTYPROFILE") %></td>
+      <td width="60%"></td>
+    </tr>
+  <% } %>
+    <tr> 
+      <td width="40%"><h3><%= ejbcawebbean.getText("LISTOFENDENTITYPROFILES") %></h3></td>
+      <td width="60%"></td>
+    </tr>
+    <tr> 
+      <td width="40%">
+        <select name="<%=SELECT_PROFILE%>" style="width: 50em" size="15"  >
+          <% Iterator iter = profiles.keySet().iterator();
+             while(iter.hasNext()){
+               String profilename = (String) iter.next();%>
+            <option value="<c:out value="<%= profilename %>"/>"> 
+                <c:out value="<%= profilename %>"/>
+             </option>
+          <%}%>
+        </select>
+      </td>
+      <td width="60%"></td>
+    </tr>
+    <tr> 
+      <td width="40%"> 
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="left">
+              <input type="submit" name="<%= BUTTON_EDIT_PROFILE %>" value="<%= ejbcawebbean.getText("EDITENDENTITYPROFILE") %>">
+            </td>
+            <td align="center">
+              &nbsp;
+            </td>
+            <td align="right">
+              <input class=buttonstyle type="submit" onClick="return confirm('<%= ejbcawebbean.getText("AREYOUSURE",true) %>');" name="<%= BUTTON_DELETE_PROFILE %>" value="<%= ejbcawebbean.getText("DELETEENDENTITYPROFILE") %>">
+            </td>
+          </tr>
+        </table> 
+      </td>
+      <td width="60%"></td>
+    </tr>
+  </table>
+
+  <table class="actions">
+    <tr> 
+      <td width="100%"><h3><%= ejbcawebbean.getText("ADDPROFILE") %></h3></td>
+    </tr>
+    <tr> 
+      <td width="100%"> 
+        <input type="text" name="<%=TEXTFIELD_PROFILENAME%>" size="40" maxlength="255" title="<%= ejbcawebbean.getText("FORMAT_ID_STR") %>">
+        <input type="submit" name="<%= BUTTON_ADD_PROFILE%>" onClick='return checkfieldforlegalchars("document.editprofiles.<%=TEXTFIELD_PROFILENAME%>","<%= ejbcawebbean.getText("ONLYCHARACTERS",true) %>")' value="<%= ejbcawebbean.getText("ADD") %>">&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="<%= BUTTON_RENAME_PROFILE%>" onClick='return checkfieldforlegalchars("document.editprofiles.<%=TEXTFIELD_PROFILENAME%>","<%= ejbcawebbean.getText("ONLYCHARACTERS",true) %>")' value="<%= ejbcawebbean.getText("RENAME") %>">&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="<%= BUTTON_CLONE_PROFILE%>" onClick='return checkfieldforlegalchars("document.editprofiles.<%=TEXTFIELD_PROFILENAME%>","<%= ejbcawebbean.getText("ONLYCHARACTERS",true) %>")' value="<%= ejbcawebbean.getText("USESELECTEDASTEMPLATE") %>">
+      </td>
+    </tr>
+  </table>
+
+</form>
+

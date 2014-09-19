@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!--$Id: log4j.xml 13931 2012-01-31 13:59:23Z primelars $-->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Console output -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender"> 
+		<param name="Target" value="System.out"/>
+		<param name="Threshold" value="INFO"/>
+		<layout class="org.apache.log4j.PatternLayout"> 
+			<param name="ConversionPattern" value="%d %-5p [%c] %m%n"/> 
+		</layout> 
+	</appender> 
+
+	<!-- File output -->
+	<appender name="file" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="logs/cmpProxy.log"/>
+		<param name="append" value="false" />
+		<param name="encoding" value="UTF-8" />
+		<param name="MaxFileSize" value="10MB"/>
+		<param name="MaxBackupIndex" value="20"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
+		</layout>
+	</appender>
+
+	<category name="sun.net.www.protocol.http.HttpURLConnection">
+		<priority value="INFO"/>
+	</category>
+
+	<!-- Set to INFO if you want info of every HTTP transaction -->
+	<!-- Set to DEBUG if you want ASN1 decoded output of every incoming CMP message -->
+	<category name="org.ejbca.ui.web.protocol.CmpProxyServlet">
+		<priority value="WARN"/>
+	</category>
+
+	<!-- Set to INFO if you want info of every TCP transaction -->
+	<category name="org.ejbca.ui.tcp.CmpTcpProxyCommandHandler">
+		<priority value="WARN"/>
+	</category>
+
+	<category name="org.ejbca.ui.tcp.TcpReceivedMessage">
+		<priority value="INFO"/>
+	</category>
+
+	<category name="org.quickserver">
+		<priority value="INFO"/>
+	</category>
+
+	<category name="org.cesecore.internal.InternalResources">
+		<priority value="DEBUG"/>
+	</category>
+
+	<root> 
+		<priority value="TRACE" /> 
+		<appender-ref ref="console"/>
+		<appender-ref ref="file"/>
+	</root> 
+
+</log4j:configuration>

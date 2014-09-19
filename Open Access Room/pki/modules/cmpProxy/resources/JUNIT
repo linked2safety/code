@@ -1,0 +1,12 @@
+$Id: JUNIT 9219 2010-06-15 14:21:27Z anatom $
+
+
+To test the proxy with the EJBCA CMP unit tests (runcmp) you got to have some system variables set.
+
+The variables that has to be set are:
+httpCmpProxyURL		The URL of the proxy http servlet.
+tcpCmpProxyIP		The IP address of the TCP proxy.
+tcpCmpProxyPort		The port of the TCP proxy.
+
+An example how the junit could be started:
+ant -DhttpCmpProxyURL=http://your-proxy-server:8080/cmpProxy-3.10.2/cmp -DtcpCmpProxyIP=your-proxy-server -DtcpCmpProxyPort=5587 runcmp

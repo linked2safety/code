@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>eu.ubitech.fistar.ejbcarestproxy</groupId>
+    <artifactId>EJBCARestProxyClient</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>EJBCARestProxyClient</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    
+    
+
+        <!-- EJBCA Local Dependencies -->           
+        <dependency>
+            <groupId>org.ejbca.core</groupId>
+            <artifactId>ws-cli</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+      
+        <dependency>
+            <groupId>org.ejbca.cvc </groupId>
+            <artifactId>cert-cvc</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+      
+        <dependency>
+            <groupId>org.cesecore </groupId>
+            <artifactId>cesecore</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+            
+        <dependency>
+            <groupId>org.ejbca.util </groupId>
+            <artifactId>ejbca-util</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+                  
+        <dependency>
+            <groupId>org.cesecore</groupId>
+            <artifactId>cesecore-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.cesecore</groupId>
+            <artifactId>cesecore-entity</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.ejbca.core </groupId>
+            <artifactId>ejbca-ws</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+            
+            
+                   
+                
+           
+        <!-- EJBCA Maven Dependencies -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.49</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.49</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+                
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2</version>
+        </dependency>
+                        
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.6</version>
+        </dependency>
+      
+    </dependencies>
+  
+  
+    <build>
+        <finalName>${project.artifactId}</finalName>  	        
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                </configuration>
+            </plugin>	  
+  	    
+        </plugins>
+    </build>
+  
+  
+</project>

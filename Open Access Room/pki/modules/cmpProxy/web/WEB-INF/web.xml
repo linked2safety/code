@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+
+	<display-name>CMP Proxy</display-name>
+	<description>
+		Forwarding of CMP calls to a CA
+	</description>
+
+	<servlet>
+		<servlet-name>CmpProxyServlet</servlet-name>
+		<servlet-class>org.ejbca.ui.web.protocol.CmpProxyServlet</servlet-class>
+		<init-param>
+			<param-name>title</param-name>
+			<param-value>CMP Proxy</param-value>
+			<description>Title of page.</description>
+		</init-param>
+		<!-- configFileName to be used if you want to read configuration from other paths than the default.
+		See README file for more info. -->
+		<!--init-param>
+			<param-name>configFileName</param-name>
+			<param-value>/home/lars/work/cmpProxy.properties</param-value>
+			<description>Configuration file.</description>
+		</init-param-->
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CmpProxyServlet</servlet-name>
+		<url-pattern>/cmp</url-pattern>
+	</servlet-mapping>
+	
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>restricted methods</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+            <http-method>OPTIONS</http-method>
+            <http-method>TRACE</http-method>
+        </web-resource-collection>
+        <auth-constraint />
+    </security-constraint> 
+	
+</web-app>

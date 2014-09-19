@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="cmpTcpProxy" default="build">
+	<description>
+		A stand alone CMP TCP Proxy
+	</description>
+	
+	<!--
+		TODO: This module should probably depends on ejbca-util and a cmp-library jar.
+		TODO: 
+	-->
+
+	<dirname property="this.dir" file="${ant.file.cmpTcpProxy}"/>
+	<import file="${this.dir}/../build.xml"/>
+
+    <property name="build.dir" location="${this.dir}/build-tcp"/>
+	<property name="src.dir" location="${this.dir}/src"/>
+
+	<path id="cmpTcpProxy.lib.classpath">
+		<fileset dir="${ejbca.home}/lib">
+			<include name="log4j-1.2.16.jar"/>
+			<include name="quickserver/commons-pool.jar"/>
+			<include name="quickserver/QuickServer.jar"/>
+			<include name="commons-collections-3.2.jar"/>
+			<include name="commons-configuration-1.6.jar"/>
+			<include name="commons-lang-2.5.jar"/>
+			<include name="commons-logging-1.1.1.jar"/>
+			<include name="bcprov-jdk15on-149.jar"/>
+		</fileset>
+                <path location="${mod.cesecore-entity.lib}"/>
+                <path location="${mod.cesecore-common.lib}"/>
+                <path location="${mod.cesecore-ejb-interface.lib}"/>
+	</path>
+
+	<target name="build" description="Build this module" depends="compile">
+		<pathconvert property="cmpTcpProxy.dependencies" pathsep=" ">
+			<path>
+				<fileset dir="${mod.cmpTcpProxy.dist}" includes="lib/*.jar"/>
+			</path>
+			<map from="${mod.cmpTcpProxy.dist}/" to=""/>
+		</pathconvert>
+		<jar jarfile="${mod.cmpTcpProxy.dist}/cmpTcpProxy.jar">
+			<manifest >
+				<attribute name="Class-path" value="${cmpTcpProxy.dependencies} ./ properties/" />
+				<attribute name="Main-Class" value="org.ejbca.ui.tcp.CmpTcpProxyServer"/>
+			</manifest>
+			<fileset dir="${build.dir}"/>
+			<fileset dir="${ejbca.home}/src">
+				<include name="intresources/**"/>
+			</fileset>
+			<fileset dir="${ejbca.home}/src/java">
+				<include name="dncomponents.properties"/>
+				<include name="profilemappings.properties"/>
+                <include name="defaultvalues.properties"/>
+			</fileset>  
+		</jar>
+	</target>
+
+	<target name="clean" description="Clean up this module">
+		<delete dir="${build.dir}" />
+		<delete dir="${mod.cmpTcpProxy.dist}" />
+	</target>
+
+    <target name="compile" depends="setup, cesecore-ejb-interface">
+		<mkdir dir="${build.dir}" />
+		<javac includeantruntime="yes" destdir="${build.dir}" debug="on" encoding="iso8859-1" target="${java.target.version}" classpathref="cmpTcpProxy.lib.classpath">
+			<src path="${src.dir}"/>
+			<src path="${mod.ejbca-cmp-tcp.path}/src" />
+			<src path="${ejbca.home}/src/java"/>
+			<include name="org/ejbca/ui/tcp/CmpTcpProxyServer.java" />
+		</javac>
+	</target>
+
+	<target name="setup">
+		<mkdir dir="${mod.cmpTcpProxy.dist}"/>
+		<!-- Copy all the files in the cmpTcpProxy.lib.classpath to mod.cmpTcpProxy.dist/lib -->
+		<pathconvert property="lib.cmpTcpProxy.classpath.property" pathsep=" ">
+			<path refid="cmpTcpProxy.lib.classpath" />
+			<map from="${ejbca.home}/" to=""/>
+		</pathconvert>
+		<copy todir="${mod.cmpTcpProxy.dist}/lib" flatten="true">
+			<fileset dir="${ejbca.home}" includes="${lib.cmpTcpProxy.classpath.property}"/>
+		</copy>
+		<!-- Copy scripts etc to mod.cmpTcpProxy.dist -->
+		<copy todir="${mod.cmpTcpProxy.dist}">
+			<fileset dir="${this.dir}/resources">
+				<include name="ejbcacmpTcpProxy.bat"/>
+				<include name="ejbcacmpTcpProxy.sh"/>
+				<include name="README"/>
+				<include name="JUNIT"/>
+				<include name="tcpProxy.properties"/>
+				<include name="properties/**/*.*"/>
+			</fileset>
+		</copy>
+		<chmod file="${mod.cmpTcpProxy.dist}/*.sh" perm="a+rx"/>
+	</target>
+
+</project>
