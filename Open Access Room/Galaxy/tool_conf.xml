@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<toolbox>
+  <section name="Get Data" id="getext">
+    <tool file="data_source/upload.xml"/>
+    <tool file="LMDS/lmds.xml"/>
+  </section>
+<!-- ======== Linked2Safety Tools ============== -->
+<!-- ======== Set The Target Variable ============== -->
+  <section name="Set Target Variable" id="stvTools">
+    <tool file="SetTarget/setTarget.xml"/>
+  </section>
+<!-- ======== Quality Control Tools ============== -->
+  <section name="Quality Control" id="qcTools">
+    <tool file="QualityControl/alleleFrequencyQC.xml"/>
+    <tool file="QualityControl/hardy_weinberg.xml" />
+    <tool file="QualityControl/missingDataQC.xml" />
+    <tool file="QualityControl/nonApplicableDataQC.xml" />
+  </section>
+<!-- ======== Dimensionality Reduction ============== -->
+  <section name="Dimensionality Reduction" id="drTools">
+    <tool file="DimensionalityReduction/reduce_data_rsfs.xml"/>
+    <tool file="DimensionalityReduction/reduce_data_igfs.xml" />
+    <tool file="DimensionalityReduction/reduce_data_csfs.xml" />
+  </section>
+<!-- ======== Single Hypothesis Testing Tools ============== -->
+  <section name="Single Hypothesis Testing" id="shtTools">
+    <tool file="SingleHypothesisTesting/fisherExactTest.xml" />
+    <tool file="SingleHypothesisTesting/chiSquareTest.xml" />
+    <tool file="SingleHypothesisTesting/linkageDisequilibrium.xml" />
+    <tool file="SingleHypothesisTesting/oddsRatio.xml" />
+    <tool file="SingleHypothesisTesting/BinomialLogisticRegression.xml" />
+  </section>
+ <!-- ======== Data Mining ============== -->
+  <section name="Data Mining" id="dmTools">
+    <tool file="DataMining/associationrules.xml"/>
+    <tool file="DataMining/decisiontrees.xml" />
+    <tool file="DataMining/decisiontrees_cv.xml" />
+    <tool file="DataMining/randomforest.xml" />
+    <tool file="DataMining/randomforest_cv.xml" />
+  </section>
+<!-- ======== Visualization Tools ============== -->
+  <section name="Visualizations" id="vTools">
+    <tool file="Visualizations/assocBarchart.xml" />
+    <tool file="Visualizations/assocBoxplot.xml" />
+    <tool file="Visualizations/rulesBarchart.xml"/>
+    <tool file="Visualizations/ProfilesOfEachAdverseEventBarchart.xml"/>
+    <tool file="Visualizations/AdverseEventsDrugBarchart.xml"/>
+    <tool file="Visualizations/AdverseEventsProfileBarchart.xml"/>
+    <tool file="Visualizations/knowbase.xml"/>
+  </section> 
+   <!-- ======== Adverse Events Detection ============== -->
+   <section name="Adverse Events Detection" id="adverseEventDetection">
+    <tool file="SafetyAlert/viewSafetyAlertsNotifications.xml"/>
+    <tool file="SafetyAlert/safetyAlertGeneration.xml"/>
+    <tool file="SafetyAlert/safetyAlertNotificationSubscription.xml"/>
+    <tool file="SafetyAlert/safetyAlertNotificationUnsubscribe.xml"/>
+    <tool file="SafetyAlert/viewSafetyAlertSubscriptions.xml"/>
+  </section> 
+  <!-- ======== Profile Management ============== -->
+  <section name="Profile Management" id="profile_management">
+    <tool file="VirtualProfile/view_profile.xml"/>
+    <tool file="VirtualProfile/create_profile.xml"/>
+    <tool file="VirtualProfile/modify_profile.xml"/>
+    <tool file="VirtualProfile/delete_profile.xml"/>
+  </section>
+ <!-- ======== Filtering Tools ============== -->
+  <section name="Knowledge Filtering Tools" id="filteringTools">
+    <tool file="KnowledgeExtractionAndFilteringMechanism/insertAssociationRule.xml" />
+    <tool file="KnowledgeExtractionAndFilteringMechanism/insertAssociation.xml" />
+    <tool file="KnowledgeExtractionAndFilteringMechanism/filterAssociationRule.xml" />
+    <tool file="KnowledgeExtractionAndFilteringMechanism/filterAssociation.xml" />
+  </section> 
+  
+<!-- ======== END OF Linked2Safety Tools ============== -->
+</toolbox>

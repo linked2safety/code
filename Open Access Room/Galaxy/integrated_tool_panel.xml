@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<toolbox>
+    <section id="getext" name="Get Data" version="">
+        <tool id="upload1" />
+        <tool id="qi" />
+    </section>
+    <section id="stvTools" name="Set Target Variable" version="">
+        <tool id="set_target_variable" />
+    </section>
+    <section id="qcTools" name="Quality Control" version="">
+        <tool id="allele_frequency" />
+        <tool id="hardy_weinberg" />
+        <tool id="Missing_data" />
+        <tool id="NonApplicable_data" />
+    </section>
+    <section id="fsTools" name="Feature Selection" version="">
+    </section>
+    <section id="shtTools" name="Single Hypothesis Testing" version="">
+        <tool id="fisher_exact_test" />
+        <tool id="chi_square_test" />
+        <tool id="ld_test" />
+        <tool id="oddsRatio" />
+        <tool id="Binomial_Logistic_Regression" />
+    </section>
+    <section id="drTools" name="Dimensionality Reduction" version="">
+        <tool id="reduce_data_rough_set_feature_selection" />
+        <tool id="reduce_data_information_gain_feature_selection" />
+        <tool id="reduce_data_chi_squared_feature_selection" />
+    </section>
+    <section id="knTools" name="KnowledgeExtractionAndFilteringMechanism" version="">
+    </section>
+    <section id="data_mining" name="Data Mining" version="">
+    </section>
+    <section id="dmTools" name="Data Mining" version="">
+        <tool id="associationrules" />
+        <tool id="decisiontrees" />
+        <tool id="decisiontrees_cv" />
+        <tool id="randomforest" />
+        <tool id="randomforest_cv" />
+    </section>
+    <section id="filteringTools" name="Knowledge Filtering Tools" version="">
+        <tool id="insert_association_rule" />
+        <tool id="insert_association" />
+        <tool id="filter_association_rule" />
+        <tool id="filter_association" />
+    </section>
+    <section id="vTools" name="Visualization" version="">
+        <tool id="assoc_Barchart" />
+        <tool id="assoc_Boxplot" />
+        <tool id="rules_Barchart" />
+        <tool id="profiles_of_each_adverse_event_Barchart" />
+        <tool id="adverse_events_drugs_Barchart" />
+        <tool id="adverse_events_profiles_Barchart" />
+        <tool id="kb" />
+    </section>
+    <section id="QC" name="Quality Control" version="">
+    </section>
+    <section id="adverseEventDetection" name="Adverse Events Detection" version="">
+        <tool id="view_safety_alerts_notifications" />
+        <tool id="safety_alert_notification_subscription" />
+        <tool id="safety_alert_notification_unsubscription" />
+        <tool id="view_safety_alert_notification_subscription" />
+        <tool id="generate_safety_alert" />
+    </section>
+    <section id="profile_management" name="Profile Management" version="">
+        <tool id="view_profiles" />
+        <tool id="create_profile" />
+        <tool id="modify_profile" />
+        <tool id="delete_profile" />
+    </section>
+    <section id="statTools" name="Statistical Tools" version="">
+    </section>
+    <section id="send" name="Send Data" version="">
+    </section>
+    <section id="EncodeTools" name="ENCODE Tools" version="">
+    </section>
+    <section id="liftOver" name="Lift-Over" version="">
+    </section>
+    <section id="textutil" name="Text Manipulation" version="">
+    </section>
+    <section id="filter" name="Filter and Sort" version="">
+        <label id="gff" text="GFF" version="" />
+    </section>
+    <section id="group" name="Join, Subtract and Group" version="">
+    </section>
+    <section id="convert" name="Convert Formats" version="">
+    </section>
+    <section id="features" name="Extract Features" version="">
+    </section>
+    <section id="fetchSeq" name="Fetch Sequences" version="">
+    </section>
+    <section id="fetchAlign" name="Fetch Alignments" version="">
+    </section>
+    <section id="scores" name="Get Genomic Scores" version="">
+    </section>
+    <section id="bxops" name="Operate on Genomic Intervals" version="">
+    </section>
+    <section id="stats" name="Statistics" version="">
+        <label id="gff" text="GFF" version="" />
+    </section>
+    <section id="dwt" name="Wavelet Analysis" version="">
+    </section>
+    <section id="plots" name="Graph/Display Data" version="">
+    </section>
+    <section id="regVar" name="Regional Variation" version="">
+    </section>
+    <section id="multReg" name="Multiple regression" version="">
+    </section>
+    <section id="multVar" name="Multivariate Analysis" version="">
+    </section>
+    <section id="hyphy" name="Evolution" version="">
+    </section>
+    <section id="motifs" name="Motif Tools" version="">
+    </section>
+    <section id="clustal" name="Multiple Alignments" version="">
+    </section>
+    <section id="tax_manipulation" name="Metagenomic analyses" version="">
+    </section>
+    <section id="fasta_manipulation" name="FASTA manipulation" version="">
+    </section>
+    <section id="ncbi_blast_plus_tools" name="NCBI BLAST+" version="">
+    </section>
+    <section id="NGS_QC" name="NGS: QC and manipulation" version="">
+        <label id="fastqcsambam" text="FastQC: fastq/sam/bam" version="" />
+        <label id="illumina" text="Illumina fastq" version="" />
+        <label id="454" text="Roche-454 data" version="" />
+        <label id="solid" text="AB-SOLiD data" version="" />
+        <label id="generic_fastq" text="Generic FASTQ manipulation" version="" />
+        <label id="fastx_toolkit" text="FASTX-Toolkit for FASTQ data" version="" />
+    </section>
+    <section id="picard_beta" name="NGS: Picard (beta)" version="">
+        <label id="picard_conversion" text="Conversion" version="" />
+        <label id="qcsambam" text="QC/Metrics for sam/bam" version="" />
+        <label id="picard-clean" text="bam/sam Cleaning" version="" />
+    </section>
+    <section id="solexa_tools" name="NGS: Mapping" version="">
+    </section>
+    <section id="indel_analysis" name="NGS: Indel Analysis" version="">
+    </section>
+    <section id="ngs-rna-tools" name="NGS: RNA Analysis" version="">
+        <label id="rna_seq" text="RNA-seq" version="" />
+        <label id="filtering" text="Filtering" version="" />
+    </section>
+    <section id="samtools" name="NGS: SAM Tools" version="">
+    </section>
+    <section id="gatk" name="NGS: GATK Tools (beta)" version="">
+        <label id="gatk_bam_utilities" text="Alignment Utilities" version="" />
+        <label id="gatk_realignment" text="Realignment" version="" />
+        <label id="gatk_recalibration" text="Base Recalibration" version="" />
+        <label id="gatk_genotyping" text="Genotyping" version="" />
+        <label id="gatk_annotation" text="Annotation" version="" />
+        <label id="gatk_filtration" text="Filtration" version="" />
+        <label id="gatk_variant_quality_score_recalibration" text="Variant Quality Score Recalibration" version="" />
+        <label id="gatk_variant_utilities" text="Variant Utilities" version="" />
+    </section>
+    <section id="peak_calling" name="NGS: Peak Calling" version="">
+    </section>
+    <section id="ngs-simulation" name="NGS: Simulation" version="">
+    </section>
+    <section id="rgdat" name="SNP/WGA: Data; Filters" version="">
+        <label id="rgimport" text="Data: Import and upload" version="" />
+        <label id="rgfilter" text="Data: Filter and Clean" version="" />
+        <label id="rgsim" text="Simulate" version="" />
+    </section>
+    <section id="rgqcplot" name="SNP/WGA: QC; LD; Plots" version="">
+        <label id="rgvisual" text="QC; Eigenstrat" version="" />
+        <label id="rgld" text="LD; Manhattan/QQ; GRR" version="" />
+    </section>
+    <section id="rgmodel" name="SNP/WGA: Statistical Models" version="">
+    </section>
+    <section id="hgv" name="Phenotype Association" version="">
+    </section>
+    <section id="vcf_tools" name="VCF Tools" version="">
+    </section>
+</toolbox>

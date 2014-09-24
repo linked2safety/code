@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<datatypes>
+  <registration converters_path="lib/galaxy/datatypes/converters" display_path="display_applications">
+    <datatype extension="csv" type="galaxy.datatypes.csvDatacube:CSV" display_in_upload="true" /> 
+    <datatype extension="sif" type="galaxy.datatypes.csvDatacube:CSV" display_in_upload="true" />
+    <datatype extension="txt" type="galaxy.datatypes.data:Text" display_in_upload="false"/>
+    <datatype extension="pdf" type="galaxy.datatypes.images:Pdf" mimetype="application/pdf" display_in_upload="false"/>
+  </registration>
+  <sniffers>
+    <!--
+    The order in which Galaxy attempts to determine data types is
+    important because some formats are much more loosely defined
+    than others.  The following list should be the most rigidly
+    defined format first, followed by next-most rigidly defined,
+    and so on.
+    -->
+    <sniffer type="galaxy.datatypes.csvDatacube:CSV"/>
+    <sniffer type="galaxy.datatypes.images:Pdf"/>
+
+  </sniffers>
+</datatypes>

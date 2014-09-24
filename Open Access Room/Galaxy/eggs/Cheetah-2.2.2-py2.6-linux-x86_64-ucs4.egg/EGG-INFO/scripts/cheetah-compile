@@ -1,0 +1,3 @@
+#!/afs/bx.psu.edu/project/pythons/linux-x86_64-ucs4/bin/python2.6
+from Cheetah.CheetahWrapper import _cheetah_compile
+_cheetah_compile()

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<toolbox>
+  <section name="Get Data" id="getext">
+    <tool file="data_source/upload.xml"/>
+  </section>
+<!-- ======== Linked2Safety Tools ============== -->
+<!-- ======== Quality Control Tools ============== -->
+  <section name="Quality Control" id="QC">
+    <tool file="Preprocessing/alleleFrequencyQC.xml"/>
+    <tool file="Preprocessing/hardy_weinberg.xml" />
+    <tool file="Preprocessing/missingDataQC.xml" />
+  </section>
+<!-- ======== Statistical Tools ============== -->
+  <section name="Statistical Tools" id="statTools">
+    <tool file="Statistics/fisherExactTest.xml" />
+    <tool file="Statistics/chiSquareTest.xml" />
+    <tool file="Statistics/linkageDisequilibrium.xml" />
+  </section>
+<!-- ======== END OF Linked2Safety Tools ============== -->
+<!--
+  <section name="Text Manipulation" id="textutil">
+    <tool file="filters/fixedValueColumn.xml" />
+    <tool file="stats/column_maker.xml" />
+    <tool file="filters/catWrapper.xml" />
+    <tool file="filters/cutWrapper.xml" />
+    <tool file="filters/mergeCols.xml" />
+    <tool file="filters/convert_characters.xml" />
+    <tool file="filters/CreateInterval.xml" />
+    <tool file="filters/cutWrapper.xml" />
+    <tool file="filters/changeCase.xml" />
+    <tool file="filters/pasteWrapper.xml" />
+    <tool file="filters/remove_beginning.xml" />
+    <tool file="filters/randomlines.xml" />
+    <tool file="filters/headWrapper.xml" />
+    <tool file="filters/tailWrapper.xml" />
+    <tool file="filters/trimmer.xml" />
+    <tool file="filters/wc_gnu.xml" />
+    <tool file="filters/secure_hash_message_digest.xml" />
+    <tool file="stats/dna_filtering.xml" />
+    <tool file="new_operations/tables_arithmetic_operations.xml" />
+  </section>
+  <section name="Graph/Display Data" id="plots">
+    <tool file="plotting/histogram2.xml" />
+    <tool file="plotting/scatterplot.xml" />
+    <tool file="plotting/bar_chart.xml" />
+    <tool file="plotting/xy_plot.xml" />
+    <tool file="plotting/boxplot.xml" />
+    <tool file="visualization/GMAJ.xml" />
+    <tool file="visualization/LAJ.xml" />
+    <tool file="visualization/build_ucsc_custom_track.xml" />
+    <tool file="maf/vcf_to_maf_customtrack.xml" />
+    <tool file="mutation/visualize.xml" />
+  </section>
+  <section name="Multiple regression" id="multReg">
+    <tool file="regVariation/linear_regression.xml" />
+    <tool file="regVariation/logistic_regression_vif.xml" />
+    <tool file="regVariation/best_regression_subsets.xml" />
+    <tool file="regVariation/rcve.xml" />
+    <tool file="regVariation/partialR_square.xml" />
+  </section>
+  <section name="Multivariate Analysis" id="multVar">
+    <tool file="multivariate_stats/pca.xml" />
+    <tool file="multivariate_stats/cca.xml" />
+    <tool file="multivariate_stats/kpca.xml" />
+    <tool file="multivariate_stats/kcca.xml" />
+  </section>
+-->
+</toolbox>
