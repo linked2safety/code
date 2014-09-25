@@ -1,0 +1,11 @@
+('C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\build\\build\\linked2safety.win32\\out00-PKG.pkg',
+ {'BINARY': 1,
+  'DATA': 1,
+  'EXECUTABLE': 1,
+  'EXTENSION': 1,
+  'PYMODULE': 1,
+  'PYSOURCE': 1},
+ [('out00-PYZ.pyz', 'C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\build\\build\\linked2safety.win32\\out00-PYZ.pyz', 'PYZ'), ('struct', 'C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\python_x86\\lib\\struct.pyc', 'PYMODULE'), ('pyi_os_path', 'C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\build\\pyinstaller-2.1\\PyInstaller\\loader\\pyi_os_path.pyc', 'PYMODULE'), ('pyi_archive', 'C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\build\\pyinstaller-2.1\\PyInstaller\\loader\\pyi_archive.pyc', 'PYMODULE'), ('pyi_importers', 'C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\build\\pyinstaller-2.1\\PyInstaller\\loader\\pyi_importers.pyc', 'PYMODULE'), ('_pyi_bootstrap', 'C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\build\\pyinstaller-2.1\\PyInstaller\\loader\\_pyi_bootstrap.py', 'PYSOURCE'), ('pyi_carchive', 'C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\build\\pyinstaller-2.1\\PyInstaller\\loader\\pyi_carchive.py', 'PYSOURCE'), ('linked2safety', 'C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\application\\linked2safety.py', 'PYSOURCE'), ('linked2safety.win32.exe.manifest', 'C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\build\\build\\linked2safety.win32\\linked2safety.win32.exe.manifest', 'BINARY')],
+ 1,
+ None,
+ False)

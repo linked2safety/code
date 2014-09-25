@@ -1,0 +1,38 @@
+{#
+This code is licensed under the GNU General Public License, version 3.0 (GPL-3.0)
+For details see: http://opensource.org/licenses/GPL-3.0
+#}
+{% extends "layouts/default.html" %}
+
+{% block title %}Welcome to Linked2Safety{% end %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ static_url("css/home.css") }}" />
+{% end %}
+
+{% block js %}
+{% end %}
+
+{% block menu %}
+    <a href="/mapping/" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false">
+        <span class="ui-button-icon-primary ui-icon ui-icon-shuffle"></span>
+        <span class="ui-button-text">Mapping</span>
+    </a>
+    <a href="/transform/" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary" role="button" aria-disabled="false">
+        <span class="ui-button-icon-primary ui-icon ui-icon-gear"></span>
+        <span class="ui-button-text">Transform</span>
+    </a>
+{% end %}
+
+{% block body %}
+<div class="content">
+	<h2>Linked2Safety Project</h2>
+    <p>A Next-Generation, Secure Linked Data Medical Information Space For Semantically-Interconnecting Electronic Health Records and Clinical Trials Systems Advancing Patients Safety In Clinical Research</p>
+	<h3>Mapping Tool</h3>
+	<p>This tool represents the EHR and EDC Schema Mapping and Alignment Component and performs the actual mapping and alignment of EHRs and EDCs to the reference Common EHR Schema of Linked2Safety.</p>
+	<p>This tool facilitates the representation of medical information and enables extensive processing of health data coming from heterogeneous sources, regardless of originating application.</p>
+	<h3>Transformation Tool</h3>
+	<p>This tool represents the Transformation to Common Schema Component and performs the actual transformation of EHRs and EDCs to the reference Common EHR Schema of Linked2Safety.</p>
+	<p>This component enables the automatic transformation of medical information mapped and aligned using the previous component.</p>
+</div>
+{% end %}

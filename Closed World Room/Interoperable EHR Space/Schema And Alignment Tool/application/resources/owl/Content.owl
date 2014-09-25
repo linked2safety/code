@@ -1,0 +1,1180 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY cont "http://www.openehr.org/owl/v1/Content#" >
+    <!ENTITY stru "http://www.openehr.org/owl/v1/Structure#" >
+    <!ENTITY type "http://www.openehr.org/owl/v1/BaseTypes#" >
+    <!ENTITY ehr "http://www.openehr.org/owl/v1/Annotations#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.openehr.org/owl/v1/Content#"
+     xml:base="http://www.openehr.org/owl/v1/Content"
+     xmlns:stru="http://www.openehr.org/owl/v1/Structure#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ehr="http://www.openehr.org/owl/v1/Annotations#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:type="http://www.openehr.org/owl/v1/BaseTypes#"
+     xmlns:cont="http://www.openehr.org/owl/v1/Content#">
+    <owl:Ontology rdf:about="http://www.openehr.org/owl/v1/Content">
+        <rdfs:label>Linked2Safety Common EHR Schema</rdfs:label>
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <rdfs:comment>Linked2Safety Common EHR Schema - Content
+based on the openEHR EHR Reference Model (RM) v1.0.2</rdfs:comment>
+        <owl:imports rdf:resource="http://www.openehr.org/owl/v1/Structure"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#activities -->
+
+    <owl:ObjectProperty rdf:about="&cont;activities">
+        <rdfs:range rdf:resource="&cont;ACTIVITY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#careflow_step -->
+
+    <owl:ObjectProperty rdf:about="&cont;careflow_step">
+        <rdfs:range rdf:resource="&type;DV_CODED_TEXT"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#current_state -->
+
+    <owl:ObjectProperty rdf:about="&cont;current_state">
+        <rdfs:range rdf:resource="&type;DV_CODED_TEXT"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#data -->
+
+    <owl:ObjectProperty rdf:about="&cont;data">
+        <rdfs:range rdf:resource="&stru;LOCATABLE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#description -->
+
+    <owl:ObjectProperty rdf:about="&cont;description">
+        <rdfs:range rdf:resource="&stru;ITEM_STRUCTURE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#encoding -->
+
+    <owl:ObjectProperty rdf:about="&cont;encoding">
+        <rdfs:range rdf:resource="&type;CODE_PHRASE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#expiry_time -->
+
+    <owl:ObjectProperty rdf:about="&cont;expiry_time">
+        <rdfs:range rdf:resource="&type;DV_DATE_TIME"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#guideline_id -->
+
+    <owl:ObjectProperty rdf:about="&cont;guideline_id">
+        <rdfs:range rdf:resource="&type;OBJECT_REF"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#instruction_details -->
+
+    <owl:ObjectProperty rdf:about="&cont;instruction_details">
+        <rdfs:range rdf:resource="&cont;INSTRUCTION_DETAILS"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#instruction_id -->
+
+    <owl:ObjectProperty rdf:about="&cont;instruction_id">
+        <rdfs:range rdf:resource="&type;LOCATABLE_REF"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#ism_transition -->
+
+    <owl:ObjectProperty rdf:about="&cont;ism_transition">
+        <rdfs:range rdf:resource="&cont;ISM_TRANSITION"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#narrative -->
+
+    <owl:ObjectProperty rdf:about="&cont;narrative">
+        <rdfs:range rdf:resource="&type;DV_TEXT"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#other_participations -->
+
+    <owl:ObjectProperty rdf:about="&cont;other_participations">
+        <rdfs:range rdf:resource="&type;PARTICIPATION"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#protocol -->
+
+    <owl:ObjectProperty rdf:about="&cont;protocol">
+        <rdfs:range rdf:resource="&stru;ITEM_STRUCTURE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#provider -->
+
+    <owl:ObjectProperty rdf:about="&cont;provider">
+        <rdfs:range rdf:resource="&type;PARTY_PROXY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#state -->
+
+    <owl:ObjectProperty rdf:about="&cont;state">
+        <rdfs:range rdf:resource="&stru;HISTORY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#time -->
+
+    <owl:ObjectProperty rdf:about="&cont;time">
+        <rdfs:range rdf:resource="&type;DV_DATE_TIME"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#timing -->
+
+    <owl:ObjectProperty rdf:about="&cont;timing">
+        <rdfs:range rdf:resource="&type;DV_PARSABLE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#transition -->
+
+    <owl:ObjectProperty rdf:about="&cont;transition">
+        <rdfs:range rdf:resource="&type;DV_CODED_TEXT"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#wf_definition -->
+
+    <owl:ObjectProperty rdf:about="&cont;wf_definition">
+        <rdfs:range rdf:resource="&type;DV_PARSABLE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#wf_details -->
+
+    <owl:ObjectProperty rdf:about="&cont;wf_details">
+        <rdfs:range rdf:resource="&stru;ITEM_STRUCTURE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#work_flow_id -->
+
+    <owl:ObjectProperty rdf:about="&cont;work_flow_id">
+        <rdfs:range rdf:resource="&type;OBJECT_REF"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#action_archetype_id -->
+
+    <owl:DatatypeProperty rdf:about="&cont;action_archetype_id">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#activity_id -->
+
+    <owl:DatatypeProperty rdf:about="&cont;activity_id">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#ACTION -->
+
+    <owl:Class rdf:about="&cont;ACTION">
+        <rdfs:subClassOf rdf:resource="&cont;CARE_ENTRY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;description"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;time"/>
+                <owl:onClass rdf:resource="&type;DV_DATE_TIME"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;instruction_details"/>
+                <owl:onClass rdf:resource="&cont;INSTRUCTION_DETAILS"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;ism_transition"/>
+                <owl:onClass rdf:resource="&cont;ISM_TRANSITION"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:Purpose>Used to record a clinical action that has been performed, which may have been ad-hoc, or due to the execution of an Activity in an Instruction workflow. Every Action corresponds to a careflow step of some kind or another.</ehr:Purpose>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:HL7></ehr:HL7>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:Use></ehr:Use>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Details of transition in the Instruction state machine caused by this Action.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ACTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;ism_transition"/>
+                <owl:onClass rdf:resource="&cont;ISM_TRANSITION"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Description of the activity to be performed, in the form of an archetyped structure.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ACTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;description"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Point in time at which this action completed.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ACTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;time"/>
+                <owl:onClass rdf:resource="&type;DV_DATE_TIME"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Details to of the Instruction that caused this Action to be performed, if there was one.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ACTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;instruction_details"/>
+                <owl:onClass rdf:resource="&cont;INSTRUCTION_DETAILS"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#ACTIVITY -->
+
+    <owl:Class rdf:about="&cont;ACTIVITY">
+        <rdfs:subClassOf rdf:resource="&stru;LOCATABLE"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;action_archetype_id"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;description"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;timing"/>
+                <owl:onClass rdf:resource="&type;DV_PARSABLE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:Purpose>Defines a single activity within an Instruction, such as a medication administration.</ehr:Purpose>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:HL7></ehr:HL7>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:Use></ehr:Use>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Perl-compliant regular expression pattern, enclosed in ‘//’ delimiters, indicating the valid archetype identifiers of archetypes for Actions corresponding to this Activity specification.
+Defaults to “/.*/”, meaning any archetype.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ACTIVITY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;action_archetype_id"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Timing of the activity, in the form of a parsable string, such as an HL7 GTS or ISO8601 string.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ACTIVITY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;timing"/>
+                <owl:onClass rdf:resource="&type;DV_PARSABLE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Description of the activity, in the form of an archetyped structure.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ACTIVITY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;description"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#ADMIN_ENTRY -->
+
+    <owl:Class rdf:about="&cont;ADMIN_ENTRY">
+        <rdfs:subClassOf rdf:resource="&cont;ENTRY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;data"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:Use>Used for admistrative details of admission, episode, ward location, discharge, appointment (if not stored in a practice management or appointments system).</ehr:Use>
+        <ehr:Purpose>Entry subtype for administrative information, i.e. information about setting up the clinical process, but not itself clinically relevant. Archetypes will define contained information.</ehr:Purpose>
+        <ehr:HL7></ehr:HL7>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:MisUse>Not used for any clinically significant information.</ehr:MisUse>
+        <ehr:ISO18308></ehr:ISO18308>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>The data of the Entry; modelled in archetypes.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ADMIN_ENTRY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;data"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#CARE_ENTRY -->
+
+    <owl:Class rdf:about="&cont;CARE_ENTRY">
+        <rdfs:subClassOf rdf:resource="&cont;ENTRY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;guideline_id"/>
+                <owl:onClass rdf:resource="&type;OBJECT_REF"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;protocol"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:Use></ehr:Use>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:Purpose>The abstract parent of all clinical ENTRY subtypes. A CARE_ENTRY defines protocol and guideline attributes for all clinical Entry subtypes.</ehr:Purpose>
+        <ehr:Abstract>true</ehr:Abstract>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:HL7></ehr:HL7>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Description of the method (i.e. how) the information in this entry was arrived at. For OBSERVATIONs, this is a description of the method or instrument used. For EVALUATIONs, how the evaluation was arrived at. For INSTRUCTIONs, how to execute the Instruction.
+This may take the form of references to guidelines, including manually followed and executable; knowledge references such as a paper in Medline; clinical reasons within a largercare process.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;CARE_ENTRY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;protocol"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Optional external identifier of guideline creating this action if relevant.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;CARE_ENTRY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;guideline_id"/>
+                <owl:onClass rdf:resource="&type;OBJECT_REF"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#CONTENT_ITEM -->
+
+    <owl:Class rdf:about="&cont;CONTENT_ITEM">
+        <rdfs:subClassOf rdf:resource="&stru;LOCATABLE"/>
+        <ehr:Purpose>Abstract ancestor of all concrete content types.</ehr:Purpose>
+        <ehr:Abstract>true</ehr:Abstract>
+    </owl:Class>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#ENTRY -->
+
+    <owl:Class rdf:about="&cont;ENTRY">
+        <rdfs:subClassOf rdf:resource="&cont;CONTENT_ITEM"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&type;language"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;work_flow_id"/>
+                <owl:onClass rdf:resource="&type;OBJECT_REF"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;encoding"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;provider"/>
+                <owl:onClass rdf:resource="&type;PARTY_PROXY"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&type;subject"/>
+                <owl:onClass rdf:resource="&type;PARTY_PROXY"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;other_participations"/>
+                <owl:allValuesFrom rdf:resource="&type;PARTICIPATION"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:HL7>Act</ehr:HL7>
+        <ehr:CEN13606>Cluster OCC (ENV 13606:2000); Entry (prEN 13606:2006)</ehr:CEN13606>
+        <ehr:Purpose>The abstract parent of all ENTRY subtypes. An ENTRY is the root of a logical item of “hard” clinical information created in the “clinical statement” context, within a clinical session. There can be numerous such contexts in a clinical session. Observations and other Entry types only ever document information captured/created in the event documented by the enclosing Composition.
+An ENTRY is also the minimal unit of information any query should return, since a whole ENTRY (including sub-parts) records spatial structure, timing information, and contextual information, as well as the subject and generator of the information.</ehr:Purpose>
+        <ehr:Use></ehr:Use>
+        <ehr:Abstract>true</ehr:Abstract>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Id of human subject of this ENTRY, e.g.:
+- organ donor
+- foetus
+- a family member
+- another clinically relevant person.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ENTRY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&type;subject"/>
+                <owl:onClass rdf:resource="&type;PARTY_PROXY"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Identifier of externally held workflow engine data for this workflow execution, for this subject of care.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ENTRY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;work_flow_id"/>
+                <owl:onClass rdf:resource="&type;OBJECT_REF"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Other participations at ENTRY level.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ENTRY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;other_participations"/>
+                <owl:allValuesFrom rdf:resource="&type;PARTICIPATION"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Optional identification of provider of the information in this ENTRY, which might be:
+- the patient
+- a patient agent, e.g. parent, guardian
+- the clinician
+- a device or software
+Generally only used when the recorder needs to make it explicit. Otherwise, Composition composer and other participants are assumed.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ENTRY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;provider"/>
+                <owl:onClass rdf:resource="&type;PARTY_PROXY"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Name of character set in which text values in this Entry are encoded. Coded from openEHR Code Set “character sets”.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ENTRY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;encoding"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment> indicator of the localised language in which this Entry is written. Coded from openEHR Code Set “languages”.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ENTRY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&type;language"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#EVALUATION -->
+
+    <owl:Class rdf:about="&cont;EVALUATION">
+        <rdfs:subClassOf rdf:resource="&cont;CARE_ENTRY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;data"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:Use>Used for all kinds of statements which evaluate other information, such as interpretations of obvservations, diagnoses, differential diagnoses, hypotheses, risk assessments, goals and plans.</ehr:Use>
+        <ehr:MisUse>Should not be used for actionable statements such as medication orders - these are represented using the INSTRUCTION type.</ehr:MisUse>
+        <ehr:Purpose>Entry type for evaluation statements.</ehr:Purpose>
+        <ehr:HL7>In HL7v3, diagnoses etc seem to be Observations.</ehr:HL7>
+        <ehr:ISO18308></ehr:ISO18308>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>The data of this evaluation, in the form of a spatial data structure.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;EVALUATION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;data"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#GENERIC_ENTRY -->
+
+    <owl:Class rdf:about="&cont;GENERIC_ENTRY">
+        <rdfs:subClassOf rdf:resource="&cont;CONTENT_ITEM"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;data"/>
+                <owl:onClass rdf:resource="&stru;ITEM_TREE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:HL7></ehr:HL7>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:Use></ehr:Use>
+        <ehr:CEN13606>Entry</ehr:CEN13606>
+        <ehr:Purpose>This class is used to create intermediate representations of data from sources not otherwise conforming to openEHR classes, such as HL7 messages, relational databases and so on.</ehr:Purpose>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>The ‘data’ from the source message or record.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;GENERIC_ENTRY"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;data"/>
+                <owl:onClass rdf:resource="&stru;ITEM_TREE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#INSTRUCTION -->
+
+    <owl:Class rdf:about="&cont;INSTRUCTION">
+        <rdfs:subClassOf rdf:resource="&cont;CARE_ENTRY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;activities"/>
+                <owl:allValuesFrom rdf:resource="&cont;ACTIVITY"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;expiry_time"/>
+                <owl:onClass rdf:resource="&type;DV_DATE_TIME"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;wf_definition"/>
+                <owl:onClass rdf:resource="&type;DV_PARSABLE"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;narrative"/>
+                <owl:onClass rdf:resource="&type;DV_TEXT"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:Use>Used for any actionable statement such as medication and therapeutic orders, monitoring, recall and review. Enough details must be provided for the specification to be directly executed by an actor, either human or machine.</ehr:Use>
+        <ehr:MisUse>Not to be used for plan items which are only specified in general terms.</ehr:MisUse>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:HL7>Act subtype Substance_administration, any Act type which is really an action specification (cf an Act in the past)</ehr:HL7>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:Purpose>Used to specify actions in the future. Enables simple and complex specifications to be expressed, including in a fully-computable workflow form.</ehr:Purpose>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Mandatory human-readable version of what the Instruction is about.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;INSTRUCTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;narrative"/>
+                <owl:onClass rdf:resource="&type;DV_TEXT"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Optional expiry date/time to assist determination of when an Instruction can be assumed to have expired. This helps prevent false listing of Instructions as Active when they clearly must have been terminated in some way or other.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;INSTRUCTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;expiry_time"/>
+                <owl:onClass rdf:resource="&type;DV_DATE_TIME"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Optional workflow engine executable expression of the Instruction.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;INSTRUCTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;wf_definition"/>
+                <owl:onClass rdf:resource="&type;DV_PARSABLE"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>List of all activities in Instruction.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;INSTRUCTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;activities"/>
+                <owl:allValuesFrom rdf:resource="&cont;ACTIVITY"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#INSTRUCTION_DETAILS -->
+
+    <owl:Class rdf:about="&cont;INSTRUCTION_DETAILS">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;instruction_id"/>
+                <owl:onClass rdf:resource="&type;LOCATABLE_REF"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;wf_details"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;activity_id"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:Use></ehr:Use>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:Purpose>Used to record details of the Instruction causing an Action.</ehr:Purpose>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:HL7></ehr:HL7>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Reference to causing Instruction.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;INSTRUCTION_DETAILS"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;instruction_id"/>
+                <owl:onClass rdf:resource="&type;LOCATABLE_REF"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Identifier of Activity within Instruction, in the form of its archetype path.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;INSTRUCTION_DETAILS"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;activity_id"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Various workflow engine state details, potentially including such things as:
+- condition that fired to cause this Action to be done (with actual variables substituted);
+- list of notifications which actually occurred (with all variables substituted);
+- other workflow engine state.
+This specification does not currently define the actual structure or semantics of this field.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;INSTRUCTION_DETAILS"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;wf_details"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#ISM_TRANSITION -->
+
+    <owl:Class rdf:about="&cont;ISM_TRANSITION">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;transition"/>
+                <owl:onClass rdf:resource="&type;DV_CODED_TEXT"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;current_state"/>
+                <owl:onClass rdf:resource="&type;DV_CODED_TEXT"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;careflow_step"/>
+                <owl:onClass rdf:resource="&type;DV_CODED_TEXT"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:HL7></ehr:HL7>
+        <ehr:Purpose>Model of a transition in the Instruction State machine, caused by a careflow step. The attributes document the careflow step as well as the ISM transition.</ehr:Purpose>
+        <ehr:Use></ehr:Use>
+        <ehr:CEN13606></ehr:CEN13606>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:ISO18308></ehr:ISO18308>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>The ISM current state. Coded by openEHR terminology group “Instruction states”.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ISM_TRANSITION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;current_state"/>
+                <owl:onClass rdf:resource="&type;DV_CODED_TEXT"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>The ISM transition which occurred to arrive in the current_state. Coded by openEHR terminology group “Instruction transitions”.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ISM_TRANSITION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;transition"/>
+                <owl:onClass rdf:resource="&type;DV_CODED_TEXT"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>The step in the careflow process which occurred as part of generating this action, e.g. “dispense”, “start_administration”. This attribute represents the clinical label for the activity, as opposed to current_state which represents the state machine (ISM) computable form. Defined in archetype.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;ISM_TRANSITION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;careflow_step"/>
+                <owl:onClass rdf:resource="&type;DV_CODED_TEXT"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#OBSERVATION -->
+
+    <owl:Class rdf:about="&cont;OBSERVATION">
+        <rdfs:subClassOf rdf:resource="&cont;CARE_ENTRY"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;data"/>
+                <owl:onClass rdf:resource="&stru;HISTORY"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;state"/>
+                <owl:onClass rdf:resource="&stru;HISTORY"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:MisUse>Not used for recording opinion or future statements of any kind, including instructions, intentions, plans etc.</ehr:MisUse>
+        <ehr:CEN13606>Cluster</ehr:CEN13606>
+        <ehr:Use>OBSERVATION is used for all notionally objective (i.e. measured in some way) observations of phenomena, and patient-reported phenomena, e.g. pain.</ehr:Use>
+        <ehr:HL7>Observation</ehr:HL7>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:Purpose>Entry subtype for all clinical data in the past or present, i.e. which (by the time it is recorded) has already occurred. OBSERVATION data is expressed using the class HISTORY&lt;T&gt;, which guarantees that it is situated in time.</ehr:Purpose>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>The data of this observation, in the form of a history of values which may be of any complexity.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;OBSERVATION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;data"/>
+                <owl:onClass rdf:resource="&stru;HISTORY"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Optional recording of the state of subject of this observation during the observation process, in the form of a separate history of values which may be of any complexity. State may also be recorded within the History of the data attribute.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;OBSERVATION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&cont;state"/>
+                <owl:onClass rdf:resource="&stru;HISTORY"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Content#SECTION -->
+
+    <owl:Class rdf:about="&cont;SECTION">
+        <rdfs:subClassOf rdf:resource="&cont;CONTENT_ITEM"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;items"/>
+                <owl:allValuesFrom rdf:resource="&cont;CONTENT_ITEM"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:MisUse>Should not be used instead of ENTRY hierarchical structures.</ehr:MisUse>
+        <ehr:HL7>CDA Heading.</ehr:HL7>
+        <ehr:Use>Created according to archetyped structures for typical headings such as SOAP, physical examination, but also pathology result heading structures.</ehr:Use>
+        <ehr:Purpose>Represents a heading in a heading structure, or “section tree”.</ehr:Purpose>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:CEN13606>Headed_section</ehr:CEN13606>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>Ordered list of content items under this section, which may include:
+- more SECTIONs
+- ENTRYs</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&cont;SECTION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&stru;items"/>
+                <owl:allValuesFrom rdf:resource="&cont;CONTENT_ITEM"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <rdf:Description>
+        <rdfs:comment>List of all activities in Instruction.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Name of character set in which text values in this Entry are encoded. Coded from openEHR Code Set “character sets”.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Optional identification of provider of the information in this ENTRY, which might be:
+- the patient
+- a patient agent, e.g. parent, guardian
+- the clinician
+- a device or software
+Generally only used when the recorder needs to make it explicit. Otherwise, Composition composer and other participants are assumed.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Optional workflow engine executable expression of the Instruction.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Mandatory human-readable version of what the Instruction is about.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Timing of the activity, in the form of a parsable string, such as an HL7 GTS or ISO8601 string.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Description of the activity, in the form of an archetyped structure.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Reference to causing Instruction.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Identifier of Activity within Instruction, in the form of its archetype path.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Other participations at ENTRY level.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Point in time at which this action completed.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Optional external identifier of guideline creating this action if relevant.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The data of the Entry; modelled in archetypes.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Mandatory indicator of the localised language in which this Entry is written. Coded from openEHR Code Set “languages”.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Details of transition in the Instruction state machine caused by this Action.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Description of the activity to be performed, in the form of an archetyped structure.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Various workflow engine state details, potentially including such things as:
+- condition that fired to cause this Action to be done (with actual variables substituted);
+- list of notifications which actually occurred (with all variables substituted);
+- other workflow engine state.
+This specification does not currently define the actual structure or semantics of this field.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Perl-compliant regular expression pattern, enclosed in ‘//’ delimiters, indicating the valid archetype identifiers of archetypes for Actions corresponding to this Activity specification.
+			Defaults to “/.*/”, meaning any archetype.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The ‘data’ from the source message or record.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Identifier of externally held workflow engine data for this workflow execution, for this subject of care.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Reference to causing Instruction.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The step in the careflow process which occurred as part of generating this action, e.g. “dispense”, “start_administration”. This attribute represents the clinical label for the activity, as opposed to current_state which represents the state machine (ISM) computable form. Defined in archetype.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Identifier of Activity within Instruction, in the form of its archetype path.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The data of this evaluation, in the form of a spatial data structure.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The ISM current state. Coded by openEHR terminology group “Instruction states”.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Optional recording of the state of subject of this observation during the observation process, in the form of a separate history of values which may be of any complexity. State may also be recorded within the History of the data attribute.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Optional expiry date/time to assist determination of when an Instruction can be assumed to have expired. This helps prevent false listing of Instructions as Active when they clearly must have been terminated in some way or other.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Id of human subject of this ENTRY, e.g.:
+- organ donor
+- foetus
+- a family member
+- another clinically relevant person.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The ISM transition which occurred to arrive in the current_state. Coded by openEHR terminology group “Instruction transitions”.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Description of the method (i.e. how) the information in this entry was arrived at. For OBSERVATIONs, this is a description of the method or instrument used. For EVALUATIONs, how the evaluation was arrived at. For INSTRUCTIONs, how to execute the Instruction.
+This may take the form of references to guidelines, including manually followed and executable; knowledge references such as a paper in Medline; clinical reasons within a largercare process.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Ordered list of content items under this section, which may include:
+- more SECTIONs
+- ENTRYs</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The data of this observation, in the form of a history of values which may be of any complexity.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Details to of the Instruction that caused this Action to be performed, if there was one.</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+

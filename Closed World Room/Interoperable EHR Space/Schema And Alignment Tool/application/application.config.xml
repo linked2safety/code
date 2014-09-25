@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<configs>
+    <config name="version" value="v1.1.2014.828" />
+    <config name="providerName" value="Linked2Safety" />
+    <config name="mappingDescription" ><![CDATA[<enter description here>]]></config>
+    <config name="browseFileOn" value="server" />
+    <config name="port" value="8888" />
+    <config name="address" value="127.0.0.1" />
+    <config name="rdfIncludeEmptyAttributes" value="true" />
+    <config name="useMedDRA" value="false" />
+    <!-- Specify if the application will group the sub properties under the name of the parent property-->
+    <config name="groupSubProperties" value="false" />
+    <!-- Specify if the application will use sub properties defined in the owl structure -->
+    <config name="useOwlSubproperties" value="true" />
+    <!-- Specify if the application will use sub properties defined in the owl structure only within the MedDRA section -->
+    <config name="useMedDRAOwlSubproperties" value="true" />
+    
+    <config name="LastBrowsingLocation" value="." />
+    <config name="LastBrowsingLocationRaw" value="." />
+    <config name="LastBrowsingLocationMapping" value="." />
+    <config name="LastBrowsingLocationOutput" value="." />
+    
+    <config name="owlAttributesFiles">
+        <!-- List of owl files from where owl attributes should be retrieved-->
+        <!--<item>Variables.owl</item>-->
+        <item>L2S_CTO-1.0.23.owl</item>
+    </config>
+    <config name="owlNamespaces">
+        <!--
+            List of namspace aliases for owl files:
+            name - is the alias
+            value - is the namespace
+            Sample:
+            <item name="alias" value="namespace-uri" />
+        -->
+        <item name="rdfs"                   value="http://www.w3.org/2000/01/rdf-schema#" />
+        <item name="owl"                    value="http://www.w3.org/2002/07/owl#" />
+        <item name="xsd"                    value="http://www.w3.org/2001/XMLSchema#" />
+        <item name="rdf"                    value="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+        <item name="obo"                    value="http://purl.obolibrary.org/obo/" />
+        <item name="ehr"                    value="http://www.openehr.org/owl/v1/Annotations#" />
+        <item name="type"                   value="http://www.openehr.org/owl/v1/BaseTypes#" />
+        <item name="cont"                   value="http://www.openehr.org/owl/v1/Content#" />
+        <item name="arch"                   value="http://www.openehr.org/owl/v1/Archetype#" />
+        <item name="cehr"                   value="http://www.linked2safety-project.eu/owl/v1/Variables#" />
+        <item name="sehr"                   value="http://hcls.deri.ie/l2s/sehr/1.0#" />
+        <item name="chuv"                   value="http://hcls.deri.ie/l2s/sehr/chuv/1.0#" />
+        <item name="chuvPsycDis"            value="http://hcls.deri.ie/l2s/chuv/1.0#" />
+        <item name="cing"                   value="http://hcls.deri.ie/l2s/sehr/cing/1.0#" />
+        <item name="cingDB"                 value="http://hcls.deri.ie/l2s/sehr/cing/db/1.0#" />
+        <item name="cingNg"                 value="http://hcls.deri.ie/l2s/sehr/cing/ng/1.0#" />
+        <item name="cingBreastCA"           value="http://hcls.deri.ie/l2s/sehr/cing/BreastCA/1.0#" />
+        <item name="zeincroAE"              value="http://hcls.deri.ie/l2s/sehr/zeincro/studyAE/1.0#" />
+        <item name="zeincroConcmed"         value="http://hcls.deri.ie/l2s/sehr/zeincro/Concmed/1.0#" />
+        <item name="studyB"                 value="http://hcls.deri.ie/l2s/sehr/zeincro/respiratory/medicalhistory/studyB#" />
+        <item name="zeincroMedHistStudyB"   value="http://hcls.deri.ie/l2s/sehr/zeincro/respiratory/medicalhistory/studyB/1.0#" />
+        <item name="zeincroMedHistStudyA"   value="http://hcls.deri.ie/l2s/sehr/zeincro/respiratory/medicalhistory/studyA/1.0#" />
+        <item name="zeincroMedHistStudyC"   value="http://hcls.deri.ie/l2s/sehr/zeincro/respiratory/medicalhistory/studyC/1.0#" />
+        <item name="scmn"                   value="http://hcls.deri.ie/l2s/sehr/commonVariables/1.0#" />
+    </config>
+    <config name="owlCategories">
+        <!--
+            List of Category names associated with the owl namespace aliases
+            name - is the namespace alias
+            value - is the category description
+            Sample:
+            <item name="alias" value="description" />
+        -->
+        <item name="owl"                    value="OWL" />
+        <item name="rdf"                    value="RDS" />
+        <item name="rdfs"                   value="RDFS" />
+        <item name="obo"                    value="OBO" />
+        <item name="ehr"                    value="openEHR-Annotations" />
+        <item name="arch"                   value="openEHR-Archetype" />
+        <item name="type"                   value="openEHR-BaseTypes" />
+        <item name="cont"                   value="openEHR-Content" />
+        <item name="cehr"                   value="L2S Common EHR" />
+        <item name="sehr"                   value="Drug Use" />
+        <item name="chuv"                   value="Psychiatric Variables" />
+        <item name="chuvPsycDis"            value="Psychiatric Variables" />
+        <item name="cing"                   value="Single Nucleotide Polymorphisms (SNPs)" />
+        <item name="cingDB"                 value="Diabetes Variables" />
+        <item name="cingNg"                 value="Neurogenetics Variables" />
+        <item name="cingBreastCA"           value="Breast Cancer Variables " />
+        <item name="zeincroAE"              value="Adverse Event Variables" />
+        <item name="zeincroConcmed"         value="Concomitant Medication Variables" />
+        <item name="studyB"                 value="Medical history Variables" />
+        <item name="zeincroMedHistStudyB"   value="Medical History Variables" />
+        <item name="zeincroMedHistStudyA"   value="Medical History Variables" />
+        <item name="zeincroMedHistStudyC"   value="Medical History Variables" />
+        <item name="scmn"                   value="Common Variables" />
+    </config>
+    <config name="owlIgnoredNamespaces">
+        <!--
+            List of owl namespaces that should be ignored
+            name - is the namespace that should be ignored
+            Sample:
+            <item name="namespace-uri-or-alias" />
+        -->
+        <item name="http://www.ifomis.org/acgt/1.0#" />
+    </config>
+    <config name="postTransformationConsoleCommands">
+        <!--
+            List of console commands that are executed after the transformation is completed. 
+            %(rdfFile)s will be replace with the location of the generated rdf file
+            %(appDir)s will be replace with the home application directory
+            
+            Example: notepad "%(rdfFile)s"
+        -->
+        <!--<item><![CDATA[notepad "%(rdfFile)s"]]></item>-->
+    </config>
+</configs>

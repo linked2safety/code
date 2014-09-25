@@ -1,0 +1,14 @@
+#header-menu{
+    padding-left: 2px;
+}
+
+.content{
+    padding: 10px;    
+}
+
+.content h3{
+	margin-top: 10px;
+}
+.content p{
+	margin-bottom: 10px;
+}

@@ -1,0 +1,9 @@
+('C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\build\\build\\linked2safety.win64\\linked2safety.win64.exe',
+ False,
+ False,
+ 'C:\\Data\\cristip\\work\\CNAS-SIUI\\L2S\\src\\trunk\\application\\static\\favicon.ico',
+ None,
+ [],
+ None,
+ False,
+ 1393842905L)

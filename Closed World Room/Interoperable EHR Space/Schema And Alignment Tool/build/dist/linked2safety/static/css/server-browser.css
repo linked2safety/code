@@ -1,0 +1,91 @@
+.dialog-server-browser{
+    position: relative;
+}
+
+.dialog-server-browser label.location-input{
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 45px;
+    width: auto;
+    height: 30px;
+    line-height: 40px;
+}
+
+.dialog-server-browser .location-button{
+    position: absolute;
+    top:5px;
+    right: 0;
+}
+
+.dialog-server-browser input.location-input{
+    position: absolute;
+    right: 0;
+    top: 1px;
+    left: 90px;
+    width: 300px;
+}
+.dialog-server-browser .list-drives{
+    position: absolute;
+    top: 40px;
+    left:0;
+    right: 0;
+    height: 30px;
+    display: none;
+}
+
+.dialog-server-browser .list-drives li{
+    display: block;
+    float: left;
+    width:50px;
+    height: 30px;
+    position: relative;
+}
+
+.dialog-server-browser .list-drives a{
+    position: absolute;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    line-height: 30px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.dialog-server-browser.has-drives .list-drives{
+    display: block;
+}
+
+.dialog-server-browser .list-entries{
+    position: absolute;
+    top: 40px;
+    left:0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid #CCCCCC;
+    
+}
+
+.dialog-server-browser .list-entries li{
+    margin-top: 5px;
+}
+
+.dialog-server-browser .list-entries li.selected .text{
+    color:#FF0000;
+}
+
+.dialog-server-browser.has-drives .list-entries{
+    top:70px;
+}
+
+.dialog-server-browser .list-entries .text{
+    float: left;
+}
+
+.dialog-server-browser .list-entries .ui-icon{
+    display: block;
+    float: left;
+}

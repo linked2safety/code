@@ -1,0 +1,482 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY cont "http://www.openehr.org/owl/v1/Content#" >
+    <!ENTITY stru "http://www.openehr.org/owl/v1/Structure#" >
+    <!ENTITY type "http://www.openehr.org/owl/v1/BaseTypes#" >
+    <!ENTITY ehr "http://www.openehr.org/owl/v1/Annotations#" >
+    <!ENTITY comp "http://www.openehr.org/owl/v1/Composition#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.openehr.org/owl/v1/Composition#"
+     xml:base="http://www.openehr.org/owl/v1/Composition"
+     xmlns:stru="http://www.openehr.org/owl/v1/Structure#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:comp="http://www.openehr.org/owl/v1/Composition#"
+     xmlns:ehr="http://www.openehr.org/owl/v1/Annotations#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:type="http://www.openehr.org/owl/v1/BaseTypes#"
+     xmlns:cont="http://www.openehr.org/owl/v1/Content#">
+    <owl:Ontology rdf:about="http://www.openehr.org/owl/v1/Composition">
+        <rdfs:label>Linked2Safety Common EHR Schema</rdfs:label>
+        <rdfs:comment>Linked2Safety Common EHR Schema - Composition
+based on the openEHR EHR Reference Model (RM) v1.0.2</rdfs:comment>
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <owl:imports rdf:resource="http://www.openehr.org/owl/v1/Content"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#category -->
+
+    <owl:ObjectProperty rdf:about="&comp;category">
+        <rdfs:range rdf:resource="&type;DV_CODED_TEXT"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#composer -->
+
+    <owl:ObjectProperty rdf:about="&comp;composer">
+        <rdfs:range rdf:resource="&type;PARTY_PROXY"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#composition -->
+
+    <owl:ObjectProperty rdf:about="&comp;composition">
+        <rdfs:range rdf:resource="&comp;COMPOSITION"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#content -->
+
+    <owl:ObjectProperty rdf:about="&comp;content">
+        <rdfs:range rdf:resource="&cont;CONTENT_ITEM"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#context -->
+
+    <owl:ObjectProperty rdf:about="&comp;context">
+        <rdfs:range rdf:resource="&comp;EVENT_CONTEXT"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#end_time -->
+
+    <owl:ObjectProperty rdf:about="&comp;end_time">
+        <rdfs:range rdf:resource="&type;DV_DATE_TIME"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#health_care_facility -->
+
+    <owl:ObjectProperty rdf:about="&comp;health_care_facility">
+        <rdfs:range rdf:resource="&type;PARTY_IDENTIFIED"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#other_context -->
+
+    <owl:ObjectProperty rdf:about="&comp;other_context">
+        <rdfs:range rdf:resource="&stru;ITEM_STRUCTURE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#participations -->
+
+    <owl:ObjectProperty rdf:about="&comp;participations">
+        <rdfs:range rdf:resource="&type;PARTICIPATION"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#setting -->
+
+    <owl:ObjectProperty rdf:about="&comp;setting">
+        <rdfs:range rdf:resource="&type;DV_CODED_TEXT"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#start_time -->
+
+    <owl:ObjectProperty rdf:about="&comp;start_time">
+        <rdfs:range rdf:resource="&type;DV_DATE_TIME"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#territory -->
+
+    <owl:ObjectProperty rdf:about="&comp;territory">
+        <rdfs:range rdf:resource="&type;CODE_PHRASE"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#COMPOSITION -->
+
+    <owl:Class rdf:about="&comp;COMPOSITION">
+        <rdfs:subClassOf rdf:resource="&stru;LOCATABLE"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&type;language"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;category"/>
+                <owl:onClass rdf:resource="&type;DV_CODED_TEXT"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;composer"/>
+                <owl:onClass rdf:resource="&type;PARTY_PROXY"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;territory"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;context"/>
+                <owl:onClass rdf:resource="&comp;EVENT_CONTEXT"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;content"/>
+                <owl:someValuesFrom rdf:resource="&cont;CONTENT_ITEM"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:Purpose>One version in a VERSIONED_COMPOSITION.
+A composition is considered the unit of modification of the record, the unit of transmission in record extracts, and the unit of attestation by authorising clinicians.
+In this latter sense, it may be considered equivalent to a signed document.</ehr:Purpose>
+        <ehr:CEN13606>Composition</ehr:CEN13606>
+        <ehr:ISO18308></ehr:ISO18308>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:Use></ehr:Use>
+        <ehr:HL7>CDA DOCUMENT</ehr:HL7>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>The person primarily responsible for the content of the Composition (but not necessarily its committal into the EHR system).
+This is the identifier which should appear on the screen. It may or may not be the person who entered the data.
+When it is the patient, the special “self” instance of PARTY_PROXY will be used.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;COMPOSITION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;composer"/>
+                <owl:onClass rdf:resource="&type;PARTY_PROXY"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>The content of this Composition.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;COMPOSITION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;content"/>
+                <owl:someValuesFrom rdf:resource="&cont;CONTENT_ITEM"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Indicates what broad category this Composition is belogs to, e.g. “persistent” - of longitudinal validity, “event”, “process” etc.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;COMPOSITION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;category"/>
+                <owl:onClass rdf:resource="&type;DV_CODED_TEXT"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Mandatory indicator of the localised language in which this Composition is written.
+Coded from openEHR Code Set “languages”. The language of an Entry if different from the Composition is indicated in ENTRY.language.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;COMPOSITION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&type;language"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>The clinical session context of this Composition, i.e. the contextual attributes of the clinical session.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;COMPOSITION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;context"/>
+                <owl:onClass rdf:resource="&comp;EVENT_CONTEXT"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Name of territory in which this Composition was written. Coded from openEHR “countries” code set, which is an expression of the ISO 3166 standard.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;COMPOSITION"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;territory"/>
+                <owl:onClass rdf:resource="&type;CODE_PHRASE"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.openehr.org/owl/v1/Composition#EVENT_CONTEXT -->
+
+    <owl:Class rdf:about="&comp;EVENT_CONTEXT">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;other_context"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;setting"/>
+                <owl:onClass rdf:resource="&type;DV_CODED_TEXT"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;health_care_facility"/>
+                <owl:onClass rdf:resource="&type;PARTY_IDENTIFIED"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;start_time"/>
+                <owl:onClass rdf:resource="&type;DV_DATE_TIME"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;end_time"/>
+                <owl:onClass rdf:resource="&type;DV_DATE_TIME"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;participations"/>
+                <owl:someValuesFrom rdf:resource="&type;PARTICIPATION"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ehr:Purpose>Documents the context information of a healthcare event involving the subject of care and the health system. The context information recorded here are independent
+of the attributes recorded in the version audit, which document the “system interaction” context, i.e. the context of a user interacting with the health record
+system. Healthcare events include patient contacts, and any other business activity, such as pathology investigations which take place on behalf of the patient.</ehr:Purpose>
+        <ehr:CEN13606>Composition class</ehr:CEN13606>
+        <ehr:HL7>TBD</ehr:HL7>
+        <ehr:MisUse></ehr:MisUse>
+        <ehr:Use></ehr:Use>
+        <ehr:ISO18308></ehr:ISO18308>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>The health care facility under whose care the event took place. This is the most specific workgroup or delivery unit within a care delivery enterprise that has
+an official identifier in the health system, and can be used to ensure medico-legal accountability.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;EVENT_CONTEXT"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;health_care_facility"/>
+                <owl:onClass rdf:resource="&type;PARTY_IDENTIFIED"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>The setting in which the clinical session took place. Coded using the openEHR Terminology, “setting” group.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;EVENT_CONTEXT"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;setting"/>
+                <owl:onClass rdf:resource="&type;DV_CODED_TEXT"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Optional end time of the clinical session.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;EVENT_CONTEXT"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;end_time"/>
+                <owl:onClass rdf:resource="&type;DV_DATE_TIME"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Start time of the clinical session or other kind of event during which a provider performs a service of any kind for the patient.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;EVENT_CONTEXT"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;start_time"/>
+                <owl:onClass rdf:resource="&type;DV_DATE_TIME"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Parties involved in the healthcare event. These would normally include the physician( s) and often the patient (but not the latter if the clinical session is a pathology test for example).</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;EVENT_CONTEXT"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;participations"/>
+                <owl:someValuesFrom rdf:resource="&type;PARTICIPATION"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <rdfs:comment>Other optional context which will be archetyped.</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&comp;EVENT_CONTEXT"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&comp;other_context"/>
+                <owl:onClass rdf:resource="&stru;ITEM_STRUCTURE"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    <rdf:Description>
+        <rdfs:comment>Parties involved in the healthcare event. These would normally include the physician( s) and often the patient (but not the latter if the clinical session is a pathology test for example).</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The content of this Composition.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The person primarily responsible for the content of the Composition (but not necessarily its committal into the EHR system).
+This is the identifier which should appear on the screen. It may or may not be the person who entered the data.
+When it is the patient, the special “self” instance of PARTY_PROXY will be used.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The clinical session context of this Composition, i.e. the contextual attributes of the clinical session.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The actual location where the session occurred, e.g. “microbiol lab 2”, “home”, “ward A3” and so on.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The setting in which the clinical session took place. Coded using the openEHR Terminology, “setting” group.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Start time of the clinical session or other kind of event during which a provider performs a service of any kind for the patient.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Optional end time of the clinical session.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>The health care facility under whose care the event took place. This is the most specific workgroup or delivery unit within a care delivery enterprise that has
+an official identifier in the health system, and can be used to ensure medico-legal accountability.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Other optional context which will be archetyped.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Mandatory indicator of the localised language in which this Composition is written.
+Coded from openEHR Code Set “languages”. The language of an Entry if different from the Composition is indicated in ENTRY.language.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Indicates what broad category this Composition is belogs to, e.g. “persistent” - of longitudinal validity, “event”, “process” etc.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>Name of territory in which this Composition was written. Coded from openEHR “countries” code set, which is an expression of the ISO 3166 standard.</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net -->
+
