@@ -1,0 +1,27 @@
+<tool id="reduce_data_chi_squared_feature_selection" name="Chi Squared Dimensionality Reduction">
+<command interpreter="bash">
+
+ runReduceDataCSFS.sh $removeMissingVal $datacube $no_of_dimensions weka-3-6-7.jar $chi_squared_reduced_data_cube $__user_email__
+
+</command>
+<inputs>
+  <param name="datacube" format="csv" type="data" label="File to process">    
+  <help> Select the target variable of the input data using Set Target Variable tool before using this tool.</help>  
+  </param>
+  <param name="no_of_dimensions" size="4" type="integer" value="3" label="Specify number of predictor variables to choose" >
+           <validator type="empty_field" message="Please specify the number of predictor variables to select. "/>
+           <help>The number of predictor variables to select must be no more than their total number in the data cube.</help> 
+  </param>
+   <param name="removeMissingVal" type="select" label="Delete the missing values of the predictor variables?" >
+            <option value="0">No</option>
+            <option value="1" selected="true">Yes</option>
+            <help>If No is selected, the missing values of each variable will be replaced by its most frequent value</help>
+  </param>
+</inputs>
+<outputs>
+  <data name="chi_squared_reduced_data_cube" format="csv" label="chi_squared_reduced_data_cube"/>
+</outputs>
+<help>
+This tool reduces the dimensionality of the input data cube using a chi squared dimensioanlity reduction algorithm by asking the user to specify the number of dimensions to select. Output is the lower dimesional data cube consisting of the chosen dimensions and the target variable. 
+</help>
+</tool>

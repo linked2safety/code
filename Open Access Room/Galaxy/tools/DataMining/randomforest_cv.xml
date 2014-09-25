@@ -1,0 +1,35 @@
+<tool id="randomforest_cv" name="Random Forest (Cross Validation)">
+<command interpreter="bash">
+
+runRandomForest_cv.sh $removeMissingVal $datacube $no_of_trees $cv_folds weka-3-7-7.jar $association_rules $random_forest_pdf_file $__user_email__
+
+</command>
+<inputs>
+  <param name="datacube" format="csv" type="data" label="File to process">
+   <help> Select the target variable of the input data using Set Target Variable tool before using this tool.</help>
+  </param>
+  <param name="removeMissingVal" type="select" label="Delete the missing values of the predictor variables?" >
+            <option value="0">No</option>
+            <option value="1" selected="true">Yes</option>
+            <help>If No is selected, the missing values of each variable will be replaced by its most frequent value</help>
+  </param>
+  <param name="no_of_trees" size="4" type="integer" value="3" label="number of decision trees of the random forest" >
+     <validator type="in_range" min="1" message="The number of decision trees must be at least 1."/>
+     <validator type="empty_field" message="Please specify the number of decision trees of the random forest."/>
+     <help>The number of decision trees is 3 by default.</help> 
+  </param>
+  <param name="cv_folds" size="4" type="integer" value="10" label="Number of folds for cross validation" >
+    <validator type="in_range" min="2" message="The number of folds must be at least 2."/> 
+    <validator type="empty_field" message="Please specify the number of cross validation folds to build a random forest."/>
+     <help>Normally the number of folds is set to 10 (10 fold cross validation). Setting the number of folds to 10 means that 90% of the data is used as training data to build a random forest and the remaining 10% of the data is used as testing data to obtain the classification accuracy of the random forest. This training-testing process is done 10 times in total with each time using a different 90% of the data as training data and the rmaining 10% of the data as testing data.
+     </help> 
+  </param>
+</inputs>
+<outputs>
+  <data name="association_rules" format="txt"  label="association rules of random forest cross validation"/>
+  <data name="random_forest_pdf_file" format="pdf" label="random forest visualization"/>
+</outputs>
+<help>
+The input data is a Linked2Safety data cube in csv format. A number of decision trees (3 by default) are randomly built from the input data using Random Forest algorithm and association rules are extracted from the decision trees. 
+</help>
+</tool>

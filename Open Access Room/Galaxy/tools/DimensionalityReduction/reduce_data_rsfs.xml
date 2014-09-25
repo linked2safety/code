@@ -1,0 +1,23 @@
+<tool id="reduce_data_rough_set_feature_selection" name="Rough Set Dimensionality Reduction">
+<command interpreter="bash">
+
+runReduceDataRSFS.sh $removeMissingVal $datacube $rough_set_reduced_data_cube $__user_email__
+
+</command>
+<inputs>
+  <param name="datacube" format="csv" type="data" label="File to process">
+  <help> Select the target variable of the input data using Set Target Variable tool before using this tool.</help>    
+  </param>
+  <param name="removeMissingVal" type="select" label="Delete the missing values of the predictor variables?" >
+            <option value="0">No</option>
+            <option value="1" selected="true">Yes</option>
+            <help>If No is selected, the missing values of each variable will be replaced by its most frequent value</help>
+  </param>
+</inputs>
+<outputs>
+  <data name="rough_set_reduced_data_cube" format="csv" label="rough_set_reduced_data_cube"/>
+</outputs>
+<help>
+This tool automatically reduces the dimensionality of the input data cube using a rough set dimensioanlity reduction algorithm. Output is the lower dimesional data cube consisting the chosen dimensions and the target variable.
+</help>
+</tool>

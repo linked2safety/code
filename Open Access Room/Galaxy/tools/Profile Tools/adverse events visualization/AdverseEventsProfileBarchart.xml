@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<tool id="adverse_events_profiles_Barchart" name="Adverse Events of Each Profile Barchart">
+	<description></description>	
+	<command interpreter="python">
+		AdverseEventsProfileBarchart.py $__user_email__ $output 
+	</command>
+
+	<outputs>
+        <data name="output" format="pdf" label="Adverse Events of Each Profile Barchart"/>
+	</outputs>
+
+	<help>
+	**What it does**
+	 
+	Creates a barchart to display the number of adverse events of each profile.
+
+	**output:** The barchart in pdf.
+	</help>
+</tool>

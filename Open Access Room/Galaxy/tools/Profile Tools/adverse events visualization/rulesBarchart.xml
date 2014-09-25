@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<tool id="rules_Barchart" name="Association Rules of Adverse Events Barchart">
+	<description></description>	
+	<command interpreter="python">
+		rulesBarchart.py $output
+	</command>
+
+	<outputs>
+        <data name="output" format="pdf" label="Association Rules of Adverse Events Barchart"/>
+	</outputs>
+
+	<help>
+	**What it does**
+	 
+	Creates a barchart to display the number of association rules which detect each adverse event in the knowledge base.
+
+	**output:** The barchart in pdf.
+	</help>
+
+</tool>

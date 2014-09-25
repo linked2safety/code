@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--insertAssociation-->
+<tool id="insert_association" name="Insert New Association">
+	<description></description>	
+	<command interpreter="python">
+		insertAssociation.py "$association" $p_value $odds_ratio $ld "$reference" "$notes" $__user_email__ $outp
+	</command>
+
+	<inputs>
+		<param name="association" type="text" value="" label="New association" size="512" help="The association should be in the form: a &amp; b =&gt; c">
+			<validator type="empty_field" message="You must specify the new association"/>
+		</param>
+		<param name="p_value" type="text" value="N/A" label="p value" help="Insert the p value of the association [0,1]. If it is not available set the value to N/A">
+			<validator type="empty_field" message="You must specify a value for the p value of the association"/>
+		</param>
+		<param name="odds_ratio" type="text" value="N/A" label="Odds Ratio" help="Insert the odds ratio of the association [0,]. If it is not available set the value to N/A">
+			<validator type="empty_field" message="You must specify a value for the odds ratio of the association"/>
+		</param>
+		<param name="ld" type="text" value="N/A" label="Linkage Disequilibrium" help="Insert the linkage disequilibrium [-1,1]. If it is not available set the value to N/A">
+			<validator type="empty_field" message="You must specify a value for the linkage disequilibrium"/>		
+		</param>
+		<param name="reference" type="text" value="" label="References" size="512" help="Please cite the sources that contain this association">
+			<validator type="empty_field" message="You must specify the sources that contain this association"/>
+		</param>
+		<param name="notes" type="text" value="" label="Notes" size="1024" help="Insert information regarding the new association (e.g. algorithm and dataset used to obtain the association)">
+			<validator type="empty_field" message="You must provide information about the new association"/>
+		</param>
+	</inputs>
+
+	<outputs>
+        <data name="outp" format="txt" label="Insert New Association Output:"/>
+	</outputs>
+
+	<help>
+	**What it does**
+	Inserts a new association in the Linked2Safety knowledge database 
+
+	**output:** 
+	Informs the user if the new association was successfully added in the database.
+	
+	**restrictions:**
+	Only authorised users can use this tool. Contact the system administrator to request access.
+	</help>
+
+</tool>

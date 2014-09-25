@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<tool id="allele_frequency" name="Allele Frequency Test">‎‎
+<description></description>	
+
+	<command interpreter="bash">
+		runAlleleFreq.sh $input1 $threshold $allele_frequencies_output $__user_email__ 
+	</command>
+
+<inputs>
+    <param name="input1" type="data" format="csv" label="File to process" >
+		<help>Select a file from the history as input to this procedure</help> 
+	</param>
+	<param name="threshold" type="float" value="0.05" size="5" label="Threshold" help="Defines the mininmum accepted minor allele frequency. The threshold must be in the range [0,1]" >
+		<validator type="in_range" min="0" max="1" message="The threshold must be in the range [0,1]"/>
+		<validator type="empty_field" message="A value for the threshold must be entered"/>
+	</param>
+</inputs>
+
+<outputs> 
+	<data format="csv" name="allele_frequencies_output" label="Allele frequency QC output: " />
+</outputs>
+
+<help>
+**What it does**
+
+Removes any SNPs with a minor allele frequency lower than the specified threshold.
+
+**output:** A csv datacube file</help>
+</tool>
+
+

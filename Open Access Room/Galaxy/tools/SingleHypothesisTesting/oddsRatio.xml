@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--oddsRatio-->
+<tool id="oddsRatio" name="Odds Ratio">
+	<description></description>	
+	<command interpreter="bash">
+		runOR.sh $inputFile $ignoreMissing $outFile $__user_email__
+	</command>
+
+	<inputs>
+		<param name="inputFile" type="data" format="csv" label="File to process" >
+			<help>Select a file from the history as input to this procedure</help> 
+		</param>
+	    <param name="ignoreMissing" type="select" label="Remove missing values?" >
+	    	<option value="0">No</option>
+	    	<option value="1" selected="true">Yes</option>
+	    	<help>If No is selected, missing values will be considered as a match for both possible values of the variable</help>
+		</param>
+	</inputs>
+
+	<outputs>
+        <data name="outFile" format="txt" label="Odds Ratio Output:"/>
+	</outputs>
+
+	<help>
+	**What it does**
+	 
+	Calculates the Odds Ratio between two binary variables.
+	
+	The algorithm uses the last two variables of the data cube as its target variables.
+
+	**output:** The Odds Ratio between the two variables.
+	</help>
+
+</tool>

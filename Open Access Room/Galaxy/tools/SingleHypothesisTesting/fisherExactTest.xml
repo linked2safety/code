@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--FisherExactTest-->
+<tool id="fisher_exact_test" name="Fishers Exact Test">
+	<description></description>	
+	<command interpreter="bash">
+		runFisherExact.sh $inputFile $fisherExactOut $__user_email__ 
+	</command>
+
+	<inputs>
+		<param name="inputFile" type="data" format="csv" label="File to process" >
+			<help>Select a file from the history as input to this procedure</help> 
+		</param>
+	</inputs>
+
+	<outputs>
+        <data name="fisherExactOut" format="txt" label="Fisher's Exact Test Output:"/>
+	</outputs>
+
+	<help>
+	**What it does**
+	 
+	Performs Fisher's Exact Test on the specified dataset.
+	
+	Any instances with missing values are automatically removed before performing the test.
+
+	**output:** The p-value of the test.
+	</help>
+
+</tool>

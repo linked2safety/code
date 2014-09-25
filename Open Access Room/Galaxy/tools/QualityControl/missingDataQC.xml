@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--Missing data algorithm-->
+<tool id="Missing_data" name="Missing Data Test">
+<description>
+</description>
+
+<command interpreter="bash">
+	runMissingData.sh $input1 $threshold $Output_file $__user_email__ 
+</command>
+
+<inputs>
+	<param name="input1" type="data" format="csv" label="File to process">
+		<help>Select a file from the history as input to this procedure</help> 
+	</param>
+	<param name="threshold" type="float" value="0.05" size="5" label="Threshold" help="The maximum rate of missing values for a variable. The threshold must be in the range [0,1]" >
+		<validator type="in_range" min="0" max="1" message="The threshold must be in the range [0,1]"/>
+		<validator type="empty_field" message="A value for the threshold is needed"/>
+	</param>
+</inputs>
+
+<outputs>
+     <data name="Output_file" format="csv" label="Missing Data QC output: "/>
+</outputs>
+<help>
+**What it does**
+
+Removes any variables with a rate of missing values above the specified threshold.
+
+**output:** A csv datacube.
+
+</help>
+
+</tool>

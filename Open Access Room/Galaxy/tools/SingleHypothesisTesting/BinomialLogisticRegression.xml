@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--BinomialLogisticRegression-->
+<tool id="Binomial_Logistic_Regression" name="Binomial Logistic Regression">
+	<description></description>	
+	<command interpreter="bash">
+		runBinomialLR.sh $inputFile $removeMissingVal $Iterations $LogisticRegressionOut $__user_email__ 
+	</command>
+
+	<inputs>
+		<param name="inputFile" type="data" format="csv" label="File to process" >
+			<help>Select a file from the history as input to this procedure</help> 
+		</param>
+	    <param name="removeMissingVal" type="select" label="Delete the missing values of the predictor variables?" >
+	    	<option value="0">No</option>
+	    	<option value="1" selected="true">Yes</option>
+	    	<help>If No is selected, the missing values of each variable will be replaced by its most frequent value</help>
+		</param>
+		<param name="Iterations" type="integer" value="100" label="Number of iterations" >
+		<validator type="empty_field" message="A value for the number of iterations is needed"/>
+		</param>
+	</inputs>
+
+	<outputs>
+        <data name="LogisticRegressionOut" format="txt" label="Binomial Logistic Regression Output:"/>
+	</outputs>
+
+	<help>
+	**What it does**
+	 
+	Performs Binomial Logistic Regression on the specified dataset.
+
+	**output:** The list of the p-values of the test.
+	</help>
+
+</tool>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--filterAssociationRule-->
+<tool id="filter_association_rule" name="Filter Out an Association Rule">
+	<description></description>	
+	<command interpreter="python">
+		filterAssociationRule.py "$associationRule" "$reason" $__user_email__ $outp
+	</command>
+
+	<inputs>
+		<param name="associationRule" type="select" label="Association Rule" dynamic_options="getAssociationRules()" help="Select the association rule that you want to be filtered out from the knowledge database."/>
+		<param name="reason" type="text" value="" label="Reason" size="1024" help="Provide the reason for filtering out this association rule">
+			<validator type="empty_field" message="You must provide a reason for filtering out this association rule"/>
+		</param>
+	</inputs>
+
+	<outputs>
+        <data name="outp" format="txt" label="Filter Out an Association Rule Output:"/>
+	</outputs>
+
+	<code file="retrieveAssociationRules.py" /> 
+
+	<help>
+	
+	**What it does**
+	Filters out any association rules that match the specified association rule from the Linked2Safety knowledge database 
+
+	**output:** 
+	Informs the user if the filtering was successful.
+	
+	**restrictions:**
+	Only authorised users can use this tool. Contact the system administrator to request access.
+	</help>
+
+</tool>

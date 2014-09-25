@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<tool id="hardy_weinberg" name="Hardy Weinberg Equilibrium Test">
+<description></description>
+
+	<command interpreter="bash">
+		runHWE.sh $input1 $threshold $onlyOnControls $hardyOutput $__user_email__ 
+	</command>
+
+<inputs>
+	<param name="input1" type="data" format="csv" label="File to process" >
+		<help>Select a file from the history as input to this procedure</help> 
+	</param>
+	<param type="select" name="onlyOnControls" value="1" label="Apply it on controls">
+		<option value="1">yes</option>
+		<option value="0">no</option>
+	<help>By selecting yes, the test will only consider the alleles of the controls</help>
+	</param>
+	<param name="threshold" size="7" type="float" value="0.001"><label>Threshold</label></param>
+		<validator type="in_range" min="0" max="1" message="The threshold must be in the range [0,1]"/>
+		<validator type="empty_field" message="A value for the threshold must be entered"/>
+</inputs>
+
+<outputs>
+   <data format="csv" name="hardyOutput" label="HWE output: " />
+</outputs>
+<help>
+**What it does**
+ 
+Removes any SNPs that failed the Hardy Weinberg Equilibrium Test.
+
+Uses the source code found at http://www.sph.umich.edu/csg/abecasis/Exact/c_instruct.html
+
+The code implements an exact SNP test of Hardy-Weinberg Equilibrium as described in 
+
+Wigginton JE, Cutler DJ and Abecasis GR (2005). A note on exact tests of Hardy-Weinberg equilibrium. Am J Hum Genet 76:887-93
+
+**output:** A csv datacube.
+</help>
+</tool>
+
+
+

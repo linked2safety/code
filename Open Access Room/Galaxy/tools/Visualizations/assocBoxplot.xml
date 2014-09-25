@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--Boxplot-->
+<tool id="assoc_Boxplot" name="Associations Boxplot">
+	<description></description>	
+	<command interpreter="bash">
+		runAssocBoxPlot.sh $output $varOfInterest $metric
+	</command>
+
+	<inputs>
+		<param name="varOfInterest" type="select" label="Select the variable of interest" dynamic_options="getVariables()"/>
+	    <param name="metric" type="select" label="Select the metric of interest:" >
+	    	<option value="0" selected="true">p_value</option>
+	    	<option value="1">odds_ratio</option>
+			<help>Will only consider associations that have a value for the selected metric</help> 
+		</param>
+
+	</inputs>
+
+	<outputs>
+        <data name="output" format="pdf" label="Associations Boxplot"/>
+	</outputs>
+
+	<code file="retrieveBoxPlotSelectValues.py" /> 
+
+	<help>
+	**What it does**
+	 
+	Creates a boxplot with the factors associated with the selected variable, based on the knowledge stored in the Linked2Safety knowledge base.
+	The tool does NOT run any analysis on a dataset to create the visualization, but uses all of the statistically significant associations that were identified from all of the analyses performed by the users of the platform.
+
+	**output:** The boxplot with the associated factors in pdf.
+	</help>
+
+</tool>

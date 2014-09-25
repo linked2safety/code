@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--ChiSquareTest-->
+<tool id="ld_test" name="Linkage Disequilibrium">
+	<description></description>	
+	<command interpreter="bash">
+		runLD.sh $inputFile $ldMeasure $outFile $__user_email__
+	</command>
+
+	<inputs>
+		<param name="inputFile" type="data" format="csv" label="File to process" >
+			<help>Select a file from the history as input to this procedure</help> 
+		</param>
+	    <param name="ldMeasure" type="select" label="Select the LD measure" >
+	    	<option value="1" selected="true">D</option>
+	    	<option value="2">D'</option>
+	    	<option value="3">r</option> 
+		</param>
+	</inputs>
+
+	<outputs>
+        <data name="outFile" format="txt" label="LD Output:"/>
+	</outputs>
+
+	<help>
+	**What it does**
+	 
+	Calculates the LD between the first two SNPs found in the data cube.
+
+	**output:** The LD between the two SNPs.
+	</help>
+
+</tool>

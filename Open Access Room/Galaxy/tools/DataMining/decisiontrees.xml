@@ -1,0 +1,28 @@
+<tool id="decisiontrees" name="Decision Trees (Percentage Split)">
+<command interpreter="bash">
+
+runDecisionTrees.sh $removeMissingVal $datacube $split_percentage weka-3-7-7.jar $output $decision_tree_pdf_file $__user_email__
+
+</command>
+<inputs>
+  <param name="datacube" type="data" format="csv" label="File to process">
+     <help>Choose a file from history as input to this procedure</help>
+  </param>
+ <param name="removeMissingVal" type="select" label="Delete the missing values of the predictor variables?" >
+            <option value="0">No</option>
+            <option value="1" selected="true">Yes</option>
+            <help>If No is selected, the missing values of each variable will be replaced by its most frequent value</help>
+  </param>
+  <param name="split_percentage" size="4" type="float" value="66" label="Percentage of the data to build a decision tree" >
+           <validator type="empty_field" message="Please specify the percentage of the data to build a decision tree."/>
+           <help>Setting split percentage to 66 means that 66% of the dataset is used to build a decision tree and the remaining 34% of the dataset is used to test the performance of the decision tree.</help> 
+  </param>
+</inputs>
+<outputs>
+  <data name="output" format="txt"  label="association rules of decision tree percentage split"/>
+  <data name="decision_tree_pdf_file" format="pdf" label="decision visualization"/>
+</outputs>
+<help>
+The input data is a Linked2Safety data cube in csv format. Firstly, the input data is split into two smaller data: a training data and a testing data using the specified percentage. Then, a decision tree is built using the training data by the C4.5 algorithm and association rules are extracted from the decision tree. Finally, the decision tree and the association rules are used to predict the categories of the testing data. Output are the decision tree, its classification accuracy of the decision tree, the association rules and their support, confidence and lift.  
+</help>
+</tool>

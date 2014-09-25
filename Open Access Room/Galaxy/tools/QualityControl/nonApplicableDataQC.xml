@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--Non Applicable Data algorithm-->
+<tool id="NonApplicable_data" name="Non Applicable Data Test">
+<description>
+</description>
+
+<command interpreter="bash">
+	runNonApplicableData.sh $input $onlyOnTarget $Output_file $__user_email__ 
+</command>
+
+<inputs>
+	<param name="input" type="data" format="csv" label="File to process">
+		<help>Select a file from the history as input to this procedure</help> 
+	</param>
+	<param type="select" name="onlyOnTarget" value="1" label="Check only the taret variable">
+		<option value="1">yes</option>
+		<option value="0">no</option>
+	<help>By selecting yes, the test will only consider the values of the target variable. If no is selected, instances with non applicable values in any of the data cube variables will be removed</help>
+	</param>
+</inputs>
+
+<outputs>
+     <data name="Output_file" format="csv" label="Non Applicable Data QC output: "/>
+</outputs>
+<help>
+**What it does**
+
+Removes any instances with non applicable values.
+It can either remove instances with non applicable values in the target variable or in any of the variables of the data cube.
+
+**output:** A csv datacube.
+
+</help>
+
+</tool>

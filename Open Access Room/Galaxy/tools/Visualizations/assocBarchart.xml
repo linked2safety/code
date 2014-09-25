@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--Barchart-->
+<tool id="assoc_Barchart" name="Associations Barchart">
+	<description></description>	
+	<command interpreter="python">
+		assocBarchart.py $varOfInterest $output
+	</command>
+	<inputs>
+		<param name="varOfInterest" type="select" multiple="true" label="Select the variables of interest" dynamic_options="getVariables()">
+			<help>Multiple variables can be selected</help>
+		</param>
+	</inputs>
+	<outputs>
+        <data name="output" format="pdf" label="Barchart with associations of adverse events"/>
+	</outputs>
+
+
+	<code  file="retrieveAssocBarchartSelectValues.py"/>
+
+
+	<help>
+	**What it does**
+	 
+	Creates a barchart that illustrates the number of associations that exist for each of the selected adverse events in the knowledge base of Linked2Safety.
+	The tool does NOT run any analysis on a dataset to create the visualization, but uses all of the statistically significant associations that were identified from all of the analyses performed by the users of the platform.
+
+	**output:** The barchart in pdf.
+	</help>
+
+</tool>

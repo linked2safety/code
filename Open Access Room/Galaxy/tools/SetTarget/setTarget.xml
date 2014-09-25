@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--SetTargetVariable-->
+<tool id="set_target_variable" name="Set the Target Variable">
+	<description>This tool is used to select the target variable for the analyses that will be performed.</description>	
+	<command interpreter="bash">
+		runSetTarget.sh $inputFile $setTargetOut $targetVar $__user_email__
+	</command>
+
+	<inputs>
+		<param name="inputFile" type="data" format="csv" label="File to process" >
+			<help>Select a file from the history as input to this procedure</help> 
+		</param>
+		<param name="targetVar" type="data_column" data_ref="inputFile" numerical="False" multiple="true" label="Select the target Variable" />
+	</inputs>
+
+	<outputs>
+        <data name="setTargetOut" format="csv" label="Set the Target Variable Output:"/>
+	</outputs>
+
+	<help>
+	**What it does**
+	 
+	Sets the target variable for the analyses that will be performed.
+	
+	If multiple variables are selected, then variables not selected are removed from the data cube.
+	
+	Multiple variables can be selected for example if odds ratio will be performed.
+	
+	In this case the user selects the two variables that will be analysed using odds ratio and only those are retained in the returned data cube.
+	
+	**output:** A new data cube with the target variable located at the last dimension of the data cube.
+	</help>
+
+</tool>

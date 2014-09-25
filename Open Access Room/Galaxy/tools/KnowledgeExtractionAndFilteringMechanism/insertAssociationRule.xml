@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--insertAssociationRule-->
+<tool id="insert_association_rule" name="Insert New Association Rule">
+	<description></description>	
+	<command interpreter="python">
+		insertAssociationRule.py "$associationRule" $support $confidence $lift "$reference" "$notes" $__user_email__ $outp
+	</command>
+
+	<inputs>
+		<param name="associationRule" type="text" value="" label="New association rule" size="1024" help="The association rule should be in the form: a=1 &amp; b=2 =&gt; c=0">
+			<validator type="empty_field" message="You must specify the new association rule"/>
+		</param>
+		<param name="support" type="text" value="N/A" label="Support" help="Insert the support of the association rule [0,1]. If the value is not available set the value to N/A">
+			<validator type="empty_field" message="You must specify a value for the support of the association rule"/>
+		</param>
+		<param name="confidence" type="text" value="N/A" label="Confidence" help="Insert the confidence of the association rule [0,1]. If the value is not available set the value to N/A">
+			<validator type="empty_field" message="You must specify a value for the confidence of the association rule"/>
+		</param>
+		<param name="lift" type="text" value="N/A" label="Lift" help="Insert the lift of the association rule [0,]. If the value is not available set the value to N/A">
+			<validator type="empty_field" message="You must specify a value for the lift of the association rule"/>
+		</param>		
+		<param name="reference" type="text" value="" label="References" size="512" help="Please cite the sources that contain this association rule">
+			<validator type="empty_field" message="You must specify the sources that contain this association rule"/>
+		</param>
+		<param name="notes" type="text" value="" label="Notes" size="1024" help="Insert information regarding the new association rule (e.g. algorithm and dataset used to obtain the association rule)">
+			<validator type="empty_field" message="You must provide information about the new association rule"/>
+		</param>
+	</inputs>
+
+	<outputs>
+        <data name="outp" format="txt" label="Insert New Association Rule Output:"/>
+	</outputs>
+
+	<help>
+	**What it does**
+	Inserts a new association rule in the Linked2Safety knowledge database 
+
+	**output:** 
+	Informs the user if the new association rule was successfully added in the database.
+	
+	**restrictions:**
+	Only authorised users can use this tool. Contact the system administrator to request access.
+	</help>
+
+</tool>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--ChiSquareTest-->
+<tool id="chi_square_test" name="Pearsons Chi Square Test">
+	<description></description>	
+	<command interpreter="bash">
+		runChiSquare.sh $inputFile $chiSquareOut $yatesCorrection $removeZeroColRow $permTest $permIterations $__user_email__
+	</command>
+
+	<inputs>
+		<param name="inputFile" type="data" format="csv" label="File to process" >
+			<help>Select a file from the history as input to this procedure</help> 
+		</param>
+	    <param name="yatesCorrection" type="select" label="Perform Yates' continuity correction?" >
+	    	<option value="0" selected="true">No</option>
+	    	<option value="1">Yes</option>
+			<help>This is only applied on 2x2 contingency tables</help> 
+		</param>
+		<param name="removeZeroColRow" type="select" label="Remove any columns and rows with only zero values?" >
+	    	<option value="0">No</option>
+	    	<option value="1" selected="true">Yes</option>
+			<help>Will remove any columns or rows with only zero values from the contingency table that will be created.</help> 
+		</param>
+		<param name="permTest" type="select" label="Perform permutation testing?" >
+	    	<option value="0" selected="true">No</option>
+	    	<option value="1">Yes</option>
+		</param>
+		<param name="permIterations" type="integer" value="1000" label="Number of permutation iterations" >
+			<validator type="empty_field" message="A value for the number of permutation iterations is needed"/>
+			<help>This will only be used if you selected to perform permutation testing</help> 
+		</param>
+	</inputs>
+
+	<outputs>
+        <data name="chiSquareOut" format="txt" label="Pearson's Chi Square Output:"/>
+	</outputs>
+
+	<help>
+	**What it does**
+	 
+	Performs Pearson's Chi Square Test on the specified dataset.
+	
+	Any instances with missing values are automatically removed before performing the test.
+
+	**output:** The p-value of the test.
+	</help>
+
+</tool>

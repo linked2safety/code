@@ -1,0 +1,30 @@
+<tool id="associationrules" name="Association Rules">
+<command interpreter="bash">
+
+runAssociationRules.sh $removeMissingVal $datacube $conf_threshold $no_of_rules weka-3-7-7.jar $output $__user_email__
+
+</command>
+<inputs>
+  <param name="datacube" type="data" format="csv" label="File to process"/>
+  <param name="removeMissingVal" type="select" label="Delete the missing values of the predictor variables?" >
+            <option value="0">No</option>
+            <option value="1" selected="true">Yes</option>
+            <help>If No is selected, the missing values of each variable will be replaced by its most frequent value</help>
+  </param>
+  <param name="conf_threshold" size="4" type="float" value="0.9" label="Confidence Threshold" >
+           <validator type="empty_field" message="Please enter a confidence threshold between 0 and 1 (default 0.9)."/>
+           <help>Threshold is the minimum value of confidence e.g. 0.9</help> 
+  </param>
+  <param name="no_of_rules" size="4" type="integer" value="10" label="No. of Rules" >
+           <validator type="empty_field" message="Please enter number of rules to output e.g. 10."/>
+           <help>Please specify number of rules to output e.g. 10.</help> 
+  </param>
+</inputs>
+<outputs>
+  <data name="output" format="txt" label="association rules"/>
+</outputs>
+<help>
+The input data is a Linked2Safety data cube in csv format. If the input data contains more than one adverse event variables, single adverse event association rules (e.g. drug = ibuprofen and age = over 50 => diabetes = type1) and multi adverse event association rules (e.g. drug = anti-biotics and age = over_70 => stroke = true and heart disease = true) are output by the Apriori algorithm. If the input data contains one adverse event variable, single adv
+erse event association rules are output.
+</help>
+</tool>
